@@ -78,105 +78,7 @@ residue theorem handles instead). Analyticity is required on and inside
 $C$, not just along the contour itself.
 
 ---
-
-# Complex Differentiability & the Cauchy-Riemann Equations
-
-## Defⁿ of derivative
-
-For a single-valued complex function $f(z) = u(x,y) + iv(x,y)$, the derivative at $z_0$ is defined as:
-
-$$\left.\frac{df}{dz}\right|_{z=z_0} = \lim_{\delta z \to 0} \frac{f(z_0 + \delta z) - f(z_0)}{\delta z}$$
-
-where, $\delta z = \delta x + i \delta y$. For the derivative to exist, this limit must be independent of the path / dirⁿ along which $\delta z \to 0$.
-
-## Cauchy-Riemann conⁿ
-
-* **Cartesian form:**
-
-$$\frac{\partial u}{\partial x} = \frac{\partial v}{\partial y} \quad \text{and} \quad \frac{\partial v}{\partial x} = -\frac{\partial u}{\partial y}$$
-
-* **Polar form:**
-
-$$\frac{\partial u}{\partial r} = \frac{1}{r} \frac{\partial v}{\partial \theta} \quad \text{and} \quad \frac{\partial v}{\partial r} = -\frac{1}{r} \frac{\partial u}{\partial \theta}$$
-
-* **Wirtinger Derivative / Compact form:**
-
-$$\frac{\partial f}{\partial z^*} = 0$$
-
-> **Key Insight:** If a funⁿ explicitly depends on $z^* = x - iy$, $\text{Re}(z)$, $\text{Im}(z)$, $|z|$ or $\text{Arg}(z)$, it cannot satisfy C-R universally and is non-analytic.
-
----
-
-### Derivative Expressions
-
-If $f(z)$ is differentiable:
-
-$$\frac{df}{dz} = \frac{\partial u}{\partial x} + i \frac{\partial v}{\partial x} = \frac{\partial v}{\partial y} - i \frac{\partial u}{\partial y} = \frac{\partial u}{\partial x} - i \frac{\partial u}{\partial y}$$
-
-## Necessary v/s Sufficient conditions
-
-* **Necessary conⁿ:** If $f(z) = u + iv$ is differentiable at $z_0$, then the CR equations must hold at $z_0$.
-* **Sufficient conⁿ:** For $f(z)$ to be differentiable at $z_0$, the CR eqⁿ must hold at $z_0$ and the first partial derivatives $\left(\frac{\partial u}{\partial x}, \frac{\partial u}{\partial y}, \frac{\partial v}{\partial x}, \frac{\partial v}{\partial y}\right)$ must be continuous at $z_0$.
-* **Cautionary Note:** CR equations holding at a point without continuous partial derivatives is not sufficient for differentiability (e.g. path dependent limits).
-
----
-
-# 2. Analyticity & Entire Functions
-
-## Definitions & Properties
-
-* A funⁿ $f(z)$ is analytic at a point $z_0$ if it is differentiable at $z_0$ and in a neighbourhood around $z_0$.
-* Analyticity is a regional property not an isolated point property.
-* **Entire funⁿ:** A funⁿ that is analytic everywhere in the finite complex plane ($\mathbb{C}$).
-* **Singularity:** A point $z_0$ where $f(z)$ fails to be analytic.
-
-## Fundamental theorems
-
-* **Liouville's theorem:** Every bounded entire funⁿ must be constant.
-  *(Implication: Any non-constant entire funⁿ must blow up / have a singularity at $z = \infty$.)*
-* **Infinite Differentiability:** If $f(z)$ is analytic in a domain, it possesses derivatives of all orders, and all higher derivatives are also analytic.
-* **Taylor series Representation:** Every analytic funⁿ can be represented as a power series locally.
-
----
-
-# Harmonic Functions and Geometric Properties
-
-## Laplace eqⁿ & Harmonic conjugates
-
-If $f(z) = u(x,y) + iv(x,y)$ is analytic in a domain $D$:
-
-1. Both $u$ & $v$ satisfy the 2D Laplace Equation:
-
-$$\nabla^2 u = \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} = 0 \qquad \nabla^2 v = \frac{\partial^2 v}{\partial x^2} + \frac{\partial^2 v}{\partial y^2} = 0$$
-
-* Thus, $u(x,y)$ and $v(x,y)$ are Harmonic functions, $v$ is called the harmonic conjugate of $u$.
-
-2. **Mean Value Property:** The value of a harmonic funⁿ at any point equals the average of its values along any circle centered at that point.
-
-3. **Max-Modulus Principle:** A non-constant analytic funⁿ cannot attain an absolute max for $|f(z)|$ in the interior of its domain (max occurs on the boundary).
-
----
-
-## Orthogonal trajectories
-
-From CR conⁿ, the gradients satisfy:
-
-$$\nabla u \cdot \nabla v = \frac{\partial u}{\partial x} \frac{\partial v}{\partial x} + \frac{\partial u}{\partial y} \frac{\partial v}{\partial y} = 0$$
-
-* **Geometric interpretation:** The curves of constant real part $u(x,y) = C_1$ and constant imaginary part $v(x,y) = C_2$ are mutually orthogonal at all points where $f'(z) \neq 0$.
-
----
-
-## Quick Classification & Comparison
-
-| $\text{fun}^n f(z)$ | Analytic / Non-Analytic | Reason |
-| :--- | :--- | :--- |
-| $z^n, e^z, \sin z, \cosh z$ | Entire (Analytic everywhere) | Satisfies CR everywhere with conⁿ P.D. |
-| $\frac{P(z)}{Q(z)}$ | Analytic except at roots of $Q(z)$ | Differ. everywhere except $Q(z) = 0$. |
-| $z^* = x - iy$ | Non-Analytic everywhere | $\frac{\partial u}{\partial x} = 1 \neq -1 = \frac{\partial v}{\partial y}$; explicit dependence on $z^*$. |
-| $|z|^2 = x^2 + y^2$ | Differentiable only at $z=0$ (Non-analytic) | CR satisfied only at $(0,0)$. No neighborhood of analyticity. |
-| $\text{Re}(z) = x$, $\text{Im}(z) = y$ | Non-analytic everywhere | Non-zero imaginary part missing; fails CR conⁿ. |
-| $\ln z$ | Analytic on $\mathbb{C} \setminus (-\infty, 0]$ | Requires a branch cut to remain single valued. |
+> ✍️ **Added by:** <lokesh sati>, <2026-08-16>
 
 ### Complex Numbers in Polar (Exponential) Form
 
@@ -287,7 +189,7 @@ Find all cube roots ($n = 3$) of $z = -8$:
 * **Geometric interpretation:** The $n$-th roots of a complex number always form the vertices of a regular $n$-gon centered at the origin in the Argand plane, spaced equally at angular intervals of $\frac{2\pi}{n}$.
 
 
-> ✍️ **Added by:** <souryadeep Lenka>, <16/08/2026>
+> ✍️ **Added by:** < souryadeep Lenka >, <16/08/2026>
 
 
 1. Elementary Complex Functions
@@ -338,7 +240,7 @@ $$2.\quad \cos^{-1}(z) = -i\log_e\left[z \pm \sqrt{z^2-1}\right]$$
 $$3.\quad \tan^{-1}(z) = \frac{1}{2i}\log_e\left[\frac{1+iz}{1-iz}\right] = -\frac{i}{2}\log_e\left[\frac{1+iz}{1-iz}\right]$$
 
 
-> ✍️ **Added by:** <shravani>, <16/08/2026>
+> ✍️ **Added by:** < shravani >, <16/08/2026>
 
 
 # Basis of Analysis / Calculus
@@ -487,7 +389,7 @@ $\Rightarrow$ Thus the Cauchy-Riemann eq$^n$ (CR eq$^n$) are necessary condition
 
 
 
-> ✍️ **Added by:** <Dhani Sangwan>, <16/08/2026>
+> ✍️ **Added by:** < Dhani Sangwan >, <16/08/2026>
 
 # Complex Differentiability & the Cauchy-Riemann Equations
 
@@ -589,7 +491,7 @@ $$\nabla u \cdot \nabla v = \frac{\partial u}{\partial x} \frac{\partial v}{\par
 | $\ln z$ | Analytic on $\mathbb{C} \setminus (-\infty, 0]$ | Requires a branch cut to remain single valued. |
 
 
-> ✍️ **Added by:** <Abhi balai>, <16/08/2026>
+> ✍️ **Added by:** < Abhi balai >, <16/08/2026>
 
 
 ## Analytic Functions
