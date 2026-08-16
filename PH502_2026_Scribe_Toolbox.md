@@ -243,91 +243,99 @@ $$3.\quad \tan^{-1}(z) = \frac{1}{2i}\log_e\left[\frac{1+iz}{1-iz}\right] = -\fr
 > ✍️ **Added by:** shravani , <16/08/2026>
 
 
-# Basis of Analysis / Calculus
+# Basis of Analysis / calculus
 
 ### i) Neighborhood of $z_0$
-A neighborhood of a point $z_0$ in the complex plane is the set of all points $z$ such that $|z - z_0| < \varepsilon$, where $\varepsilon$ is a small positive real number.
+A neighborhood of a point $z_0$ in the complex plane is the set of all points $z$ such that $|z - z_0| < \epsilon$, where $\epsilon$ is a small positive real number.
 
-Thus a neighborhood of a point $z_0$ is the set of all points lying inside a circle $C$ (but not on the circle) of radius $\varepsilon$ with centre at $z_0$.
+Thus a neighborhood of a point $z_0$ is the set of all points lying inside a circle $C$ (but not on the circle) of radius $\epsilon$ with centre at $z_0$.
 
 ---
 
 ### ii) Open set
 A subset $S$ of a complex plane is said to be open set if it contains only the inner points (i.e. it contains none of its boundary points).
 
-> **for ex -** $|z| < 1$ is an open set
+For ex:- $|z| < 1$ is an open set
 
-A set $S$ is called a **closed set**.
+A set $S$ is called a closed set.
 
 ---
 
 ### iii) Connected set
 An open set is said to be connected if any two of its points can be joined by a finite number of line segments all of whose points belong to the set.
 
-> **for ex :-**
-> $|z| < 2$ is connected set.
+For ex:- The $|z| < 2$ is connected set.
 
 ---
 
 # Limit of a Function
 
-A function $w = f(z)$ is said to tend to limit $l$ as $z$ tends to $z_0$ if every $\varepsilon > 0$, there exists a $\delta > 0$ such that
-$$|f(z) - l| < \varepsilon \quad \text{for all } |z - z_0| < \delta$$
+A function $w = f(z)$ is said to tend to limit $l$ as $z$ tends to $z_0$ if every $\epsilon > 0$, there exists a $\delta > 0$ such that:
 
-The above definition implies that the value of $f(z)$ can be made arbitrarily close to $l$ for all $z$ in the neighbourhood of $z_0$ except perhaps at $z = z_0$.
+$$|f(z) - l| < \epsilon \quad \text{for all } |z - z_0| < \delta$$
 
-We write this as $\lim_{z \to z_0} f(z) = l$
+The above definition implies that the value of $f(z)$ can be made arbitrary close to $l$ for all $z$ in the neighbourhood of $z_0$ except perhaps at $z = z_0$.
 
-$$\lim_{z \to z_0} f(z) = a_0, \quad \lim_{z \to z_0} g(z) = b_0 \quad \& \quad \text{further}$$
+We write this as:
 
-$$f(z) = u(x, y) + i v(x, y), \quad z_0 = x_0 + i y_0 \quad \& \quad a_0 = u_0 + i v_0$$
+$$\lim_{z \to z_0} f(z) = l$$
 
-- **a)** $\lim_{z \to z_0} f(z) = a_0 \implies \lim_{(x, y) \to (x_0, y_0)} u(x, y) = u_0 \quad \& \quad \lim_{(x, y) \to (x_0, y_0)} v(x, y) = v_0$
-- **b)** $\lim_{z \to z_0} [f(z) + g(z)] = a_0 \pm b_0$
-- **c)** $\lim_{z \to z_0} [f(z) \cdot g(z)] = a_0 \cdot b_0$
-- **d)** $\lim_{z \to z_0} \left[ \frac{f(z)}{g(z)} \right] = \frac{a_0}{b_0} \quad \text{provided that } b_0 \neq 0$
+$$\lim_{z \to z_0} f(z) = a_0, \qquad \lim_{z \to z_0} g(z) = b_0 \quad \text{\& further}$$
+
+$$f(z) = u(x, y) + i v(x, y), \qquad z_0 = x_0 + i y_0 \quad \text{\&} \quad a_0 = u_0 + i v_0$$
+
+* **a)** $\lim_{z \to z_0} f(z) = a_0 \implies \lim_{(x, y) \to (x_0, y_0)} u(x, y) = u_0 \quad \text{\&} \quad \lim_{(x, y) \to (x_0, y_0)} v(x, y) = v_0$
+* **b)** $\lim_{z \to z_0} [f(z) + g(z)] = a_0 \pm b_0$
+* **c)** $\lim_{z \to z_0} [f(z) \cdot g(z)] = a_0 \cdot b_0$
+* **d)** $\lim_{z \to z_0} \left[ \frac{f(z)}{g(z)} \right] = \frac{a_0}{b_0} \quad \text{provided that } b_0 \neq 0$
 
 ---
 
 # Continuity
 
 A function $f(z)$ of complex variable $z$ is said to be continuous at a point $z_0$, if:
-- **i)** $f(z)$ is defined at $z = z_0$
-- **ii)** $\lim_{z \to z_0} f(z)$ exists.
-- **iii)** $\lim_{z \to z_0} f(z) = f(z_0)$
+
+1. $f(z)$ is defined at $z = z_0$
+2. $\lim_{z \to z_0} f(z)$ exists.
+3. $\lim_{z \to z_0} f(z) = f(z_0)$
 
 The sum, difference and product of continuous functions of a complex variable are continuous. Also the quotient of two continuous functions is continuous at points where the denominator function does not vanish.
 
 A function $f(z)$ is said to be continuous in a domain $D$ if it is continuous at every point of $D$.
 
 It can be easily seen that the functions:
-$$f(z) = z, \quad f(z) = \text{Re}(z), \quad f(z) = \text{Im}(z), \quad f(z) = \bar{z}$$
+
+$$f(z) = z, \quad f(z) = \text{Re}(z), \quad f(z) = \text{Im}(z), \quad f(z) = |\bar{z}|$$
+
 are continuous in the entire complex plane.
 
-The polynomial function:
-$$f(z) = c_0 z^n + c_1 z^{n-1} + c_2 z^{n-2} + \dots + c_n$$
-where $c_0, c_1, c_2, \dots, c_n$ are complex constants, is continuous in the entire complex plane.
+The polynomial plane:
+
+$$f(z) = C_0 z^n + C_1 z^{n-1} + C_2 z^{n-2} \dots + C_n$$
+
+where $C_0, C_1, C_2 \dots C_n$ are complex constant, is continuous in the entire complex plane.
 
 ---
 
 # Differentiation
 
-A function $f(z)$ is said to be differentiable at a point $z = z_0$ if
+A function $f(z)$ is said to be differentiable at a point $z = z_0$ if:
+
 $$\lim_{z \to z_0} \frac{f(z) - f(z_0)}{z - z_0} \quad \text{exists}$$
 
 This limit is then called the derivative of $f(z)$ at $z = z_0$ and is denoted by $f'(z_0)$.
 
-Putting $z = z_0 + \delta z$, we have $\delta z = z - z_0$.
-Thus we may also write:
+Putting $z = z_0 + \delta z$, we have $\delta z = z - z_0$. Thus we may also write:
+
 $$f'(z_0) = \lim_{\delta z \to 0} \frac{f(z_0 + \delta z) - f(z_0)}{\delta z}$$
 
 ---
 
-### Example :- 
-Find the derivative of $f(z) = z^3$ at $z = z_0$
+### Example:-
+Find the derivative of $f(z) = z^3$ at $z = z_0$.
 
-**Sol$^{n}$ :-** 
-Consider,
+**Solⁿ:-** Consider,
+
 $$\begin{aligned}
 \lim_{\delta z \to 0} \frac{f(z_0 + \delta z) - f(z_0)}{\delta z} &= \lim_{\delta z \to 0} \frac{(z_0 + \delta z)^3 - (z_0)^3}{\delta z} \\
 &= \lim_{\delta z \to 0} \frac{3 z_0^2 \delta z + 3 z_0 (\delta z)^2 + (\delta z)^3}{\delta z} \\
@@ -338,55 +346,52 @@ $$\begin{aligned}
 
 # Cauchy Riemann Condition
 
-### Necessary Condition :-
-A necessary condition that $f(z) = u(x, y) + i v(x, y)$ be analytic in a domain $D$ is that the first order derivative of $u$ & $v$ w.r.t $x$ and $y$ must exist and must satisfy the equations.
+### Necessary condition:-
+A necessary condition that $f(z) = u(x, y) + i v(x, y)$ be analytic in a domain $D$ is that of the first order derivative of $u$ & $v$ w.r.t $x$ and $y$ must exist and must satisfy the equations.
 
 $f(z) = u(x, y) + i v(x, y)$ to be differentiable at point $z_0 = x_0 + i y_0$ if $f'(z_0)$ exists,
 
-The C-R eq$^n$:
-$$\frac{\partial u}{\partial x} = \frac{\partial v}{\partial y} \quad \& \quad \frac{\partial u}{\partial y} = -\frac{\partial v}{\partial x}$$
+The CR eqⁿ:
 
-Or in subscript notation $u_x = v_y$ and $u_y = -v_x$.
+$$\frac{\partial u}{\partial x} = \frac{\partial v}{\partial y} \quad \text{\&} \quad \frac{\partial u}{\partial y} = -\frac{\partial v}{\partial x}$$
 
-If $f(z) = u(x, y) + i v(x, y)$ is differentiable at $z_0 = x_0 + i y_0$, then:
+Or in subscript notation: $u_x = v_y$ and $u_y = -v_x$
+
+If $f(z) = u(x, y) + i v(x, y)$ is differentiable at $z_0 = x_0 + i y_0$ then,
 
 * The first order partial derivatives $u_x, u_y, v_x, v_y$ exist at $(x_0, y_0)$.
-* Then satisfy:
-  $$\begin{aligned}
-  u_x &= v_y \\
-  u_y &= -v_x
-  \end{aligned}$$
-  at $(x_0, y_0)$.
+* Then satisfy $u_x = v_y$ and $u_y = -v_x$ at $(x_0, y_0)$.
 
 The derivative is defined as:
+
 $$f'(z_0) = \lim_{\Delta z \to 0} \frac{f(z_0 + \Delta z) - f(z_0)}{\Delta z}$$
 
 Since $f'(z_0)$ exists, the limit must yield the same result regardless of the path along which $\Delta z = \Delta x + i \Delta y$.
 
-* $\Delta y = 0, \Delta z = \Delta x$
-  $$f'(z_0) = \lim_{\Delta x \to 0} \frac{u(x_0 + \Delta x, y_0) + i v(x_0 + \Delta x, y_0) - [u(x_0, y_0) + i v(x_0, y_0)]}{\Delta x}$$
+* **Path 1 ($\Delta y = 0, \Delta z = \Delta x$):**
 
-* $\Delta x = 0, \Delta z = i \Delta y$
-  $$f'(z_0) = \lim_{\Delta y \to 0} \frac{u(x_0, y_0 + \Delta y) + i v(x_0, y_0 + \Delta y) - [u(x_0, y_0) + i v(x_0, y_0)]}{i \Delta y}$$
+$$f'(z_0) = \lim_{\Delta x \to 0} \frac{u(x_0 + \Delta x, y_0) + i v(x_0 + \Delta x, y_0) - [u(x_0, y_0) + i v(x_0, y_0)]}{\Delta x}$$
 
-Eq$^n$ the real & imaginary parts from path 1 and path 2 gives:
+* **Path 2 ($\Delta x = 0, \Delta z = i \Delta y$):**
+
+$$f'(z_0) = \lim_{\Delta y \to 0} \frac{u(x_0, y_0 + \Delta y) + i v(x_0, y_0 + \Delta y) - [u(x_0, y_0) + i v(x_0, y_0)]}{i \Delta y}$$
+
+Eqⁿ the real & imaginary parts from path 1 and path 2 gives:
+
 $$\frac{\partial u}{\partial x} = \frac{\partial v}{\partial y} \quad \text{and} \quad \frac{\partial u}{\partial y} = -\frac{\partial v}{\partial x}$$
 
 ---
 
-* The eq$^n$ $\frac{\partial u}{\partial x} = \frac{\partial v}{\partial y}$ and $\frac{\partial u}{\partial y} = -\frac{\partial v}{\partial x}$ are called **Cauchy-Riemann equations**.
+* The eqⁿ $\frac{\partial u}{\partial x} = \frac{\partial v}{\partial y}$ and $\frac{\partial u}{\partial y} = -\frac{\partial v}{\partial x}$ are called **Cauchy-Riemann equations**.
 
-$\Rightarrow$ Thus the Cauchy-Riemann eq$^n$ (CR eq$^n$) are necessary conditions for a function $f(z) = u(x, y) + i v(x, y)$ to be analytic at a point. However these are not sufficient conditions for $f(z)$ to be analytic. Thus these can be used to locate points at which $f(z)$ is not analytic.
+$\Rightarrow$ Thus the Cauchy-Riemann eqⁿ (CR eqⁿ) are necessary conditions for a function $f(z) = u(x, y) + i v(x, y)$ to be analytic at a point. However these are not sufficient conditions for $f(z)$ to be analytic. Thus these can be used to locate points at which $f(z)$ is not analytic.
 
 ---
 
-### Key Points:
-
-- **i)** $f(z) \text{ analytic} \implies \frac{\partial u}{\partial x} = \frac{\partial v}{\partial y} \quad \text{and} \quad \frac{\partial u}{\partial y} = -\frac{\partial v}{\partial x}$
-- **ii)** $\frac{\partial u}{\partial x} = \frac{\partial v}{\partial y} \quad \text{and} \quad \frac{\partial u}{\partial y} = -\frac{\partial v}{\partial x}$ need not imply $f(z)$ analytic.
-- **iii)** CR eq$^n$ are not satisfied at a point $z_0 \implies f'(z_0)$ does not exist & hence not analytic at $z_0$.
-- **CR eq$^n$ not sufficient condition for $f(z)$ to be analytic.**
-
+1. $f(z) \text{ analytic} \Rightarrow \frac{\partial u}{\partial x} = \frac{\partial v}{\partial y} \text{ and } \frac{\partial u}{\partial y} = -\frac{\partial v}{\partial x}$
+2. $\frac{\partial u}{\partial x} = \frac{\partial v}{\partial y} \text{ and } \frac{\partial u}{\partial y} = -\frac{\partial v}{\partial x} \text{ need not imply } f(z) \text{ analytic}$
+3. $\text{CR eq}^n \text{ are not satisfied at a point } z_0 \Rightarrow f'(z_0) \text{ does not exist \& hence not analytic at } z_0$.
+   * $\text{CR eq}^n \text{ not sufficient condition for } f(z) \text{ to be analytic.}$
 
 
 > ✍️ **Added by:**  Dhani Sangwan , <16/08/2026>
