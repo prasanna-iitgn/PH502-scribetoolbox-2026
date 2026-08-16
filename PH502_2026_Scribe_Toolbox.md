@@ -78,7 +78,7 @@ residue theorem handles instead). Analyticity is required on and inside
 $C$, not just along the contour itself.
 
 ---
-> ✍️ **Added by:** <lokesh sati>, <2026-08-16>
+> ✍️ **Added by:** lokesh sati, <2026-08-16>
 
 ### Complex Numbers in Polar (Exponential) Form
 
