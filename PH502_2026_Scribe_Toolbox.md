@@ -280,11 +280,11 @@ We write this as:
 
 $$\lim_{z \to z_0} f(z) = l$$
 
-$$\lim_{z \to z_0} f(z) = a_0, \qquad \lim_{z \to z_0} g(z) = b_0 \quad \text{\& further}$$
+$$\lim_{z \to z_0} f(z) = a_0, \qquad \lim_{z \to z_0} g(z) = b_0 \quad \text{and further}$$
 
-$$f(z) = u(x, y) + i v(x, y), \qquad z_0 = x_0 + i y_0 \quad \text{\&} \quad a_0 = u_0 + i v_0$$
+$$f(z) = u(x, y) + i v(x, y), \qquad z_0 = x_0 + i y_0 \quad \text{and} \quad a_0 = u_0 + i v_0$$
 
-* **a)** $\lim_{z \to z_0} f(z) = a_0 \implies \lim_{(x, y) \to (x_0, y_0)} u(x, y) = u_0 \quad \text{\&} \quad \lim_{(x, y) \to (x_0, y_0)} v(x, y) = v_0$
+* **a)** $\lim_{z \to z_0} f(z) = a_0 \implies \lim_{(x, y) \to (x_0, y_0)} u(x, y) = u_0$ and $\lim_{(x, y) \to (x_0, y_0)} v(x, y) = v_0$
 * **b)** $\lim_{z \to z_0} [f(z) + g(z)] = a_0 \pm b_0$
 * **c)** $\lim_{z \to z_0} [f(z) \cdot g(z)] = a_0 \cdot b_0$
 * **d)** $\lim_{z \to z_0} \left[ \frac{f(z)}{g(z)} \right] = \frac{a_0}{b_0} \quad \text{provided that } b_0 \neq 0$
@@ -347,13 +347,13 @@ $$\begin{aligned}
 # Cauchy Riemann Condition
 
 ### Necessary condition:-
-A necessary condition that $f(z) = u(x, y) + i v(x, y)$ be analytic in a domain $D$ is that of the first order derivative of $u$ & $v$ w.r.t $x$ and $y$ must exist and must satisfy the equations.
+A necessary condition that $f(z) = u(x, y) + i v(x, y)$ be analytic in a domain $D$ is that of the first order derivative of $u$ and $v$ w.r.t $x$ and $y$ must exist and must satisfy the equations.
 
 $f(z) = u(x, y) + i v(x, y)$ to be differentiable at point $z_0 = x_0 + i y_0$ if $f'(z_0)$ exists,
 
 The CR eqⁿ:
 
-$$\frac{\partial u}{\partial x} = \frac{\partial v}{\partial y} \quad \text{\&} \quad \frac{\partial u}{\partial y} = -\frac{\partial v}{\partial x}$$
+$$\frac{\partial u}{\partial x} = \frac{\partial v}{\partial y} \quad \text{and} \quad \frac{\partial u}{\partial y} = -\frac{\partial v}{\partial x}$$
 
 Or in subscript notation: $u_x = v_y$ and $u_y = -v_x$
 
@@ -376,7 +376,7 @@ $$f'(z_0) = \lim_{\Delta x \to 0} \frac{u(x_0 + \Delta x, y_0) + i v(x_0 + \Delt
 
 $$f'(z_0) = \lim_{\Delta y \to 0} \frac{u(x_0, y_0 + \Delta y) + i v(x_0, y_0 + \Delta y) - [u(x_0, y_0) + i v(x_0, y_0)]}{i \Delta y}$$
 
-Eqⁿ the real & imaginary parts from path 1 and path 2 gives:
+Eqⁿ the real and imaginary parts from path 1 and path 2 gives:
 
 $$\frac{\partial u}{\partial x} = \frac{\partial v}{\partial y} \quad \text{and} \quad \frac{\partial u}{\partial y} = -\frac{\partial v}{\partial x}$$
 
@@ -390,7 +390,7 @@ $\Rightarrow$ Thus the Cauchy-Riemann eqⁿ (CR eqⁿ) are necessary conditions 
 
 1. $f(z) \text{ analytic} \Rightarrow \frac{\partial u}{\partial x} = \frac{\partial v}{\partial y} \text{ and } \frac{\partial u}{\partial y} = -\frac{\partial v}{\partial x}$
 2. $\frac{\partial u}{\partial x} = \frac{\partial v}{\partial y} \text{ and } \frac{\partial u}{\partial y} = -\frac{\partial v}{\partial x} \text{ need not imply } f(z) \text{ analytic}$
-3. $\text{CR eq}^n \text{ are not satisfied at a point } z_0 \Rightarrow f'(z_0) \text{ does not exist \& hence not analytic at } z_0$.
+3. $\text{CR eq}^n \text{ are not satisfied at a point } z_0 \Rightarrow f'(z_0) \text{ does not exist and hence not analytic at } z_0$.
    * $\text{CR eq}^n \text{ not sufficient condition for } f(z) \text{ to be analytic.}$
 
 
