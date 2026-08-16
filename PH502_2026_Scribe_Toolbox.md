@@ -189,7 +189,7 @@ Find all cube roots ($n = 3$) of $z = -8$:
 * **Geometric interpretation:** The $n$-th roots of a complex number always form the vertices of a regular $n$-gon centered at the origin in the Argand plane, spaced equally at angular intervals of $\frac{2\pi}{n}$.
 
 
-> ✍️ **Added by:** < souryadeep Lenka >, <16/08/2026>
+> ✍️ **Added by:** souryadeep Lenka , <16/08/2026>
 
 
 1. Elementary Complex Functions
@@ -240,7 +240,7 @@ $$2.\quad \cos^{-1}(z) = -i\log_e\left[z \pm \sqrt{z^2-1}\right]$$
 $$3.\quad \tan^{-1}(z) = \frac{1}{2i}\log_e\left[\frac{1+iz}{1-iz}\right] = -\frac{i}{2}\log_e\left[\frac{1+iz}{1-iz}\right]$$
 
 
-> ✍️ **Added by:** < shravani >, <16/08/2026>
+> ✍️ **Added by:** shravani , <16/08/2026>
 
 
 # Basis of Analysis / Calculus
@@ -389,7 +389,7 @@ $\Rightarrow$ Thus the Cauchy-Riemann eq$^n$ (CR eq$^n$) are necessary condition
 
 
 
-> ✍️ **Added by:** < Dhani Sangwan >, <16/08/2026>
+> ✍️ **Added by:**  Dhani Sangwan , <16/08/2026>
 
 # Complex Differentiability & the Cauchy-Riemann Equations
 
@@ -491,7 +491,7 @@ $$\nabla u \cdot \nabla v = \frac{\partial u}{\partial x} \frac{\partial v}{\par
 | $\ln z$ | Analytic on $\mathbb{C} \setminus (-\infty, 0]$ | Requires a branch cut to remain single valued. |
 
 
-> ✍️ **Added by:** < Abhi balai >, <16/08/2026>
+> ✍️ **Added by:** Abhi balai , <16/08/2026>
 
 
 ## Analytic Functions
