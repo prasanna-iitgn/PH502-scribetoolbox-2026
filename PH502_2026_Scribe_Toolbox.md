@@ -589,6 +589,310 @@ This condition satisfy.
 So, **$f(z) = z^2$ is analytic function.**
 
 
+> ✍️ **Added by:** Divyanshu Kumar, 2026-08-23
+
+### Sequences, Series & Convergence Tests (Ratio and Root Tests)
+
+**Statement:**
+
+A sequence of numbers $z_1, z_2, z_3, \ldots$ converges to a limit $z_\infty$ if
+
+$$\lim_{n\to\infty} z_n = z_\infty$$
+
+i.e. for every $\varepsilon > 0$ there exists $N_0$ such that $|z_n - z_\infty| \le \varepsilon$ for all $n \ge N_0$.
+
+A series with terms $x_k$ converges if the sequence of its partial sums
+
+$$S_n = \sum_{k=1}^{n} x_k$$
+
+converges. The series is **absolutely convergent** if
+
+$$\sum_{k=1}^{\infty} |x_k|$$
+
+converges.
+
+Two standard tools for testing absolute convergence of a series $\sum_n a_n$ are:
+
+**Ratio test** — the series is absolutely convergent if
+
+$$\lim_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right| < 1$$
+
+**Root test** — the series is absolutely convergent if
+
+$$\limsup_{n\to\infty} |a_n|^{1/n} < 1$$
+
+
+**Worked example:**
+
+*Ratio test:* Test the series $\sum_{n=1}^{\infty} \dfrac{n}{2^n}$:
+
+$$\lim_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right| = \lim_{n\to\infty} \frac{(n+1)/2^{n+1}}{n/2^n} = \lim_{n\to\infty} \frac{n+1}{2n} = \frac{1}{2}$$
+
+Since $\frac{1}{2} < 1$, the series converges absolutely.
+
+*Root test (where the ratio test fails):* Consider the oscillating sequence
+
+$$a_n = \begin{cases} (1/2)^n & n \text{ odd} \\ (1/3)^n & n \text{ even} \end{cases}$$
+
+The ratio $a_{n+1}/a_n$ jumps back and forth depending on parity and never settles to a single value, so $\lim_{n\to\infty} |a_{n+1}/a_n|$ does not exist — the **ratio test is inconclusive** here.
+
+The root test still works fine, since
+
+$$|a_n|^{1/n} = \begin{cases} 1/2 & n \text{ odd} \\ 1/3 & n \text{ even} \end{cases}$$
+
+This oscillates between $1/2$ and $1/3$ forever, so its ordinary limit doesn't exist either — but its $\limsup$ does:
+
+$$\limsup_{n\to\infty} |a_n|^{1/n} = \frac{1}{2} < 1$$
+
+So $\sum a_n$ **converges absolutely** by the root test, even though the ratio test alone couldn't tell us that.
+
+**Pitfalls / conditions to watch:**
+
+Both tests are inconclusive when the relevant limit equals exactly $1$ — the series may converge or diverge depending on finer details.
+
+The root test is strictly more general than the ratio test: whenever the ratio test applies, the root test agrees with it, but as the second example above shows, the root test can succeed even when the ratio of successive terms oscillates and never settles to a limit at all.
+
+---
+
+
+### Taylor Series Representation & Radius of Convergence
+
+**Statement:** If $f(z)$ is analytic inside a region $R$ of the complex plane, then for any $z_0 \in R$ there exists a neighbourhood of $z_0$ in which $f(z)$ can be expanded in an absolutely convergent power series (a **Taylor series**) in non-negative powers of $(z-z_0)$:
+$$f(z) = \sum_{n=0}^{\infty} a_n (z-z_0)^n$$
+The series converges absolutely inside the **circle of convergence** $|z - z_0| = R$, where the **radius of convergence** is
+$$R = \lim_{n\to\infty}\left|\frac{a_n}{a_{n+1}}\right| \quad \text{(equivalently, } R^{-1} = \limsup_{n\to\infty} |a_n|^{1/n}\text{)}$$
+Once $f(z)$ and $z_0$ are fixed, the coefficients are uniquely determined by $a_n = \frac{1}{n!}\frac{d^n f}{dz^n}\Big|_{z=z_0}$ — analyticity of $f$ guarantees derivatives of all orders exist.
+
+**Derivation / justification (condensed):** Absolute convergence of $\sum a_n(z-z_0)^n$ is tested via the ratio test: the series converges absolutely where
+$$\lim_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right||z-z_0| < 1 \implies |z-z_0| < R.$$
+For power series, absolute convergence implies uniform convergence on the disc, which is what licenses term-by-term differentiation and integration anywhere strictly inside the circle of convergence.
+
+**Worked example:** The geometric series gives the "master" representation
+$$\frac{1}{1-z} = \sum_{n=0}^{\infty} z^n, \qquad |z| < 1$$
+(ratio test: $R = \lim |a_n/a_{n+1}| = 1$). The *same* function has infinitely many other valid power series representations, one for each choice of expansion centre $a$:
+$$\frac{1}{1-z} = \frac{1}{1-a}\sum_{n=0}^{\infty}\left(\frac{z-a}{1-a}\right)^n, \qquad |z-a| < |1-a|$$
+E.g. for $a = -\tfrac12, i, 2$ this gives three more series, each valid in its own disc. All of them agree pointwise wherever their domains overlap (e.g. all evaluate to $1$ at $z=0$, except the $a=2$ series, whose disc $|z-2|<1$ doesn't contain $z=0$ at all).
+
+**Pitfalls / conditions to watch:** The radius of convergence is fixed the moment you fix the centre $a$ — different centres give different discs, but every one of these discs has its boundary passing through $z=1$, the actual singularity of $\frac{1}{1-z}$ (not a coincidence: singularities can't hide ). A series representation says nothing about the function outside its own disc, even if the function is perfectly well-defined there via another representation.
+
+---
+
+### Behaviour on the Circle of Convergence
+
+**Statement:**
+
+Inside the circle of convergence a power series converges absolutely and represents an analytic function; outside it, the series diverges. On the circle itself, behaviour is not determined by $R$ alone — the series may converge at some boundary points and diverge at others, or even oscillate without converging.
+
+A general fact, stated here without proof: the analytic function represented inside the circle of convergence must have at least one singularity on that circle.
+
+**Worked example:**
+
+Even where a series oscillates on the boundary, its Cesàro mean — the average of successive partial sums — can still recover the function's value there.
+
+Consider $\dfrac{1}{1-z} = \sum z^n$ at the point $z = -1$, which lies on $|z| = 1$. The partial sums alternate:
+
+$$S_m = 1 \ (m \text{ odd}), \qquad S_m = 0 \ (m \text{ even})$$
+
+The Cesàro mean is $\frac{1}{2}$, matching
+
+$$\frac{1}{1-z}\bigg|_{z=-1} = \frac{1}{2}$$
+
+exactly.
+
+
+At $z = i$, also on $|z| = 1$, the series is
+
+$$1 + i - 1 - i + 1 - i - 1 - i + \cdots$$
+
+Its partial sums cycle through $1,\ 1+i,\ i,\ 0$ and repeat. The Cesàro mean of these four values again matches the function value:
+
+$$\frac{1}{1-z}\bigg|_{z=i} = \frac{1+i}{2}$$
+
+**Pitfalls / conditions to watch:**
+
+Don't assume a series either converges everywhere on its circle or nowhere — both extremes, and everything in between, are possible. The series $\sum z^n/n^2$ converges absolutely at every point on $|z|=1$, while some **lacunary series** diverge at every point on their circle.
+
+If a power series is singular everywhere on its circle of convergence, the function it represents cannot be analytically continued past that circle.
+
+---
+
+### Entire Functions and Their Order
+
+**Statement:**
+
+An **entire function** is analytic everywhere in the finite complex plane. Its power series, about any centre, has infinite radius of convergence, and its only possible singularity is at $z = \infty$.
+
+Entire functions can be classified by their **order** $\rho$, describing asymptotic growth as $r \to \infty$, writing $z = re^{i\theta}$ or by using the power series representation:
+
+$$\rho = \limsup_{r\to\infty} \frac{\log\log|f(z)|}{\log r} = \limsup_{n\to\infty}\frac{n\log n}{\log(1/|a_n|)}$$
+
+
+
+**Worked example:**
+
+For a degree-$N$ polynomial $f(z) = \sum_{n=0}^N b_n z^n$:
+
+$$\rho = \limsup_{r\to\infty} \frac{\log[\log|b_N| + N\log r]}{\log r} = 0$$
+
+For $f(z) = e^z$: since $\log\log(e^z) \approx \log r$,
+
+$$\rho = \lim_{r\to\infty} \frac{\log r}{\log r} = 1$$
+
+**Pitfalls / conditions to watch:**
+
+All entire functions share the same location of singularity, $z = \infty$, but the order $\rho$ distinguishes how fast they blow up there. This is genuinely different information than simply "has infinite radius of convergence," which is common to all entire functions and doesn't by itself distinguish between them.
+
+--- 
+
+
+✍️ **Added by:** Sunil Bhadu, 2026-08-23
+# Scribe Work: Cauchy's Integral Theorem
+
+## Introduction and Properties
+
+Let $F(z)$ be analytic in some region R. Then the line integral $\int F(z)dz$ is independent of the actual path provided the paths lie entirely in Region R.
+
+* The value of the line integral depends only on the end points.
+* The integral of $f(z)$ over a closed contour is zero.
+
+Let C be an oriented, closed contour lying entirely in R, then:
+
+$$
+\oint f(z)dz=0
+$$
+
+It is evident that the contour C may be distorted like a rubber band (to any other contour like C') without changing the property, as long as it does not leave R.
+
+These properties are responsible for much of the power of contour integration in evaluating definite integrals.
+
+**Reference:** V. Balakrishna, Mathematical Physics (23.1)
+
+---
+
+## Proof: $\oint_{C}F(z)dz=0$
+
+Let $z=x+iy$ and $dz=dx+idy$
+
+We can write the integral as:
+
+$$
+\oint_{C}F(z)dz = \oint_{C}(udx-vdy) + i\oint_{C}(vdx+udy)
+$$
+
+We know that applying Green's Theorem:
+
+$$
+\oint(Pdx+Qdy) = \iint_{S}\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right)dxdy
+$$
+
+Applying this to our equation:
+
+$$
+\oint f(z)dz = \iint_{\text{inside } C}\left(-\frac{\partial v}{\partial x}-\frac{\partial u}{\partial y}\right)dxdy + i\iint_{\text{inside } C}\left(\frac{\partial u}{\partial x}-\frac{\partial v}{\partial y}\right)dxdy
+$$
+
+By Cauchy-Riemann Conditions:
+
+$$
+\frac{\partial u}{\partial x} = \frac{\partial v}{\partial y} \quad \text{and} \quad \frac{\partial u}{\partial y} = -\frac{\partial v}{\partial x}
+$$
+
+Substituting these conditions makes the integral zero, hence proved:
+
+$$
+\oint f(z)dz = 0
+$$
+
+---
+
+## Limitations and Conditions
+
+These theorems are only well valid when the function is non-singular, meaning defined at all points on surface and inside C.
+
+* $\oint f(z)dz=0$ works when $F(z)$ is entirely analytic (smooth, safe) everywhere inside the loop.
+
+**The Problem of Singularities:** So the problem arises that when a function is not analytic, then it blows up or down inside the contour. In this condition, $\oint f(z)dz=0$ can not be applied.
+
+This problem is solved by Cauchy's extended theorem or the principle of contour deformation.
+
+---
+
+## Example Evaluation
+
+**Question:** Evaluate the contour integral $\oint_{C}z^{2}dz$, where C is the unit circle defined by $|z| = 1$ traversed in the counter-clockwise direction.
+
+**Solution:**
+
+$F(z)=z^{2}$
+
+We know that $z^{2}$ is polynomial. So it is analytic everywhere in complex plane, particularly on and inside C. It does not have any singularities.
+
+By applying Cauchy Integral Theorem:
+
+$$
+\oint_{C}F(z)dz=0
+$$
+
+Therefore,
+
+$$
+\oint_{C}z^{2}dz=0
+$$
+
+So we come to this conclusion because $F(z)$ satisfies all conditions of Cauchy Integral theorem like:
+* Analyticity
+* Non-singularity
+
+---
+
+✍️ **Added by:** Naveen Kumar Deegwal, 2026-08-23
+
+### Deformation of Cauchy's Theorem
+
+**Statement:** If $C$ and $\Gamma$ are closed contours with $\Gamma$ lying entirely inside $C$, and $f(z)$ is analytic throughout the annular region between $C$ and $\Gamma$ (not necessarily inside $\Gamma$ itself), then
+
+$$\oint_C f(z)\.dz = \oint_\Gamma f(z)\.dz$$
+
+both integrals taken with the same (anticlockwise) orientation.
+
+**Derivation / justification (condensed):** Cut two thin bridges connecting $C$ to $\Gamma$, splitting the annular region between them into two simply-connected pieces, call them $C_A$ and $C_B$. Each piece consists of part of the outer curve $C$, a bridge across to $\Gamma$, part of $\Gamma$, and the bridge back. The crucial observation is that each bridge is shared by both pieces but walked in **opposite directions** by $C_A$ and $C_B$ — one traverses it going one way, the other traverses the same segment going the opposite way. So when the two contour integrals are added, every bridge contribution cancels exactly, and what remains is one full pass around $C$ combined with one full pass around $\Gamma$ in the reverse direction:
+
+$$\oint_{C_A} f\.dz + \oint_{C_B} f\.dz = \oint_C f\.dz - \oint_\Gamma f\.dz$$
+
+But $f$ is analytic inside each of $C_A$ and $C_B$ individually, since that enclosed region is just a piece of the annulus where $f$ is already assumed analytic. So by Cauchy's theorem, each integral on the left vanishes:
+
+$$\oint_{C_A} f\.dz + \oint_{C_B} f\.dz = 0 \implies \oint_C f\.dz = \oint_\Gamma f\.dz$$
+
+**Worked example:** Let $f(z) = 1/z$, which is analytic everywhere except at $z=0$. Take $C$ to be $|z|=2$ and $\Gamma$ to be $|z|=1$, both anticlockwise — the annulus between them avoids the singularity at $z=0$, so deformation applies:
+
+$$\oint_{|z|=2} \frac{dz}{z} = \oint_{|z|=1} \frac{dz}{z} = 2\pi i$$
+
+Both integrals give the same value $2\pi i$, even though $C$ and $\Gamma$ are different curves — exactly as the theorem predicts, since $1/z$ is analytic throughout the annulus $1 < |z| < 2$.
+
+**Pitfalls / conditions to watch:** $f$ only needs to be analytic in the region *between* $C$ and $\Gamma$ — it can misbehave (have singularities) anywhere inside $\Gamma$, and the theorem still holds. This is what makes it powerful: it lets you replace a complicated contour $C$ with a simple one $\Gamma$ (like a small circle) as long as nothing singular lies between them. Both contours must have matching orientation for the formula as stated; reversing one flips its sign.
+
+---
+
+### Cauchy's Integral Formula
+
+**Statement:** If $f(z)$ is analytic inside and on a positively oriented (anticlockwise) closed contour $\Gamma$, and $z_0$ is any point strictly enclosed inside $\Gamma$, then
+
+$$\oint_\Gamma \frac{f(z)}{z-z_0}\.dz = 2\pi i\. f(z_0)$$
+
+**Derivation / justification (condensed):** By the deformation theorem above, since $f(z)/(z-z_0)$ is analytic everywhere in $\Gamma$'s interior except at $z_0$, the integral over $\Gamma$ equals the integral over a small circle $\gamma$ of radius $\delta$ centered at $z_0$. Write
+
+$$\oint_\gamma \frac{f(z)}{z-z_0}\.dz = \oint_\gamma \frac{f(z)-f(z_0)}{z-z_0}\.dz + f(z_0)\oint_\gamma \frac{dz}{z-z_0}$$
+
+The function $\phi(z) = \dfrac{f(z)-f(z_0)}{z-z_0}$ extends continuously to $z_0$ (its limit there is $f'(z_0)$), so it's analytic throughout the disc, making the first integral zero by Cauchy's theorem. Since this holds for arbitrarily small $\delta$, and the bound $\left|\oint_\gamma \phi\,dz\right| \le 2\pi\delta \max_\gamma|\phi(z)|$ shrinks to zero as $\delta \to 0$, only the second term survives:
+
+$$\oint_\gamma \frac{f(z)}{z-z_0}\.dz = f(z_0)\oint_\gamma \frac{dz}{z-z_0} = f(z_0)\cdot 2\pi i$$
+
+**Worked example:** Evaluate $\displaystyle\oint_{|z|=2} \frac{e^z}{z-1}\.dz$. Here $f(z) = e^z$ is entire (analytic everywhere), and $z_0 = 1$ lies strictly inside $|z|=2$. Directly applying the formula:
+
+$$\oint_{|z|=2} \frac{e^z}{z-1}\.dz = 2\pi i\, f(1) = 2\pi i\. e$$
+
+**Pitfalls / conditions to watch:** $z_0$ must lie *strictly inside* $\Gamma$ — if $z_0$ is outside, $f(z)/(z-z_0)$ is analytic everywhere inside $\Gamma$ and the integral is simply $0$ by Cauchy's theorem, not $2\pi i f(z_0)$. $f$ itself must be analytic on and inside all of $\Gamma$ (only the extra factor $1/(z-z_0)$ is allowed to be singular, and only at $z_0$). This formula is also the starting point for expressing derivatives of $f$ as contour integrals, since differentiating both sides with respect to $z_0$ under the integral sign gives $f^{(n)}(z_0)$ in terms of $\oint f(z)/(z-z_0)^{n+1}\.dz$.
+
 ---
 
 ## Module 2: Integral Transforms
@@ -602,3 +906,4 @@ So, **$f(z) = z^2$ is analytic function.**
 ## Module 4: Linear Algebra
 
 ---
+
