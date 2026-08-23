@@ -893,6 +893,94 @@ $$\oint_{|z|=2} \frac{e^z}{z-1}\.dz = 2\pi i\, f(1) = 2\pi i\. e$$
 
 **Pitfalls / conditions to watch:** $z_0$ must lie *strictly inside* $\Gamma$ — if $z_0$ is outside, $f(z)/(z-z_0)$ is analytic everywhere inside $\Gamma$ and the integral is simply $0$ by Cauchy's theorem, not $2\pi i f(z_0)$. $f$ itself must be analytic on and inside all of $\Gamma$ (only the extra factor $1/(z-z_0)$ is allowed to be singular, and only at $z_0$). This formula is also the starting point for expressing derivatives of $f$ as contour integrals, since differentiating both sides with respect to $z_0$ under the integral sign gives $f^{(n)}(z_0)$ in terms of $\oint f(z)/(z-z_0)^{n+1}\.dz$.
 
+
+
+---
+
+> ✍️ **Added by:** Mansi Chaudhary, 2026-08-23
+
+### Higher-Order Derivatives & Cauchy's Inequality
+
+**Statement:** If $f(z)$ is analytic at a point $z$, its derivatives to all orders exist and are given by
+
+$$\frac{d^n}{dz^n} f(z) = \frac{n!}{2\pi i} \oint_C \frac{f(\xi)}{(\xi-z)^{n+1}}\,d\xi$$
+
+where $C$ is any contour around $z$ such that $f$ is analytic inside and on $C$.
+
+**Cauchy's Inequality:** Let $C_R$ be the circle $|z-z_0|=R$, with $f$ analytic on and inside $C_R$, and let $M_R = \max|f(z)|$ on $C_R$. Then
+
+$$|f^{(n)}(z_0)| \le \frac{n!\, M_R}{R^n}$$
+
+**Derivation / justification (condensed):** The higher-derivative formula follows by differentiating Cauchy's Integral Formula under the integral sign with respect to $z$, repeated $n$ times: since $z$ is strictly inside $C$ and $\xi$ ranges over $C$, we always have $\xi - z \neq 0$, so every derivative of $1/(\xi-z)$ with respect to $z$ exists on $C$.
+
+Cauchy's inequality follows by bounding the same integral (for $z_0$ the centre, $C = C_R$): the integrand has magnitude at most $M_R/R^{n+1}$ everywhere on $C_R$, and the contour has length $2\pi R$, so
+
+$$|f^{(n)}(z_0)| = \left|\frac{n!}{2\pi i}\oint_{C_R} \frac{f(\xi)}{(\xi-z_0)^{n+1}}\,d\xi\right| \le \frac{n!}{2\pi}\cdot 2\pi R \cdot \frac{M_R}{R^{n+1}} = \frac{n!\,M_R}{R^n}$$
+
+**Worked example:** Suppose $f(z)$ is analytic on and inside $|z|=2$, and $|f(z)| \le 5$ everywhere on that circle (so $M_R = 5$, $R=2$). Cauchy's inequality bounds the second derivative at the centre:
+
+$$|f''(0)| \le \frac{2!\cdot 5}{2^2} = \frac{10}{4} = 2.5$$
+
+This bound holds no matter what $f$ actually is, as long as it satisfies the stated analyticity and boundary bound.
+
+**Pitfalls / conditions to watch:** $M_R$ must be the maximum of $|f|$ specifically on the boundary circle $C_R$, not somewhere in the interior. The inequality only gives an upper bound on $|f^{(n)}(z_0)|$, never an exact value. $f$ must be analytic on the *entire* closed disc $|z-z_0|\le R$, not just at $z_0$ — a single singularity anywhere in that disc invalidates the bound.
+
+---
+
+### Taylor Series Expansion Theorem (via Cauchy's Integral Formula)
+
+**Statement:** If $f(z)$ is analytic in a region $A$ and $z_0 \in A$, then
+
+$$f(z) = \sum_{n=0}^{\infty} a_n (z-z_0)^n, \qquad a_n = \frac{f^{(n)}(z_0)}{n!} = \frac{1}{2\pi i}\oint_C \frac{f(\xi)}{(\xi-z_0)^{n+1}}\,d\xi$$
+
+with $C$ any curve contained in $A$ encircling $z_0$. The series converges for all $z$ inside the circle of convergence centred at $z_0$, whose radius $R$ equals the distance from $z_0$ to the **nearest singularity** of $f(z)$.
+
+**Derivation / justification (condensed):** Starting from Cauchy's Integral Formula $f(z) = \frac{1}{2\pi i}\oint_\Gamma \frac{f(\xi)}{\xi - z}\,d\xi$ (valid for $z$ inside $\Gamma$), rewrite the kernel as a geometric series:
+
+$$\frac{1}{\xi - z} = \frac{1}{(\xi-z_0) - (z-z_0)} = \frac{1}{\xi - z_0}\sum_{n=0}^{\infty}\left(\frac{z-z_0}{\xi-z_0}\right)^n$$
+
+which converges (by the ratio test) whenever $|z-z_0| < |\xi - z_0|$ — i.e. whenever $z$ lies strictly inside the circle traced by $\xi$. Substituting back and interchanging the sum and the integral (justified since the series converges uniformly on $\Gamma$) gives the Taylor series with the coefficients above. Since $\Gamma$ can be deformed to any contour $C$ inside $A$ without crossing a singularity (by the deformation theorem), the radius of convergence extends exactly up to the nearest point where $f$ stops being analytic.
+
+**Worked example:** Taylor expand $f(z) = \dfrac{1}{(z^2+4)(z-5)}$ about $z=-3$, and find the radius of convergence. The singularities of $f$ are at $z=5$ and $z=\pm 2i$. Their distances from the centre $z_0=-3$ are:
+
+$$|5-(-3)| = 8, \qquad |{\pm 2i}-(-3)| = |{-3\mp 2i}| = \sqrt{3^2+2^2} = \sqrt{13}$$
+
+The nearest singularity is at $z=\pm 2i$, distance $\sqrt{13}$, so the radius of convergence is $R=\sqrt{13}$ — determined purely by geometry, without computing a single coefficient. The first coefficient is $a_0 = f(-3) = \dfrac{1}{13\cdot(-8)} = -\dfrac{1}{104}$.
+
+**Pitfalls / conditions to watch:** The radius of convergence is fixed entirely by the distance to the *nearest* singularity — you don't need to locate every singularity, only the closest one. If $f$ is entire (no singularities at all), $R=\infty$ automatically. This is the same theorem introduced earlier from first principles; this entry shows the actual derivation via Cauchy's Integral Formula, which also explains *why* the radius equals that particular distance.
+
+---
+
+### Laurent Expansion Theorem
+
+**Statement:** Let $f(z)$ be analytic in the annular region $R$ between two concentric circles $\Gamma_1$ (radius $r_1$) and $\Gamma_2$ (radius $r_2$), both centred at $z_0$. Then for $z \in R$, $f(z)$ can be expanded in a **Laurent series** with both positive and negative powers:
+
+$$f(z) = \underbrace{\sum_{n=0}^{\infty} a_n(z-z_0)^n}_{\text{principal part}} + \underbrace{\sum_{n=1}^{\infty} b_n(z-z_0)^{-n}}_{\text{singular part}}$$
+
+with
+
+$$a_n = \frac{1}{2\pi i}\oint_C \frac{f(\xi)}{(\xi-z_0)^{n+1}}\,d\xi, \qquad b_n = \frac{1}{2\pi i}\oint_C f(\xi)(\xi-z_0)^{n-1}\,d\xi$$
+
+where $C$ is any curve lying in the annulus $r_1 < |z-z_0| < r_2$. The positive-power part converges for $|z-z_0|<r_2$, the negative-power part converges for $|z-z_0|>r_1$, and together they converge to $f(z)$ throughout the annulus.
+
+**Derivation / justification (condensed):** This is the natural extension of Cauchy's Integral Formula to a non-simply-connected (annular) region: build a contour from the outer circle $\Gamma_2$, a bridge inward, the inner circle $\Gamma_1$ traversed in reverse, and the bridge back — the bridges cancel exactly as in the deformation theorem, leaving Cauchy's formula evaluated on $\Gamma_2 - \Gamma_1$. On $\Gamma_2$ (outer), $|z-z_0| < |\xi - z_0|$, so the kernel expands exactly as in the Taylor case, giving the positive-power part. On $\Gamma_1$ (inner), $|z-z_0| > |\xi-z_0|$, so the kernel instead expands as a geometric series in $(\xi-z_0)/(z-z_0)$, producing the negative-power part.
+
+Notably, nothing is assumed about $f$'s behaviour at $z=z_0$ itself. If $f$ happens to be analytic everywhere inside $\Gamma_1$ too, then $b_n = 0$ for all $n$ (by Cauchy's theorem applied to the $b_n$ integral), and the Laurent series collapses back to an ordinary Taylor series.
+
+**Worked example:** Find the first few terms of the Laurent expansion of
+
+$$f(z) = \frac{5z-3}{z(z+2)(z-1)}$$
+
+valid in the annulus $1 < |z| < 2$. Using partial fractions and expanding $\frac{1}{z-1}$ and $\frac{1}{z+2}$ each as a series valid in this annulus (one in positive powers of $z$, one in negative powers, since $|z|>1$ and $|z|<2$ respectively), the expansion works out to
+
+$$f(z) = \left(-\frac{13}{12} + \frac{13}{24}z - \frac{13}{48}z^2 + \cdots\right) + \left(\frac{13}{6z} - \frac{2}{3z^2} + \cdots\right)$$
+
+the first bracket being the principal (positive-power) part and the second the singular (negative-power) part.
+
+**Pitfalls / conditions to watch:** The *same* function has different Laurent expansions in different annuli around the same centre — just as with multiple Taylor representations, always double check which annulus you're expanding in before writing down the series (compare $1<|z|<2$ versus $1<|z-1|<3$ for this same $f(z)$, which give different series). The number of non-zero terms in the singular part will later turn out to characterize the type of singularity at $z=z_0$.
+
+
+---
 ---
 
 ## Module 2: Integral Transforms
