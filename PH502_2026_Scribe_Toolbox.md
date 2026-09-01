@@ -1124,6 +1124,60 @@ which is exactly same again when $m=1$ (the derivative and the factorial both dr
 2. A. K. Kapoor, *Complex Variables: Principles and Problem Sessions
 
 
+
+> ✍️ **Added by:** Drishya Verma, <01/09/2026>
+
+### 1.1 Essential Singularity 
+
+Extending the definition of a pole: the singular part of $f(z)$ may involve an **unbounded** number of negative powers of $(z-a)$.
+
+$f(z)$ has an **isolated essential singularity** at $z=a$ if, in a neighbourhood of $z=a$, it can be written as
+
+$$f(z) = \underbrace{\sum_{n=1}^{\infty} \frac{c_{-n}}{(z-a)^n}}_{\text{singular part}} + \underbrace{\sum_{n=0}^{\infty} c_n (z-a)^n}_{\text{regular part}} \qquad (54A)$$
+
+As with a pole, $c_{-1}$ is still called the **residue** of $f(z)$ at the singularity.
+
+**Worked example:** $f(z) = e^{1/z} = \displaystyle\sum_{n=1}^{\infty} \frac{1}{n!\,z^n} + 1$, valid for all $z \neq 0$. The series on the right converges absolutely, $f(z)$ has an essential singularity at $z=0$, residue $=1$, and the regular part is just the constant $1$.
+
+### 1.2 Laurent Series 
+
+Representations of complex functions with **both** positive and negative powers of $(z-a)$ (as in the equations for poles and essential singularities above) are called **Laurent series**.
+
+General form:
+
+$$f(z) = \sum_{n=1}^{N} \frac{c_{-n}}{(z-a)^n} + \sum_{n=0}^{\infty} c_n (z-a)^n \qquad $$
+
+- For a **pole**, $N$ is finite (order of the pole).
+- For an **essential singularity**, $N \to \infty$.
+
+**Region of validity — worked out from first principles:**
+
+1. *Regular part* is an ordinary (positive-power) convergent power series ⇒ converges inside a circle of radius $r_1$ centred at $z=a$. If the regular part is a polynomial ($c_{n>M}=0$) or, more generally, an entire function, then $r_1 = \infty$.
+2. *Singular part*: substitute $w = \dfrac{1}{z-a}$, so $\displaystyle\sum_{n=1}^{N}\frac{c_{-n}}{(z-a)^n} = \sum_{n=1}^N c_{-n}w^n$ — an ordinary power series **in $w$**, convergent inside $|w| < r_2$ for some $r_2$ (infinite if the singular part is a polynomial/entire function of $w$). `
+3. Translating $|w|<r_2$ back to the $z$-plane: $\left|\dfrac{1}{z-a}\right| < r_2 \iff |z-a| > \dfrac{1}{r_2}$.
+4. **Only if** $\dfrac{1}{r_2} < r_1$ (i.e. $r_1 r_2 > 1$) does an **annular region** exist:
+
+$$\frac{1}{r_2} < |z-a| < r_1$$
+
+Inside this annulus both the regular and singular parts converge absolutely — **this annulus is the region of convergence of the Laurent series.**
+
+**Edge cases:**
+- If $r_2 \to \infty$ (i.e. $1/r_2 = 0$), the series converges on a **punctured disk** of radius $r_1$ centred at $z=a$ (with $z=a$ itself excluded).
+- In some cases the outer radius $r_1 = \infty$ too, so the annulus extends to infinity.
+
+**Revisit the $e^{1/z}$ example:** $e^{1/z} = \sum_{n=1}^{\infty}\frac{1}{n!}\frac{1}{z^n} + 1$ converges for all $|z|>0$, with $r_1 = \infty$ and $1/r_2 = 0$. Hence the Laurent series is convergent for **all $z\neq 0$** (including as $z\to\infty$). 
+
+**Conclusion:** A Laurent series is, in general, convergent in some annular region whose inner radius may shrink to $0$ and whose outer radius may extend to $\infty$.
+
+### 1.3 Singularity at Infinity — setup only
+
+To classify the behaviour of $f(z)$ at $z=\infty$ in the extended complex plane:
+
+1. Change variable $w = 1/z$ (this maps $z=\infty \to w=0$).
+2. Examine the singularity of $\phi(w) \equiv f(1/w)$ **at $w=0$**.
+3. The nature of that singularity determines the nature of the singularity of $f(z)$ at $z=\infty$.
+
+
 ---
 ---
 
