@@ -980,7 +980,7 @@ the first bracket being the principal (positive-power) part and the second the s
 **Pitfalls / conditions to watch:** The *same* function has different Laurent expansions in different annuli around the same centre — just as with multiple Taylor representations, always double check which annulus you're expanding in before writing down the series (compare $1<|z|<2$ versus $1<|z-1|<3$ for this same $f(z)$, which give different series). The number of non-zero terms in the singular part will later turn out to characterize the type of singularity at $z=z_0$.
 
 
-
+----------
 
 
 > ✍️ **Added by:** Nikhil Chaudhary , <31/08/2026>
@@ -1123,7 +1123,7 @@ which is exactly same again when $m=1$ (the derivative and the factorial both dr
 1. Lecture notes, *PH502 — Complex Analysis, Module 1*, Section 5: "Singularities — Poles & Residues," pp. 60–64.
 2. A. K. Kapoor, *Complex Variables: Principles and Problem Sessions
 
-
+--------
 
 > ✍️ **Added by:** Drishya Verma, <01/09/2026>
 
