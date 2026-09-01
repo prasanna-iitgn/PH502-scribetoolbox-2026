@@ -1177,6 +1177,10 @@ To classify the behaviour of $f(z)$ at $z=\infty$ in the extended complex plane:
 2. Examine the singularity of $\phi(w) \equiv f(1/w)$ **at $w=0$**.
 3. The nature of that singularity determines the nature of the singularity of $f(z)$ at $z=\infty$.
 
+## References
+
+1. Lecture notes
+
 
 ---
 ---
