@@ -1183,6 +1183,369 @@ To classify the behaviour of $f(z)$ at $z=\infty$ in the extended complex plane:
 
 
 ---
+
+> ✍️ **Added by:** Jaskirat, 12/09/2026
+
+# Cauchy's Residue Theorem
+
+**Statement:**
+Let $C$ be a closed contour lying entirely in a domain where $f(z)$ is analytic except for isolated poles and essential singularities at $\{z_k\}$ with no singularities on $C$. If $C$ winds around each singularity $r_k$ times in the positive (counter-clockwise) sense, then:
+
+
+$$\oint_C f(z)\,dz = 2\pi i \sum_k r_k \operatorname{Res}_{z=z_k} f(z)$$
+
+**Derivation / justification:**
+
+
+![](./images/residue_theorem_sketch.png)
+
+* By the contour deformation theorem, deform the boundary contour $C$ into small loops surrounding each isolated singularity connected by narrow channels.
+
+
+* The pairwise contributions of the connecting channels travel in opposite directions and cancel exactly as they are brought infinitesimally close together.
+
+
+* Expand $f(z)$ in a Laurent series $\sum_{n=-\infty}^\infty a_n (z-z_k)^n$ around each singularity. Using the standard identity $\oint (z-z_k)^n dz = 2\pi i\,\delta_{n,-1}$, only the residue term $a_{-1} = \operatorname{Res}_{z=z_k} f(z)$ yields a non-zero contribution of $2\pi i$.
+
+
+
+**Worked example:**
+Evaluate the residue contribution for an essential singularity: $f(z) = e^{1/z} + e^z$.
+
+* The series expansion on $0 < \vert{}z\vert{} < \infty$ is:
+
+$$e^{1/z} + e^z = \sum_{n=1}^\infty \frac{1}{n!\,z^n} + 2 + \sum_{n=1}^\infty \frac{z^n}{n!}$$
+
+
+* The residue at $z=0$ is the coefficient of $z^{-1}$, which is $\frac{1}{1!} = 1$.
+
+
+* A counter-clockwise loop enclosing $z=0$ gives $\oint_C (e^{1/z} + e^z)\,dz = 2\pi i(1) = 2\pi i$.
+
+
+
+**Pitfalls / conditions to watch:**
+
+* **Singularities on the Path:** Cauchy's Residue Theorem requires that no singularities lie directly on the integration contour $C$.
+
+---
+
+# Real Trigonometric Integrals over $[0, 2\pi]$
+
+
+**Statement:**
+For an integral of the form $I = \int_0^{2\pi} f(\sin\theta, \cos\theta)\,d\theta$ where $f$ is a rational function finite on $\theta \in [0, 2\pi]$:
+
+
+$$I = \oint_{\vert{}z\vert{}=1} f\left(\frac{z - z^{-1}}{2i}, \frac{z + z^{-1}}{2}\right) \frac{dz}{iz} = 2\pi \sum_{\vert{}z_k\vert{} < 1} \operatorname{Res} \left[ \frac{1}{z} f\left(\frac{z - z^{-1}}{2i}, \frac{z + z^{-1}}{2}\right) \right]$$
+
+**Derivation / justification:**
+
+* Substitute $z = e^{i\theta}$, parameterizing the unit circle in the counter-clockwise direction as $\theta$ ranges from $0$ to $2\pi$.
+
+
+* Differentiating yields $dz = i e^{i\theta} d\theta \implies d\theta = \frac{dz}{iz}$.
+
+
+* Express the trigonometric functions as $\cos\theta = \frac{z+z^{-1}}{2}$ and $\sin\theta = \frac{z-z^{-1}}{2i}$.
+
+
+* Apply the Residue Theorem solely to the poles located strictly inside the unit circle ($\vert{}z_k\vert{} < 1$).
+
+
+
+**Worked example:**
+Evaluate $I = \int_0^{2\pi} \frac{d\theta}{1 + a\cos\theta}$ for $\vert{}a\vert{} < 1$:
+
+* Substitute $z = e^{i\theta}$ and $\cos\theta = \frac{z+z^{-1}}{2}$:
+
+$$I = \oint_{\vert{}z\vert{}=1} \frac{dz/(iz)}{1 + \frac{a}{2}(z + z^{-1})} = -\frac{2i}{a} \oint_{\vert{}z\vert{}=1} \frac{dz}{z^2 + \frac{2}{a}z + 1}$$
+
+
+
+* The denominator factors into $(z - z_+)(z - z_-)$ with roots $z_\pm = \frac{-1 \pm \sqrt{1-a^2}}{a}$.
+
+
+* Since $z_+ z_- = 1$ and $\vert{}a\vert{} < 1$, the pole inside the unit circle is $z_+$ ($\vert{}z_+\vert{} < 1$, while $\vert{}z_-\vert{} > 1$).
+
+
+* Residue at $z_+$ is $\frac{1}{z_+ - z_-} = \frac{a}{2\sqrt{1-a^2}}$.
+
+
+* Multiplying by the leading factors: $I = \left(-\frac{2i}{a}\right)(2\pi i)\left(\frac{a}{2\sqrt{1-a^2}}\right) = \frac{2\pi}{\sqrt{1-a^2}}$.
+
+
+
+**Pitfalls / conditions to watch:**
+
+
+* **Incorrect Pole Selection:** Always check magnitudes carefully using relations like $z_+ z_- = 1$; only poles with $\vert{}z\vert{} < 1$ are enclosed by the unit circle.
+
+
+
+---
+
+# Integrals of Decaying Rational Functions over $(-\infty, \infty)$
+
+
+**Statement:**
+Let $f(x) = \frac{P(x)}{Q(x)}$ be a rational function with no real poles, where the degree of $Q$ exceeds $P$ by at least 2 (i.e. $\lim_{\vert{}z\vert{}\to\infty} \vert{}z f(z)\vert{} = 0$). Then:
+
+
+$$\int_{-\infty}^\infty f(x)\,dx = 2\pi i \sum_{\operatorname{Im}(z_k) > 0} \operatorname{Res}_{z=z_k} f(z)$$
+
+> Here we consider the upper half plane
+
+
+**Derivation / justification:**
+
+![](images/decaying_rational_functions_sketch.png)
+
+
+* Form a closed contour $\Gamma = C_1 + C_2$ consisting of the real axis segment $[-R, R]$ and a semi-circular arc $C_2$ of radius $R$ in the UHP.
+
+
+* Parameterize the arc $C_2$ by $z = R e^{i\theta}$ for $\theta \in [0, \pi]$:
+
+
+
+$$\left\vert{} \int_{C_2} f(z)\,dz \right\vert{} \le \pi R \max_{\theta} \vert{}f(R e^{i\theta})\vert{}$$
+
+
+
+* Because $\vert{}f(z)\vert{}$ decays faster than $1/R$, the product $R \vert{}f(R e^{i\theta})\vert{} \to 0$ as $R \to \infty$, making the arc integral vanish.
+
+
+* Taking $R \to \infty$, $\oint_\Gamma f(z) dz$ reduces directly to $\int_{-\infty}^\infty f(x) dx$.
+
+
+**Worked example:**
+Evaluate $I = \int_{-\infty}^\infty \frac{dx}{(x^2+a^2)(x^2+b^2)}$ with $b > a > 0$:
+
+* Poles occur at $z = \pm ia$ and $z = \pm ib$; those in the upper half-plane are $z = ia$ and $z = ib$.
+
+
+* Compute residues:
+
+$$\operatorname{Res}_{z=ia} f(z) = \frac{1}{2ia(b^2-a^2)}, \quad \operatorname{Res}_{z=ib} f(z) = \frac{1}{2ib(a^2-b^2)}$$
+
+
+
+* Sum residues and multiply by $2\pi i$:
+
+$$I = 2\pi i \left[ \frac{1}{2ia(b^2-a^2)} - \frac{1}{2ib(b^2-a^2)} \right] = \frac{\pi}{b^2-a^2} \left( \frac{b-a}{ab} \right) = \frac{\pi}{ab(a+b)}$$
+
+
+
+
+**Pitfalls / conditions to watch:**
+
+* **Decay Rate Requirement:** If the denominator degree is only 1 higher than the numerator, because $R\vert{}f(z)\vert{} \not\to 0$.
+
+
+* **Lower vs. Upper Half-Plane:** The lower half-plane can also be used, but the clockwise contour orientation introduces a negative sign ($-2\pi i \sum_{\operatorname{Im}(z_k) < 0} \operatorname{Res}$).
+
+
+
+---
+
+# Integrals with Complex Exponentials
+
+
+**Statement:**
+If $\lim_{\vert{}z\vert{}\to\infty} \vert{}f(z)\vert{} = 0$ in the upper half-plane, and $a > 0$, then the integral over the semicircular arc $C_R$ of radius $R$ vanishes as $R \to \infty$:
+
+
+$$\lim_{R\to\infty} \int_{C_R} f(z) e^{iaz}\,dz = 0$$
+
+
+Consequently, $\int_{-\infty}^\infty f(x)e^{iax}dx = 2\pi i \sum_{\operatorname{Im}(z_k)>0} \operatorname{Res} [f(z)e^{iaz}]$.
+
+**Derivation / justification:**
+
+* Set $z = R e^{i\theta} = R(\cos\theta + i\sin\theta)$ on the UHP arc ($0 \le \theta \le \pi$). Then $\vert{}e^{iaz}\vert{} = e^{-a R \sin\theta}$.
+
+
+* Bound the integral: $\vert{}I_R\vert{} \le \epsilon R \int_0^\pi e^{-a R \sin\theta} d\theta = 2\epsilon R \int_0^{\pi/2} e^{-a R \sin\theta} d\theta$.
+
+
+* Apply Jordan's inequality $\sin\theta \ge \frac{2\theta}{\pi}$ for $\theta \in [0, \pi/2]$:
+
+
+
+$$\vert{}I_R\vert{} \le 2\epsilon R \int_0^{\pi/2} e^{-2a R \theta / \pi}\,d\theta = \frac{\pi\epsilon}{a}(1 - e^{-a R}) < \frac{\pi\epsilon}{a}$$
+
+
+
+* Taking $R \to \infty$ gives $\epsilon \to 0$, driving the arc integral to $0$.
+
+
+
+**Worked example:**
+Evaluate $I = \int_0^\infty \frac{\cos x}{x^2+1}\,dx = \frac{1}{2}\operatorname{Re} \left[ \int_{-\infty}^\infty \frac{e^{ix}}{x^2+1}\,dx \right]$:
+
+* Extend to $f(z) = \frac{e^{iz}}{z^2+1}$, which has a simple pole in the UHP at $z = i$.
+
+
+* Compute the residue:
+
+$$\operatorname{Res}_{z=i} \left[\frac{e^{iz}}{(z-i)(z+i)}\right] = \frac{e^{i(i)}}{2i} = \frac{e^{-1}}{2i}$$
+
+
+
+* Close contour in UHP (since $a = 1 > 0$):
+
+
+
+$$\int_{-\infty}^\infty \frac{e^{ix}}{x^2+1}\,dx = 2\pi i \left(\frac{e^{-1}}{2i}\right) = \frac{\pi}{e}$$
+
+
+
+* Accounting for symmetry: $I = \frac{1}{2} \left(\frac{\pi}{e}\right) = \frac{\pi}{2e}$.
+
+
+
+**Pitfalls / conditions to watch:**
+
+* **Sign of Exponential Factor:** If $a < 0$, closing in the UHP causes $e^{-a R \sin\theta} \to \infty$. We must close the contour in the **lower half-plane** instead.
+
+
+* **Integrating $\cos(ax)$ directly:** Do not integrate $\frac{\cos z}{z^2+1}$ on the arc because $\cos z = \frac{e^{iz}+e^{-iz}}{2}$ blows up in both half-planes. Always replace $\cos(ax)$ with $e^{iax}$ first, then take the real part at the end.
+
+
+
+---
+
+# Indented Contours and the Cauchy Principal Value (CPV)
+
+
+**Statement:**
+
+* **Fractional Residue Lemma:** If $f(z)$ has a simple pole at $z_0$ and $\gamma_\rho$ is a circular arc of radius $\rho$ subtending an angle $\alpha$, then:
+
+
+
+$$\lim_{\rho \to 0} \int_{\gamma_\rho} f(z)\,dz = \pm i \alpha \operatorname{Res}_{z=z_0} f(z)$$
+
+
+
+
+where the sign is positive for CCW and negative for CW.
+
+
+* **Cauchy Principal Value (CPV):** For a singularity at $x_0 \in (a, b)$:
+
+
+
+$$\mathcal{P}\int_a^b f(x)\,dx \equiv \lim_{\epsilon \to 0} \left[ \int_a^{x_0-\epsilon} f(x)\,dx + \int_{x_0+\epsilon}^b f(x)\,dx \right]$$
+
+
+
+
+**Derivation / justification:**
+
+
+![](images/indented_contour.png)
+
+* Expand $f(z)$ in its Laurent series around the simple pole $z_0$: $f(z) = \frac{\operatorname{Res} f(z)}{z-z_0} + \sum_{n=0}^\infty a_n(z-z_0)^n$.
+
+
+* Parameterize the arc as $z = z_0 + \rho e^{i\theta}$ for $\theta \in [\theta_1, \theta_1 + \alpha]$.
+
+
+* The non-negative power terms vanish as $\mathcal{O}(\rho)$ when $\rho \to 0$.
+
+
+* The pole term yields:
+
+$$\int_{\gamma_\rho} \frac{\operatorname{Res} f(z)}{\rho e^{i\theta}} i\rho e^{i\theta} d\theta = i \operatorname{Res}_{z=z_0} f(z) \int_{\theta_1}^{\theta_1+\alpha} d\theta = i \alpha \operatorname{Res}_{z=z_0} f(z)$$
+
+
+
+
+**Worked example:**
+Evaluate $I = \int_0^\infty \frac{\sin x}{x}\,dx = \frac{1}{2} \operatorname{Im} \left( \mathcal{P}\int_{-\infty}^\infty \frac{e^{ix}}{x}\,dx \right)$:
+
+* Consider $f(z) = \frac{e^{iz}}{z}$ over the indented contour consisting of $[-R, -\rho]$, the CW small semi-circle $C_\rho$ around $z=0$, $[\rho, R]$, and the large UHP semi-circle $C_R$.
+
+
+* Inside the closed contour, $f(z)$ is analytic, so $\oint_\Gamma f(z)\,dz = 0$.
+
+
+* As $R \to \infty$, the integral on $C_R$ vanishes by Jordan's Lemma.
+
+
+* As $\rho \to 0$, the CW semi-circular indentation ($-\pi$ radians) gives:
+
+
+
+$$\int_{C_\rho} \frac{e^{iz}}{z}\,dz \to -i\pi \operatorname{Res}_{z=0} \left(\frac{e^{iz}}{z}\right) = -i\pi(1) = -\pi i$$
+
+
+
+* Sum of pieces: $\mathcal{P}\int_{-\infty}^\infty \frac{e^{ix}}{x}\,dx - \pi i = 0 \implies \mathcal{P}\int_{-\infty}^\infty \frac{e^{ix}}{x}\,dx = \pi i$.
+
+
+* Taking the imaginary part and dividing by 2 yields $I = \frac{1}{2} \operatorname{Im}(\pi i) = \frac{\pi}{2}$.
+
+
+
+**Pitfalls / conditions to watch:**
+
+* **Simple Poles Only:** The Fractional Residue Lemma applies to **simple** (order 1) poles; higher-order poles diverge as $1/\rho^{n-1}$ on fractional arcs.
+
+
+* **Sense of the Indentation Arc:** Indenting into the upper half-plane bypasses the pole by travelling clockwise, yielding a factor of $-\pi i \operatorname{Res}$, whereas counter-clockwise gives $+\pi i \operatorname{Res}$.
+
+---
+
+TODO: SIngularities at INfinity ; and i\espilon thingy
+
+# Residue at Infinity
+
+**Statement:** If a single-valued function $f(z)$ has an isolated singularity at infinity (or even if it is regular there), its residue at infinity is defined as $\text{Res}_{z=\infty} f(z) = -\frac{1}{2\pi i} \oint_C f(z) dz$, where $C$ is a large circle traversed counter-clockwise enclosing all finite singularities. Equivalently, the residue is the coefficient of $1/w$ in the Laurent expansion of $-\frac{1}{w^2}f(1/w)$, defined via the mapping $w = 1/z$.
+
+**Derivation / justification:**
+
+* The large circle $C$ covers all singularities in the finite plane, meaning the sum of all finite residues plus the residue at infinity equals zero: $\text{Res}_{z=\infty} f(z) = -\sum_j \text{Res}_{z=a_j} f(z)$.
+* By changing variables to $w = 1/z$, the differential becomes $dz = -1/w^2 dw$.
+* The large counter-clockwise circle $C$ in the $z$-plane maps directly to an infinitesimal counter-clockwise circle $c$ around the origin in the $w$-plane.
+
+**Worked example:** Evaluate the residue at infinity for $f(z) = \frac{1}{z-1} + \frac{1}{z-2}$.
+
+* $f(z)$ has simple poles at $z=1$ and $z=2$, and is analytically regular at $z=\infty$.
+* Using the sum of finite residues: $\text{Res}_{z=\infty} f(z) = -\left[ \text{Res}_{z=1} f(z) + \text{Res}_{z=2} f(z) \right]$.
+* This evaluates to $-\left[ 1 + 1 \right] = -2$.
+
+**Pitfalls / conditions to watch:**
+
+* **Regularity at infinity does not imply zero residue:** Even if a function is regular at infinity, its residue there might not be zero. For instance, $1/z$ is regular at $\infty$ but has a residue of $-1$, though $1/z^2$ has a residue of $0$.
+* **Entire functions:** Non-constant entire functions (like polynomials or $e^z$) have an essential singularity at infinity but possess no residue there because the bounding contour $C$ can be shrunk to a point.
+
+---
+
+# Multivalued Functions and Singularities
+
+**Statement:** Inverse functions of many-to-one mappings (like $z^2, e^z$) yield multi-valued outputs because the argument $\arg(z)$ does not return to its initial value after traversing a loop around the origin. A convenient approach to make these functions "good" is to impose a branch cut—restricting the argument to a range like $\theta_0 < \theta < \theta_0 + 2\pi$. Removing this cut line creates a "cut-plane" where each branch becomes a well-defined, continuous single-valued function.
+
+**Derivation / justification:**
+
+* A branch point is defined as a point where looping around it forces the function to comb through different branches.
+* To check if $z=\infty$ is a branch point, apply the transformation $t = 1/z$ and examine the behavior at $t = 0$.
+* Functions with rational powers $(z-a)^{p/q}$ possess **algebraic branch points**, meaning the branches cycle back to the original value after $q$ loops.
+* Conversely, **winding points** generated by $\operatorname{Log} z$ or irrational powers $z^\alpha$ will jump to higher branches indefinitely without ever repeating.
+
+**Worked example:** Defining a single-valued branch for $\operatorname{Log} z$.
+
+* The multivalued expression is $\operatorname{Log} z = \ln r + i\theta + i2\pi m$, which yields infinite branches indexed by $m$.
+* By establishing a branch cut along the positive real axis ($\theta_0 = 0$) and restricting the argument to $0 < \theta < 2\pi$, we isolate one single-valued branch.
+* Changing the bounding ray $\theta_0$ or selecting a different integer $m$ generates alternative valid single-valued branches.
+
+**Pitfalls / conditions to watch:**
+
+* **Strict inequality on the cut:** The rays $\theta_0$ and $\theta_0 + 2\pi$ must be strictly excluded from the allowed range. Because $\arg(z)$ is fundamentally discontinuous across this ray, the function holds no well-defined value there.
+* **Minimum branch point:** All multivalued functions must contain at least two branch points (which can include infinity) to properly define a branch cut between them; a single branch point cannot exist in isolation.
+
 ---
 
 ## Module 2: Integral Transforms
