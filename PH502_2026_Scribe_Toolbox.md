@@ -1192,7 +1192,7 @@ To classify the behaviour of $f(z)$ at $z=\infty$ in the extended complex plane:
 Let $C$ be a closed contour lying entirely in a domain where $f(z)$ is analytic except for isolated poles and essential singularities at $\{z_k\}$ with no singularities on $C$. If $C$ winds around each singularity $r_k$ times in the positive (counter-clockwise) sense, then:
 
 
-$$\oint_C f(z)\,dz = 2\pi i \sum_k r_k \operatorname{Res}_{z=z_k} f(z)$$
+$$\oint_C f(z)\,dz = 2\pi i \sum_k r_k \text{Res}_{z=z_k} f(z)$$
 
 **Derivation / justification:**
 
@@ -1205,7 +1205,7 @@ $$\oint_C f(z)\,dz = 2\pi i \sum_k r_k \operatorname{Res}_{z=z_k} f(z)$$
 * The pairwise contributions of the connecting channels travel in opposite directions and cancel exactly as they are brought infinitesimally close together.
 
 
-* Expand $f(z)$ in a Laurent series $\sum_{n=-\infty}^\infty a_n (z-z_k)^n$ around each singularity. Using the standard identity $\oint (z-z_k)^n dz = 2\pi i\,\delta_{n,-1}$, only the residue term $a_{-1} = \operatorname{Res}_{z=z_k} f(z)$ yields a non-zero contribution of $2\pi i$.
+* Expand $f(z)$ in a Laurent series $\sum_{n=-\infty}^\infty a_n (z-z_k)^n$ around each singularity. Using the standard identity $\oint (z-z_k)^n dz = 2\pi i\,\delta_{n,-1}$, only the residue term $a_{-1} = \text{Res}_{z=z_k} f(z)$ yields a non-zero contribution of $2\pi i$.
 
 
 
@@ -1237,7 +1237,7 @@ $$e^{1/z} + e^z = \sum_{n=1}^\infty \frac{1}{n!\,z^n} + 2 + \sum_{n=1}^\infty \f
 For an integral of the form $I = \int_0^{2\pi} f(\sin\theta, \cos\theta)\,d\theta$ where $f$ is a rational function finite on $\theta \in [0, 2\pi]$:
 
 
-$$I = \oint_{\vert{}z\vert{}=1} f\left(\frac{z - z^{-1}}{2i}, \frac{z + z^{-1}}{2}\right) \frac{dz}{iz} = 2\pi \sum_{\vert{}z_k\vert{} < 1} \operatorname{Res} \left[ \frac{1}{z} f\left(\frac{z - z^{-1}}{2i}, \frac{z + z^{-1}}{2}\right) \right]$$
+$$I = \oint_{\vert{}z\vert{}=1} f\left(\frac{z - z^{-1}}{2i}, \frac{z + z^{-1}}{2}\right) \frac{dz}{iz} = 2\pi \sum_{\vert{}z_k\vert{} < 1} \text{Res} \left[ \frac{1}{z} f\left(\frac{z - z^{-1}}{2i}, \frac{z + z^{-1}}{2}\right) \right]$$
 
 **Derivation / justification:**
 
@@ -1292,7 +1292,7 @@ $$I = \oint_{\vert{}z\vert{}=1} \frac{dz/(iz)}{1 + \frac{a}{2}(z + z^{-1})} = -\
 Let $f(x) = \frac{P(x)}{Q(x)}$ be a rational function with no real poles, where the degree of $Q$ exceeds $P$ by at least 2 (i.e. $\lim_{\vert{}z\vert{}\to\infty} \vert{}z f(z)\vert{} = 0$). Then:
 
 
-$$\int_{-\infty}^\infty f(x)\,dx = 2\pi i \sum_{\operatorname{Im}(z_k) > 0} \operatorname{Res}_{z=z_k} f(z)$$
+$$\int_{-\infty}^\infty f(x)\,dx = 2\pi i \sum_{\text{Im}(z_k) > 0} \text{Res}_{z=z_k} f(z)$$
 
 > Here we consider the upper half plane
 
@@ -1327,7 +1327,7 @@ Evaluate $I = \int_{-\infty}^\infty \frac{dx}{(x^2+a^2)(x^2+b^2)}$ with $b > a >
 
 * Compute residues:
 
-$$\operatorname{Res}_{z=ia} f(z) = \frac{1}{2ia(b^2-a^2)}, \quad \operatorname{Res}_{z=ib} f(z) = \frac{1}{2ib(a^2-b^2)}$$
+$$\text{Res}_{z=ia} f(z) = \frac{1}{2ia(b^2-a^2)}, \quad \text{Res}_{z=ib} f(z) = \frac{1}{2ib(a^2-b^2)}$$
 
 
 
@@ -1343,7 +1343,7 @@ $$I = 2\pi i \left[ \frac{1}{2ia(b^2-a^2)} - \frac{1}{2ib(b^2-a^2)} \right] = \f
 * **Decay Rate Requirement:** If the denominator degree is only 1 higher than the numerator, because $R\vert{}f(z)\vert{} \not\to 0$.
 
 
-* **Lower vs. Upper Half-Plane:** The lower half-plane can also be used, but the clockwise contour orientation introduces a negative sign ($-2\pi i \sum_{\operatorname{Im}(z_k) < 0} \operatorname{Res}$).
+* **Lower vs. Upper Half-Plane:** The lower half-plane can also be used, but the clockwise contour orientation introduces a negative sign ($-2\pi i \sum_{\text{Im}(z_k) < 0} \text{Res}$).
 
 
 
@@ -1359,7 +1359,7 @@ If $\lim_{\vert{}z\vert{}\to\infty} \vert{}f(z)\vert{} = 0$ in the upper half-pl
 $$\lim_{R\to\infty} \int_{C_R} f(z) e^{iaz}\,dz = 0$$
 
 
-Consequently, $\int_{-\infty}^\infty f(x)e^{iax}dx = 2\pi i \sum_{\operatorname{Im}(z_k)>0} \operatorname{Res} [f(z)e^{iaz}]$.
+Consequently, $\int_{-\infty}^\infty f(x)e^{iax}dx = 2\pi i \sum_{\text{Im}(z_k)>0} \text{Res} [f(z)e^{iaz}]$.
 
 **Derivation / justification:**
 
@@ -1382,14 +1382,14 @@ $$\vert{}I_R\vert{} \le 2\epsilon R \int_0^{\pi/2} e^{-2a R \theta / \pi}\,d\the
 
 
 **Worked example:**
-Evaluate $I = \int_0^\infty \frac{\cos x}{x^2+1}\,dx = \frac{1}{2}\operatorname{Re} \left[ \int_{-\infty}^\infty \frac{e^{ix}}{x^2+1}\,dx \right]$:
+Evaluate $I = \int_0^\infty \frac{\cos x}{x^2+1}\,dx = \frac{1}{2}\text{Re} \left[ \int_{-\infty}^\infty \frac{e^{ix}}{x^2+1}\,dx \right]$:
 
 * Extend to $f(z) = \frac{e^{iz}}{z^2+1}$, which has a simple pole in the UHP at $z = i$.
 
 
 * Compute the residue:
 
-$$\operatorname{Res}_{z=i} \left[\frac{e^{iz}}{(z-i)(z+i)}\right] = \frac{e^{i(i)}}{2i} = \frac{e^{-1}}{2i}$$
+$$\text{Res}_{z=i} \left[\frac{e^{iz}}{(z-i)(z+i)}\right] = \frac{e^{i(i)}}{2i} = \frac{e^{-1}}{2i}$$
 
 
 
@@ -1425,7 +1425,7 @@ $$\int_{-\infty}^\infty \frac{e^{ix}}{x^2+1}\,dx = 2\pi i \left(\frac{e^{-1}}{2i
 
 
 
-$$\lim_{\rho \to 0} \int_{\gamma_\rho} f(z)\,dz = \pm i \alpha \operatorname{Res}_{z=z_0} f(z)$$
+$$\lim_{\rho \to 0} \int_{\gamma_\rho} f(z)\,dz = \pm i \alpha \text{Res}_{z=z_0} f(z)$$
 
 
 
@@ -1447,7 +1447,7 @@ $$\mathcal{P}\int_a^b f(x)\,dx \equiv \lim_{\epsilon \to 0} \left[ \int_a^{x_0-\
 
 ![](images/indented_contour.png)
 
-* Expand $f(z)$ in its Laurent series around the simple pole $z_0$: $f(z) = \frac{\operatorname{Res} f(z)}{z-z_0} + \sum_{n=0}^\infty a_n(z-z_0)^n$.
+* Expand $f(z)$ in its Laurent series around the simple pole $z_0$: $f(z) = \frac{\text{Res} f(z)}{z-z_0} + \sum_{n=0}^\infty a_n(z-z_0)^n$.
 
 
 * Parameterize the arc as $z = z_0 + \rho e^{i\theta}$ for $\theta \in [\theta_1, \theta_1 + \alpha]$.
@@ -1458,13 +1458,13 @@ $$\mathcal{P}\int_a^b f(x)\,dx \equiv \lim_{\epsilon \to 0} \left[ \int_a^{x_0-\
 
 * The pole term yields:
 
-$$\int_{\gamma_\rho} \frac{\operatorname{Res} f(z)}{\rho e^{i\theta}} i\rho e^{i\theta} d\theta = i \operatorname{Res}_{z=z_0} f(z) \int_{\theta_1}^{\theta_1+\alpha} d\theta = i \alpha \operatorname{Res}_{z=z_0} f(z)$$
+$$\int_{\gamma_\rho} \frac{\text{Res} f(z)}{\rho e^{i\theta}} i\rho e^{i\theta} d\theta = i \text{Res}_{z=z_0} f(z) \int_{\theta_1}^{\theta_1+\alpha} d\theta = i \alpha \text{Res}_{z=z_0} f(z)$$
 
 
 
 
 **Worked example:**
-Evaluate $I = \int_0^\infty \frac{\sin x}{x}\,dx = \frac{1}{2} \operatorname{Im} \left( \mathcal{P}\int_{-\infty}^\infty \frac{e^{ix}}{x}\,dx \right)$:
+Evaluate $I = \int_0^\infty \frac{\sin x}{x}\,dx = \frac{1}{2} \text{Im} \left( \mathcal{P}\int_{-\infty}^\infty \frac{e^{ix}}{x}\,dx \right)$:
 
 * Consider $f(z) = \frac{e^{iz}}{z}$ over the indented contour consisting of $[-R, -\rho]$, the CW small semi-circle $C_\rho$ around $z=0$, $[\rho, R]$, and the large UHP semi-circle $C_R$.
 
@@ -1479,14 +1479,14 @@ Evaluate $I = \int_0^\infty \frac{\sin x}{x}\,dx = \frac{1}{2} \operatorname{Im}
 
 
 
-$$\int_{C_\rho} \frac{e^{iz}}{z}\,dz \to -i\pi \operatorname{Res}_{z=0} \left(\frac{e^{iz}}{z}\right) = -i\pi(1) = -\pi i$$
+$$\int_{C_\rho} \frac{e^{iz}}{z}\,dz \to -i\pi \text{Res}_{z=0} \left(\frac{e^{iz}}{z}\right) = -i\pi(1) = -\pi i$$
 
 
 
 * Sum of pieces: $\mathcal{P}\int_{-\infty}^\infty \frac{e^{ix}}{x}\,dx - \pi i = 0 \implies \mathcal{P}\int_{-\infty}^\infty \frac{e^{ix}}{x}\,dx = \pi i$.
 
 
-* Taking the imaginary part and dividing by 2 yields $I = \frac{1}{2} \operatorname{Im}(\pi i) = \frac{\pi}{2}$.
+* Taking the imaginary part and dividing by 2 yields $I = \frac{1}{2} \text{Im}(\pi i) = \frac{\pi}{2}$.
 
 
 
@@ -1495,7 +1495,7 @@ $$\int_{C_\rho} \frac{e^{iz}}{z}\,dz \to -i\pi \operatorname{Res}_{z=0} \left(\f
 * **Simple Poles Only:** The Fractional Residue Lemma applies to **simple** (order 1) poles; higher-order poles diverge as $1/\rho^{n-1}$ on fractional arcs.
 
 
-* **Sense of the Indentation Arc:** Indenting into the upper half-plane bypasses the pole by travelling clockwise, yielding a factor of $-\pi i \operatorname{Res}$, whereas counter-clockwise gives $+\pi i \operatorname{Res}$.
+* **Sense of the Indentation Arc:** Indenting into the upper half-plane bypasses the pole by travelling clockwise, yielding a factor of $-\pi i \text{Res}$, whereas counter-clockwise gives $+\pi i \text{Res}$.
 
 ---
 
@@ -1533,11 +1533,11 @@ TODO: SIngularities at INfinity ; and i\espilon thingy
 * A branch point is defined as a point where looping around it forces the function to comb through different branches.
 * To check if $z=\infty$ is a branch point, apply the transformation $t = 1/z$ and examine the behavior at $t = 0$.
 * Functions with rational powers $(z-a)^{p/q}$ possess **algebraic branch points**, meaning the branches cycle back to the original value after $q$ loops.
-* Conversely, **winding points** generated by $\operatorname{Log} z$ or irrational powers $z^\alpha$ will jump to higher branches indefinitely without ever repeating.
+* Conversely, **winding points** generated by $\text{Log} z$ or irrational powers $z^\alpha$ will jump to higher branches indefinitely without ever repeating.
 
-**Worked example:** Defining a single-valued branch for $\operatorname{Log} z$.
+**Worked example:** Defining a single-valued branch for $\text{Log} z$.
 
-* The multivalued expression is $\operatorname{Log} z = \ln r + i\theta + i2\pi m$, which yields infinite branches indexed by $m$.
+* The multivalued expression is $\text{Log} z = \ln r + i\theta + i2\pi m$, which yields infinite branches indexed by $m$.
 * By establishing a branch cut along the positive real axis ($\theta_0 = 0$) and restricting the argument to $0 < \theta < 2\pi$, we isolate one single-valued branch.
 * Changing the bounding ray $\theta_0$ or selecting a different integer $m$ generates alternative valid single-valued branches.
 
