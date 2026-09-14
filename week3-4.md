@@ -199,7 +199,7 @@ To classify the behaviour of $f(z)$ at $z=\infty$ in the extended complex plane:
 
 ---
 
-> ✍️ **Added by:** Jaskirat, 12/09/2026
+> ✍️ **Added by:** Jaskirat, Nikunj, Akshika, Nitu 12/09/2026 - 14/09/2026
 
 # Cauchy's Residue Theorem
 
@@ -514,7 +514,153 @@ $$\int_{C_\rho} \frac{e^{iz}}{z}\,dz \to -i\pi \text{Res}_{z=0} \left(\frac{e^{i
 
 ---
 
-TODO: SIngularities at INfinity ; and i\espilon thingy
+# Taming Integrals around Singularities (Regularizing Real-Axis Singularities)
+
+**Statement:**
+A regularization method that avoids singularities on the real integration axis by deforming the path into a vanishingly small semicircle around the pole.
+
+**Derivation / justification:**
+Consider $I = \int_{-\infty}^{\infty} dx \frac{e^{i\lambda x}}{x - x_0}$ with $\lambda > 0$.
+
+1. Extend the function to the complex plane: $f(z) = \frac{e^{i\lambda z}}{z - x_0}$.
+
+
+2. Close the contour in the upper half-plane using a large semicircle $\Gamma_1$ of radius $R \to \infty$.
+
+
+3. The total closed contour integral is $\oint f(z) dz = \int_{C} f(z)dz + \int_{\Gamma_1} f(z)dz$, where $C$ is the real axis path containing a small semicircular indentation (radius $\epsilon \to 0$) bypassing the pole at $x_0$.
+
+
+4. By Jordan's Lemma, $\int_{\Gamma_1} f(z)dz = 0$ as $R \to \infty$.
+
+
+5. If the contour indents *above* the pole ($C_1$), the pole is excluded, yielding $\oint f(z)dz = 0$. If it indents *below* ($C_2$), the pole is enclosed, yielding $2\pi i \text{Res}(x_0) = -2\pi i e^{i\lambda x_0}$ (noting orientation differences).
+
+![](./images/indented_contour_2.png)
+
+**Worked example:**
+Evaluate $I = \int_{-\infty}^{\infty} dk \frac{e^{-ik\tau}}{k^2 - k_0^2}$ for $\tau > 0$.
+
+1. Identify poles at $k = \pm k_0$.
+
+
+2. Choose contour $\gamma_3$ (which indents above both poles) and close in the lower half-plane ($C_R^-$) to ensure the exponential $e^{-ik\tau}$ decays for $\tau > 0$.
+
+
+3. Since we enclose both poles in a clockwise direction, the integral equals $-2\pi i \left[ \text{Res}(k_0) + \text{Res}(-k_0) \right]$.
+
+
+4. Calculate residues:
+
+$$R_1 = \text{Res}(k_0) = \frac{e^{-ik_0\tau}}{2k_0}$$
+
+
+$$R_2 = \text{Res}(-k_0) = -\frac{e^{ik_0\tau}}{2k_0}$$
+
+
+5. Sum and multiply:
+
+$$\oint f(z)dz = -2\pi i \left( \frac{e^{-ik_0\tau} - e^{ik_0\tau}}{2k_0} \right) = -\frac{2\pi}{k_0} \sin(k_0\tau)$$
+
+
+**Pitfalls / conditions to watch:**
+Different indentations yield different mathematical answers, and the choice of contour must be dictated by the physical conditions of the problem.
+
+
+# The $i\epsilon$-Prescription (Shifting Poles into the Complex Plane)
+
+**Statement:**
+A regularization technique that shifts poles slightly off the real axis by substituting $x_0 \to x_0 \pm i\epsilon$.
+
+**Derivation / justification:**
+To evaluate $\tilde{I} = \lim_{\epsilon \to 0} \int_{-\infty}^{\infty} dx \frac{e^{i\lambda x}}{x - x_0 \mp i\epsilon}$ with $\lambda > 0$:
+
+1. Close the contour in the upper half-plane ($\Gamma_1$).
+
+2. For the $+i\epsilon$ shift, the pole lies at $z = x_0 + i\epsilon$, which is strictly inside the upper half-plane contour.
+
+3. Apply the Residue Theorem: $\oint f(z) dz = 2\pi i \text{Res}(x_0+i\epsilon) = 2\pi i e^{i\lambda(x_0+i\epsilon)}$.
+
+4. Take the limit as $\epsilon \to 0$ to get $2\pi i e^{i\lambda x_0}$.
+
+
+**Worked example:**
+Evaluate $\tilde{I}_{--} = \lim_{\epsilon \to 0} \int_{-\infty}^{\infty} dk \frac{e^{-ik\tau}}{(k-k_0-i\epsilon)(k+k_0-i\epsilon)}$ for $\tau > 0$.
+
+1. The poles are located at $k_0 - i\epsilon$ and $-k_0 - i\epsilon$, both in the lower half-plane.
+
+2. Because $\tau > 0$, close the contour in the lower half-plane ($C_R^-$), making the loop clockwise.
+
+3. Both poles are enclosed. Apply $-2\pi i \sum \text{Res}$:
+
+
+$$
+\tilde{I}_{--} = \lim_{\epsilon \to 0} -2\pi i \left[ \frac{e^{-i(k_0 - i\epsilon)\tau}}{2k_0} + \frac{e^{-i(-k_0 - i\epsilon)\tau}}{-2k_0} \right]
+$$
+
+
+4. Taking $\epsilon \to 0$:
+
+$$
+= \frac{\pi i}{k_0} (e^{-ik_0\tau} - e^{ik_0\tau}) = -\frac{2\pi i \sin(k_0\tau)}{k_0}
+$$.
+
+
+**Pitfalls / conditions to watch:**
+This approach is equivalent to the indented contour method, and just like it, the sign of $i\epsilon$ must be chosen based on external physical constraints.
+
+# Generalized Equivalence Identity
+
+**Statement:**
+The $i\epsilon$-prescription separates algebraically into the Cauchy Principal Value ($P$) and a Dirac delta function.
+
+**Derivation / justification:**
+Evaluate $f(x_0+i\epsilon) = \int_a^b dx \frac{\phi(x)}{x - x_0 - i\epsilon}$.
+
+1. Rationalize the denominator:
+
+$$
+= \int_a^b dx \frac{(x-x_0)\phi(x)}{(x-x_0)^2 + \epsilon^2} + i\pi \int_a^b dx \frac{(\epsilon/\pi)\phi(x)}{(x-x_0)^2 + \epsilon^2}
+$$
+
+
+2. Take $\lim_{\epsilon \to 0}$. The first integral by definition becomes the Principal Value $P \int_a^b dx \frac{\phi(x)}{x-x_0}$.
+
+
+3. The fraction in the second integral acts as a representation of the Dirac delta function: $\lim_{\epsilon \to 0} \frac{\epsilon/\pi}{x^2 + \epsilon^2} = \delta(x)$.
+
+
+4. This yields the identity: $\lim_{\epsilon \to 0} \frac{1}{x - x_0 \mp i\epsilon} = P\frac{1}{x - x_0} \pm i\pi\delta(x - x_0)$.
+
+
+**Worked example:**
+Calculate $I_{PV} = P \int_{-\infty}^{\infty} dk \frac{e^{-ik\tau}}{k^2 - k_0^2}$ for $\tau > 0$ directly.
+
+1. Choose a contour that avoids poles by indenting above them ($S_1, S_2$) and closing below ($C_R^-$).
+
+2. Since there are no poles inside this contour, $\oint f(z)dz = 0$.
+
+3. The closed integral expands to: $0 = I_{PV} + \int_{S_1} f(z)dz + \int_{S_2} f(z)dz$.
+
+4. The semi-circular indentations $S_1, S_2$ evaluate to $-\pi i \text{Res}(-k_0) - \pi i \text{Res}(k_0)$:
+
+
+$$
+0 = I_{PV} - \pi i \frac{e^{ik_0\tau}}{-2k_0} - \pi i \frac{e^{-ik_0\tau}}{2k_0}
+$$
+
+
+5. Solving for $I_{PV}$ yields:
+
+$$
+I_{PV} = -\frac{\pi i}{2k_0}(e^{ik_0\tau} - e^{-ik_0\tau}) = -\frac{\pi}{k_0} \sin(k_0\tau)
+$$
+
+
+
+**Pitfalls / conditions to watch:**
+The identity $\frac{1}{x - x_0 \mp i\epsilon} = P\frac{1}{x - x_0} \pm i\pi\delta(x - x_0)$ is strictly meaningless on its own; it only holds valid when integrated over an interval containing $x_0$ and multiplied by a regular function $\phi(x)$.
+
 
 # Residue at Infinity
 
