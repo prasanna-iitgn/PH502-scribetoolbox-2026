@@ -204,7 +204,7 @@ $$
 K=\frac13\int_0^\infty\frac{u^{\frac13-1}}{1+u}\,du=\frac13\cdot\frac{\pi}{\sin(\pi/3)}=\frac13\cdot\frac{\pi}{\sqrt3/2}=\frac{2\pi}{3\sqrt3}\approx1.2092 .
 $$
 
-The numerical value of the integral is $1.20920$ ✓. In general $\int_0^\infty\frac{dx}{1+x^n}=\frac{\pi/n}{\sin(\pi/n)}$. Sanity check at $p=\tfrac12$: $x=t^2$ gives $2\int_0^\infty\frac{dt}{1+t^2}=\pi=\pi/\sin\frac\pi2$ ✓.
+The numerical value of the integral is $1.20920$. In general $\int_0^\infty\frac{dx}{1+x^n}=\frac{\pi/n}{\sin(\pi/n)}$. Sanity check at $p=\tfrac12$: $x=t^2$ gives $2\int_0^\infty\frac{dt}{1+t^2}=\pi=\pi/\sin\frac\pi2$.
 
 ---
 
@@ -255,7 +255,7 @@ The result is independent of the interval. Direct numerical integration of $\int
 | $(-1,1)$ | $3.14159$ | $3.14159$ |
 | $(2,5)$ | $3.14159$ | $3.14159$ |
 
-Analytic check for $(0,1)$: $x=\sin^2t$ gives $\int_0^{\pi/2}2\,dt=\pi$ ✓; for $(-1,1)$ the integral is $[\arcsin x]_{-1}^{1}=\pi$ ✓.
+Analytic check for $(0,1)$: $x=\sin^2t$ gives $\int_0^{\pi/2}2\,dt=\pi$; for $(-1,1)$ the integral is $[\arcsin x]_{-1}^{1}=\pi$.
 
 ---
 
@@ -280,7 +280,7 @@ $$
 \oint_{|z|=R}f\,dz=-\oint_{|w|=1/R,\ \circlearrowleft}\Big[-\frac1{w^2}f\Big(\frac1w\Big)\Big]dw=-2\pi i\,\mathrm{Res}_{w=0}\Big[-\frac1{w^2}f\Big(\frac1w\Big)\Big].
 $$
 
-Check: $f=1/z$ has $\oint=2\pi i$, and $-\frac1{w^2}\cdot w=-\frac1w$ gives $\mathrm{Res}_\infty=-1$, so $-2\pi i(-1)=2\pi i$ ✓.
+Check: $f=1/z$ has $\oint=2\pi i$, and $-\frac1{w^2}\cdot w=-\frac1w$ gives $\mathrm{Res}_\infty=-1$, so $-2\pi i(-1)=2\pi i$.
 
 *Entry 4 again.* For $f=(z-a)^{-1/2}(z-b)^{-1/2}$,
 
@@ -288,7 +288,7 @@ $$
 -\frac1{w^2}f\Big(\frac1w\Big)=-\frac1w\,(1-aw)^{-1/2}(1-bw)^{-1/2}=-\frac1w+O(w^0),
 $$
 
-so $\mathrm{Res}_\infty f=-1$ and $\oint_Cf\,dz=2\pi i$. With $\oint_C f\,dz=2iI$ from the cut, $I=\pi$ ✓.
+so $\mathrm{Res}_\infty f=-1$ and $\oint_Cf\,dz=2\pi i$. With $\oint_C f\,dz=2iI$ from the cut, $I=\pi$.
 
 **Worked example:**
 Evaluate $\displaystyle J=\int_a^b\sqrt{(x-a)(b-x)}\,dx$ using $F(z)=\sqrt{(z-a)(z-b)}$, cut $[a,b]$, normalised by $F\sim z$ at $\infty$ (so $F>0$ for $x>b$).
@@ -311,7 +311,7 @@ $$
 \boxed{\ \int_a^b\sqrt{(x-a)(b-x)}\,dx=\frac{\pi(b-a)^2}{8}\ }
 $$
 
-Check: this is the area of a half-disc of radius $\frac{b-a}2$, i.e. $\frac12\pi\big(\frac{b-a}2\big)^2$ ✓. Numerically, $(a,b)=(1,4)$ gives $3.53429$ from both the integral and the formula.
+Check: this is the area of a half-disc of radius $\frac{b-a}2$, i.e. $\frac12\pi\big(\frac{b-a}2\big)^2$. Numerically, $(a,b)=(1,4)$ gives $3.53429$ from both the integral and the formula.
 
 ---
 
