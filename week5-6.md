@@ -1,6 +1,6 @@
 > ✍️ **Added by:** Ayush Kumar, <03/10/2026>
 
-# Types of Branch Points
+#1 Types of Branch Points
 
 ## 1. Classification of Branch Points
 
@@ -109,7 +109,7 @@ $$z - 1 = r_1 e^{i\theta_1}, \quad z + 1 = r_2 e^{i\theta_2} \implies f(z) = \sq
 *
 
 
-# Contour Integrals in the Presence of Branch Points
+#2 Contour Integrals in the Presence of Branch Points
 
 
 
