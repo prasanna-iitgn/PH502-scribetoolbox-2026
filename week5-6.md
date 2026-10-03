@@ -49,17 +49,8 @@ A point $z_0$ is called a **branch point** if going around it in a small closed 
 ---
 > > ✍️ **Added by:** Garvita Bajpai, <03/10/2026>
 
-## 2. Multi-Point Branch Cuts
 
-When a function has two branch points, we can connect them with a line segment called a **branch cut** so that the function stays single-valued outside this cut.
 
-### Worked Example: $f(z) = \sqrt{z^2 - 1} = (z-1)^{1/2}(z+1)^{1/2}$
-
-* **Branch points:** $z = 1$ and $z = -1$.
-* **At infinity:** As $z \to \infty$, $f(z) \approx z$, which is single-valued. So $z = \infty$ is **not** a branch point.
-* **Branch cut:** We can just draw a cut on the real axis between $[-1, 1]$.
-
-* ```markdown
 ## 2. Multi-Point Branch Cuts
 
 When a function has two branch points, we can connect them with a line segment called a **branch cut** so that the function stays single-valued outside this cut.
