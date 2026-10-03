@@ -1,4 +1,811 @@
+✍️ **Added by:** Ayush Kumar, <03/10/2026>
 
+# Types of Branch Points
+
+## 1. Classification of Branch Points
+
+A point $z_0$ is called a **branch point** of a complex function if, after making a complete circuit around $z_0$, the function does not return to its original value. In other words, analytic continuation of the function around $z_0$ takes us from one branch of the function to another.
+
+The essential idea is that a branch point is a point around which the function becomes **multivalued**. The behavior after repeated circuits determines the type of branch point.
+
+Branch points can be classified mainly into:
+
+1. **Algebraic Branch Points**
+2. **Winding Points**
+3. **Logarithmic Branch Points**
+
+---
+
+### (i) Algebraic Branch Points
+
+**Definition:**  
+
+A point $z_0$ is called an **algebraic branch point** if, after going around $z_0$ a **finite number of times**, say $q$ times, the function returns to its original value.
+
+Thus, if one circuit takes the function from one branch to another, repeated circuits eventually bring it back to the starting branch.
+
+For a function of the form
+
+$$
+f(z)=(z-z_0)^{p/q},
+$$
+
+where $p$ and $q$ are integers and $p/q$ is in its lowest terms, $z_0$ is an algebraic branch point.
+
+#### General form
+
+Functions such as
+
+$$
+f(z)=z^{p/q}
+$$
+
+or
+
+$$
+f(z)=(z-z_0)^{p/q}
+$$
+
+have algebraic branch points.
+
+Writing
+
+$$
+z-z_0=re^{i\theta},
+$$
+
+we obtain
+
+$$
+(z-z_0)^{p/q}
+=
+r^{p/q}e^{i(p/q)\theta}.
+$$
+
+When we make one complete counter-clockwise circuit around $z_0$,
+
+$$
+\theta\rightarrow\theta+2\pi.
+$$
+
+Therefore,
+
+$$
+(z-z_0)^{p/q}
+\rightarrow
+(z-z_0)^{p/q}e^{i2\pi p/q}.
+$$
+
+Thus, one complete circuit changes the phase by
+
+$$
+\boxed{\Delta\phi=\frac{2\pi p}{q}}.
+$$
+
+After $q$ complete circuits, the accumulated phase change is
+
+$$
+q\left(\frac{2\pi p}{q}\right)=2\pi p,
+$$
+
+and hence
+
+$$
+e^{i2\pi p}=1.
+$$
+
+Therefore, the function returns to its original branch after a finite number of circuits.
+
+#### Riemann Surface
+
+An algebraic branch point with denominator $q$ generally requires **$q$ Riemann sheets** when $p/q$ is in lowest terms.
+
+Each complete $2\pi$ loop around the branch point moves the function from one sheet to the next:
+
+$$
+1\rightarrow2\rightarrow3\rightarrow\cdots\rightarrow q
+\rightarrow1.
+$$
+
+Hence, after $q$ circuits, we return to the original sheet.
+
+---
+
+### Example: $f(z)=z^{1/3}$
+
+Consider
+
+$$
+f(z)=z^{1/3}.
+$$
+
+Writing
+
+$$
+z=re^{i\theta},
+$$
+
+we have
+
+$$
+w=z^{1/3}
+=
+r^{1/3}e^{i\theta/3}.
+$$
+
+More generally,
+
+$$
+w
+=
+r^{1/3}
+e^{i(\theta+2\pi n)/3},
+\qquad n\in\mathbb Z.
+$$
+
+The possible values differ by a phase of
+
+$$
+\frac{2\pi}{3}.
+$$
+
+Therefore, each complete circuit around $z=0$ moves the function to the next branch.
+
+#### Successive circuits around $z=0$
+
+- **Initial branch:** $n=0$
+
+$$
+w=r^{1/3}e^{i\theta/3}.
+$$
+
+- **After the first loop:**
+
+$$
+\theta\rightarrow\theta+2\pi
+$$
+
+and the phase changes by
+
+$$
+\frac{2\pi}{3}.
+$$
+
+The function moves to the second sheet.
+
+- **After the second loop:**
+
+The accumulated phase change is
+
+$$
+\frac{4\pi}{3},
+$$
+
+and the function moves to the third sheet.
+
+- **After the third loop:**
+
+The accumulated phase change is
+
+$$
+2\pi,
+$$
+
+so
+
+$$
+e^{i2\pi}=1.
+$$
+
+The function therefore returns to its original value.
+
+Thus,
+
+$$
+\boxed{\text{Number of Riemann sheets}=3}.
+$$
+
+The branch points of $z^{1/3}$ are
+
+$$
+\boxed{z=0\quad\text{and}\quad z=\infty}.
+$$
+
+---
+
+### (ii) Winding Points
+
+**Definition:**  
+
+A **winding point** is a branch point for a function such as
+
+$$
+f(z)=z^\alpha,
+$$
+
+where $\alpha$ is an **irrational number**.
+
+Writing
+
+$$
+z=re^{i\theta},
+$$
+
+we obtain
+
+$$
+z^\alpha=r^\alpha e^{i\alpha\theta}.
+$$
+
+After one complete counter-clockwise circuit around $z=0$,
+
+$$
+\theta\rightarrow\theta+2\pi.
+$$
+
+Therefore,
+
+$$
+z^\alpha
+\rightarrow
+z^\alpha e^{i2\pi\alpha}.
+$$
+
+After $n$ complete circuits, the phase factor becomes
+
+$$
+e^{i2\pi\alpha n}.
+$$
+
+For the function to return to its original value, we would require
+
+$$
+e^{i2\pi\alpha n}=1.
+$$
+
+This requires
+
+$$
+\alpha n=m,
+$$
+
+where $m$ is an integer.
+
+However, when $\alpha$ is irrational, no non-zero integer $n$ can make $\alpha n$ an integer.
+
+Therefore,
+
+$$
+e^{i2\pi\alpha n}\neq1
+\qquad
+\text{for every finite }n\neq0.
+$$
+
+Hence, the function never returns exactly to its starting branch after any finite number of circuits.
+
+Therefore, an irrational power requires an **infinite number of Riemann sheets**.
+
+#### Important result
+
+For
+
+$$
+f(z)=z^\alpha,
+$$
+
+- $\alpha$ rational $\Rightarrow$ finite number of sheets $\Rightarrow$ algebraic branch point.
+- $\alpha$ irrational $\Rightarrow$ infinitely many sheets $\Rightarrow$ winding point.
+
+---
+
+### (iii) Logarithmic Branch Points
+
+**Definition:**  
+
+A point $z_0$ is called a **logarithmic branch point** when analytic continuation around it causes the function to acquire an additional constant value after every circuit, and the function never returns to its original value after any finite number of circuits.
+
+The standard example is
+
+$$
+f(z)=\ln(z-z_0).
+$$
+
+For simplicity, consider
+
+$$
+f(z)=\ln z.
+$$
+
+Writing
+
+$$
+z=re^{i\theta},
+$$
+
+the complex logarithm is
+
+$$
+\ln z
+=
+\ln r+i\theta+2\pi ni,
+\qquad n\in\mathbb Z.
+$$
+
+Thus, $\ln z$ is a multivalued function.
+
+After one complete counter-clockwise circuit around $z=0$,
+
+$$
+\theta\rightarrow\theta+2\pi.
+$$
+
+Hence,
+
+$$
+\ln z
+\rightarrow
+\ln z+2\pi i.
+$$
+
+After $n$ complete circuits,
+
+$$
+\boxed{\ln z\rightarrow\ln z+2\pi ni}.
+$$
+
+Since
+
+$$
+2\pi ni\neq0
+$$
+
+for any non-zero integer $n$, the function never returns to its original value after a finite number of circuits.
+
+Thus, infinitely many Riemann sheets are required.
+
+The logarithmic function has branch points at
+
+$$
+\boxed{z=0\quad\text{and}\quad z=\infty}.
+$$
+
+#### Example: $\ln(1)$
+
+On the principal sheet,
+
+$$
+\ln(1)=0.
+$$
+
+However, on different sheets,
+
+$$
+\ln(1)=2\pi ni.
+$$
+
+Therefore,
+
+$$
+\boxed{\ln(1)=2\pi ni,\qquad n\in\mathbb Z}.
+$$
+
+The value $0$ corresponds only to the **principal branch** ($n=0$).
+
+---
+
+> > ✍️ **Added by:** Garvita Bajpai, <03/10/2026>
+
+## 2. Multi-Point Branch Cuts
+
+When a function possesses more than one branch point, a suitable **branch cut** can be introduced to prevent the function from becoming multivalued in the remaining region.
+
+A branch cut is a curve drawn in the complex plane connecting branch points, or connecting a finite branch point to infinity, such that the function becomes **single-valued** in the remaining domain.
+
+The exact choice of branch cut is not unique. Different choices can be made depending on convenience, but the locations of the branch points themselves are fixed by the function.
+
+---
+
+### Worked Example: $f(z)=\sqrt{z^2-1}$
+
+Consider
+
+$$
+f(z)=\sqrt{z^2-1}.
+$$
+
+Factorizing,
+
+$$
+z^2-1=(z-1)(z+1),
+$$
+
+so that
+
+$$
+f(z)
+=
+\sqrt{(z-1)(z+1)}
+=
+(z-1)^{1/2}(z+1)^{1/2}.
+$$
+
+The square-root factors indicate that the points where the arguments vanish must be examined.
+
+#### Branch points
+
+For the first factor,
+
+$$
+(z-1)^{1/2},
+$$
+
+the branch point occurs at
+
+$$
+z=1.
+$$
+
+For the second factor,
+
+$$
+(z+1)^{1/2},
+$$
+
+the branch point occurs at
+
+$$
+z=-1.
+$$
+
+Therefore,
+
+$$
+\boxed{\text{Branch points: }z=1,\,-1}.
+$$
+
+---
+
+### Checking the point at infinity
+
+To determine whether $z=\infty$ is also a branch point, examine the behavior as
+
+$$
+z\rightarrow\infty.
+$$
+
+We have
+
+$$
+\sqrt{z^2-1}
+=
+z\sqrt{1-\frac{1}{z^2}}.
+$$
+
+For large $z$,
+
+$$
+\sqrt{1-\frac{1}{z^2}}
+\approx1,
+$$
+
+so
+
+$$
+f(z)\approx z.
+$$
+
+Since $z$ is single-valued, there is no additional branching at infinity in this case.
+
+Therefore,
+
+$$
+\boxed{z=\infty\text{ is not a branch point}.}
+$$
+
+---
+
+### Choice of Branch Cut
+
+Since there are two finite branch points, $z=-1$ and $z=1$, we can connect them by a line segment along the real axis.
+
+Thus, a convenient branch cut is
+
+$$
+\boxed{[-1,1]}.
+$$
+
+The complex plane is then considered with the line segment $[-1,1]$ removed.
+
+The function can be made single-valued in this cut plane.
+
+---
+
+### Behavior on the Real Axis
+
+Let
+
+$$
+z=x,
+$$
+
+where $x$ is real.
+
+We examine different regions of the real axis.
+
+| Region on Real Axis | Phase of $(z-1)^{1/2}$ | Phase of $(z+1)^{1/2}$ | Total Phase | Function Value $f(z)$ |
+| :--- | :---: | :---: | :---: | :---: |
+| **Right of $+1$** ($x>1$) | $0$ | $0$ | $0$ | $+\sqrt{x^2-1}$ |
+| **Between $-1$ and $+1$ (Top edge)** | $\pi/2$ | $0$ | $\pi/2$ | $+i\sqrt{1-x^2}$ |
+| **Between $-1$ and $+1$ (Bottom edge)** | $\pi/2$ | $\pi$ | $3\pi/2$ | $-i\sqrt{1-x^2}$ |
+| **Left of $-1$** ($x<-1$) | $\pi/2$ | $\pi/2$ | $\pi$ | $-\sqrt{x^2-1}$ |
+
+---
+
+### Region I: $x>1$
+
+For $x>1$,
+
+$$
+x-1>0,\qquad x+1>0.
+$$
+
+Both factors are positive real numbers. Therefore, their phases are
+
+$$
+\arg(x-1)=0,
+\qquad
+\arg(x+1)=0.
+$$
+
+Hence the total phase is
+
+$$
+0.
+$$
+
+Therefore,
+
+$$
+f(x)=+\sqrt{x^2-1}.
+$$
+
+---
+
+### Region II: $-1<x<1$ — Upper Edge
+
+For points approaching the branch cut from above, the arguments of the factors must be considered carefully.
+
+In this region,
+
+$$
+x-1<0,
+$$
+
+so the factor $(x-1)^{1/2}$ contributes a phase of
+
+$$
+\frac{\pi}{2}.
+$$
+
+The factor $x+1$ remains positive and therefore contributes zero phase.
+
+Hence,
+
+$$
+\text{Total phase}
+=
+\frac{\pi}{2}.
+$$
+
+Therefore,
+
+$$
+f(x)
+=
+i\sqrt{1-x^2}.
+$$
+
+Thus,
+
+$$
+\boxed{f(x+i0)=+i\sqrt{1-x^2}}.
+$$
+
+---
+
+### Region III: $-1<x<1$ — Lower Edge
+
+When approaching the branch cut from below, the phase assignment changes.
+
+The total phase becomes
+
+$$
+\frac{3\pi}{2}.
+$$
+
+Therefore,
+
+$$
+f(x)
+=
+e^{i3\pi/2}\sqrt{1-x^2}.
+$$
+
+Since
+
+$$
+e^{i3\pi/2}=-i,
+$$
+
+we obtain
+
+$$
+\boxed{f(x-i0)=-i\sqrt{1-x^2}}.
+$$
+
+Thus, the function has different limiting values on the two sides of the branch cut.
+
+---
+
+### Region IV: $x<-1$
+
+For $x<-1$, both $x-1$ and $x+1$ are negative.
+
+The corresponding phases combine to give a total phase of
+
+$$
+\pi.
+$$
+
+Therefore,
+
+$$
+f(x)
+=
+e^{i\pi}\sqrt{x^2-1}.
+$$
+
+Since
+
+$$
+e^{i\pi}=-1,
+$$
+
+we obtain
+
+$$
+\boxed{f(x)=-\sqrt{x^2-1}}.
+$$
+
+---
+
+## Phase Jump Across the Branch Cut
+
+For
+
+$$
+-1<x<1,
+$$
+
+the limiting values from the upper and lower sides are
+
+$$
+f(x+i0)=+i\sqrt{1-x^2},
+$$
+
+and
+
+$$
+f(x-i0)=-i\sqrt{1-x^2}.
+$$
+
+Therefore, the difference between the two values is
+
+$$
+f(x+i0)-f(x-i0)
+=
+i\sqrt{1-x^2}
+-
+\left(-i\sqrt{1-x^2}\right).
+$$
+
+Hence,
+
+$$
+\boxed{
+f(x+i0)-f(x-i0)
+=
+2i\sqrt{1-x^2}
+}.
+$$
+
+This difference is called the **jump across the branch cut**.
+
+The function therefore has different boundary values on the two sides of the cut.
+
+---
+
+## Behavior Outside the Branch Cut
+
+For
+
+$$
+x>1
+$$
+
+and
+
+$$
+x<-1,
+$$
+
+the function has the same limiting value when approached from above or below the real axis.
+
+Therefore, there is no discontinuity across the real axis outside the interval $[-1,1]$.
+
+The discontinuity is confined to the chosen branch cut.
+
+---
+
+# Important Things to Remember
+
+1. A **branch point** is a point around which analytic continuation changes the branch of a multivalued function.
+
+2. For an **algebraic branch point**, a finite number of circuits returns the function to its original branch.
+
+3. For a **winding point**, infinitely many circuits are required because the exponent is irrational.
+
+4. For a **logarithmic branch point**, every circuit adds a constant multiple of $2\pi i$ to the function.
+
+5. A branch cut is introduced to make a multivalued function **single-valued** in the remaining domain.
+
+6. A branch cut can be chosen conveniently; its exact path is not unique.
+
+7. The branch points themselves are determined by the function and **do not change** merely because we choose a different branch cut.
+
+8. A branch cut generally connects two branch points, or connects a finite branch point to
+
+$$
+z=\infty.
+$$
+
+9. To check whether infinity is a branch point, make the substitution
+
+$$
+\boxed{z=\frac{1}{w}}
+$$
+
+and examine the behavior near
+
+$$
+w=0.
+$$
+
+If $w=0$ is a branch point of the transformed function, then
+
+$$
+\boxed{z=\infty}
+$$
+
+is a branch point of the original function.
+
+10. For
+
+$$
+f(z)=\sqrt{z^2-1},
+$$
+
+the finite branch points are
+
+$$
+\boxed{z=\pm1},
+$$
+
+and a convenient branch cut is
+
+$$
+\boxed{[-1,1]}.
+$$
 > > ✍️ **Added by:** Ayush Kumar, <03/10/2026>
 
 # Types of Branch Points
