@@ -8,22 +8,6 @@ A point $z_0$ in the complex plane is called a **branch point** if evaluating a 
 
 Branch points are topological features of multi-valued complex functions; unlike isolated singularities (such as poles or removable singularities), they cannot be removed by local algebraic transformations.
 
-## Understanding the Idea
-
-The basic idea of a branch point can be understood through the following sequence:
-
-```mermaid
-flowchart LR
-    A["<b>1. Start in the z-plane</b><br/><br/>Choose a branch point z₀<br/>and a closed loop around it"]
-    -->
-    B["<b>2. Encircle z₀ once</b><br/><br/>Move continuously around<br/>the closed loop"]
-    -->
-    C["<b>3. Branch changes</b><br/><br/>The function does not return<br/>to its original value"]
-    -->
-    D["<b>4. New Riemann sheet</b><br/><br/>The function moves onto<br/>a different branch"]
-
----
-
 ### (i) Algebraic Branch Points
 
 **Definition:** A branch point where encircling $z_0$ a **finite number of times** ($q$ times) brings the multi-valued function back to its original value on the starting sheet.
