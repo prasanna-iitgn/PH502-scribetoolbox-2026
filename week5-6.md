@@ -146,7 +146,7 @@ $$
 
 > > ✍️ **Added by:** Vishnuvardhan Balra, 2026-10-03
 
-### 2. Contour hugging a finite cut: $\int_0^1 x^{1-p}(1-x)^pQ(x)\,dx$
+### 2. contour enclosing a finite cut: $\int_0^1 x^{1-p}(1-x)^pQ(x)\,dx$
 
 **Statement:**
 Let $0<p<1$ and let $Q(z)$ be rational with no poles on $0\le z\le1$. Put $g(z)=z^{1-p}(z-1)^{p}$, with branch points $z=0,1$ and the cut taken along $[0,1]$. For a thin rectangle $\Gamma$ around the cut (counter-clockwise),
@@ -156,7 +156,7 @@ $$
 \boxed{\ \int_0^1 x^{1-p}(1-x)^{p}\,Q(x)\,dx=-\frac{1}{2i\sin(\pi p)}\oint_\Gamma g(z)\,Q(z)\,dz\ }
 $$
 
-**Derivation / justification (condensed):**
+**Derivation / justification:**
 Let $\theta=\arg z$ and $\phi=\arg(z-1)$, both in $(0,2\pi)$. Then $g=r^{1-p}\rho^{\,p}e^{i[(1-p)\theta+p\phi]}$ with $r=|z|$, $\rho=|z-1|$.
 
 - On the cut, $0<x<1$: $\phi=\pi$ on both sides. Above, $\theta=0$, so $\arg g=p\pi$. Below, $\theta=2\pi$, so $\arg g=2\pi(1-p)+p\pi=2\pi-p\pi\equiv-p\pi$.
