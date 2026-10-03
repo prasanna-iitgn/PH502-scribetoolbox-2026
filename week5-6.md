@@ -47,6 +47,7 @@ A point $z_0$ is called a **branch point** if going around it in a small closed 
 * Note: $\ln(1) = 0$ is true **only on the principal sheet** ($n=0$)[cite: 3]. On sheet $n$, $\ln(1) = 2\pi n i$[cite: 3].
 
 ---
+> > ✍️ **Added by:** Garvita , <03/10/2026>
 
 ## 2. Multi-Point Branch Cuts
 
@@ -57,3 +58,55 @@ When a function has two branch points, we can connect them with a line segment c
 * **Branch points:** $z = 1$ and $z = -1$[cite: 4].
 * **At infinity:** As $z \to \infty$, $f(z) \approx z$, which is single-valued[cite: 4, 6]. So $z = \infty$ is **not** a branch point[cite: 4].
 * **Branch cut:** We can just draw a cut on the real axis between $[-1, 1]$[cite: 4, 5].
+
+* ```markdown
+## 2. Multi-Point Branch Cuts
+
+When a function has two branch points, we can connect them with a line segment called a **branch cut** so that the function stays single-valued outside this cut[cite: 4, 6].
+
+### Worked Example: $f(z) = \sqrt{z^2 - 1} = (z-1)^{1/2}(z+1)^{1/2}$
+
+* **Branch points:** $z = 1$ and $z = -1$[cite: 4].
+* **At infinity:** As $z \to \infty$, $f(z) \approx z$, which is single-valued[cite: 4, 6]. So $z = \infty$ is **not** a branch point[cite: 4].
+* **Branch cut:** We can just draw a cut on the real axis between $[-1, 1]$[cite: 4, 5].
+
+
+```
+
+```
+            Phase behavior of f(z) = (z-1)^(1/2) * (z+1)^(1/2)
+
+                         Phase = π/2 + 0 = π/2
+                        -----------------------
+
+```
+
+Phase = π/2 + π/2 = π                            Phase = 0 + 0 = 0
+-----------------------●=========================●---------------------> Re(z)
+(Left of -1)       -1       (Branch Cut)      +1      (Right of +1)
+-----------------------
+Phase = π + π/2 = 3π/2
+
+```
+
+| Region on Real Axis | Phase of $(z-1)^{1/2}$ | Phase of $(z+1)^{1/2}$ | Total Phase | Function Value $f(z)$ |
+| :--- | :---: | :---: | :---: | :---: |
+| **Right of $+1$** ($x > 1$) | $0$ | $0$ | $0$ | $+\sqrt{x^2 - 1}$[cite: 5] |
+| **Between $-1$ and $+1$ (Top edge)** | $\pi/2$ | $0$ | $\pi/2$ | $+i\sqrt{1 - x^2}$[cite: 5] |
+| **Between $-1$ and $+1$ (Bottom edge)** | $\pi/2$ | $\pi$ | $3\pi/2$ | $-i\sqrt{1 - x^2}$[cite: 5] |
+| **Left of $-1$** ($x < -1$) | $\pi/2$ | $\pi/2$ | $\pi$ | $-\sqrt{x^2 - 1}$[cite: 5] |
+
+* **Phase Jump across the cut:**
+  * Crossing the segment $[-1, 1]$ gives a jump of $(+i\sqrt{1-x^2}) - (-i\sqrt{1-x^2}) = 2i\sqrt{1-x^2}$[cite: 5].
+* **Outside the cut:**
+  * For $x > 1$ and $x < -1$, the total phase is the same above and below the axis, which shows that the function is continuous outside $[-1, 1]$[cite: 5, 6].
+
+---
+
+### Important Things to Remember
+
+* A branch cut must connect at least two branch points (which can include $z = \infty$)[cite: 3].
+* The choice of branch cut line is up to us, but the branch points themselves never change.
+* To check if infinity is a branch point, replace $z = 1/w$ and see if $w = 0$ is a branch point.
+
+```
