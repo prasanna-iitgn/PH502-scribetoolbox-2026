@@ -1,7 +1,7 @@
 
 > > ✍️ **Added by:** Ayush Kumar, <03/10/2026>
 
-# Types of Branch Points & Branch Cuts
+# Types of Branch PointS
 
 ## 1. Classification of Branch Points
 
@@ -47,7 +47,7 @@ A point $z_0$ is called a **branch point** if going around it in a small closed 
 * Note: $\ln(1) = 0$ is true **only on the principal sheet** ($n=0$)[cite: 3]. On sheet $n$, $\ln(1) = 2\pi n i$[cite: 3].
 
 ---
-> > ✍️ **Added by:** Garvita , <03/10/2026>
+> > ✍️ **Added by:** Garvita Bajpai, <03/10/2026>
 
 ## 2. Multi-Point Branch Cuts
 
@@ -69,25 +69,6 @@ When a function has two branch points, we can connect them with a line segment c
 * **Branch points:** $z = 1$ and $z = -1$[cite: 4].
 * **At infinity:** As $z \to \infty$, $f(z) \approx z$, which is single-valued[cite: 4, 6]. So $z = \infty$ is **not** a branch point[cite: 4].
 * **Branch cut:** We can just draw a cut on the real axis between $[-1, 1]$[cite: 4, 5].
-
-
-```
-
-```
-            Phase behavior of f(z) = (z-1)^(1/2) * (z+1)^(1/2)
-
-                         Phase = π/2 + 0 = π/2
-                        -----------------------
-
-```
-
-Phase = π/2 + π/2 = π                            Phase = 0 + 0 = 0
------------------------●=========================●---------------------> Re(z)
-(Left of -1)       -1       (Branch Cut)      +1      (Right of +1)
------------------------
-Phase = π + π/2 = 3π/2
-
-```
 
 | Region on Real Axis | Phase of $(z-1)^{1/2}$ | Phase of $(z+1)^{1/2}$ | Total Phase | Function Value $f(z)$ |
 | :--- | :---: | :---: | :---: | :---: |
