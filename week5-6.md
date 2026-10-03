@@ -104,7 +104,6 @@ $$z - 1 = r_1 e^{i\theta_1}, \quad z + 1 = r_2 e^{i\theta_2} \implies f(z) = \sq
 * **Cut Flexibility:** The choice of branch cut path is arbitrary, but the endpoint branch points themselves are invariant properties of the function.
 * **Testing Infinity:** To verify if infinity is a branch point, substitute $z = 1/w$ and test whether $w = 0$ is a branch point.
 * **Multiple Branch Points:** If a closed contour encloses multiple branch points, sum the phase changes from all enclosed points. If the total phase shift is an integer multiple of $2\pi$, no branch cut needs to extend to infinity through that outer region.
-*
 
 > > ✍️ **Added by:** Mohammed Sahil, 2026-10-03
 
