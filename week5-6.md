@@ -145,7 +145,7 @@ $$
 
 ---
 
-**Added by:** Vishnuvardhan Balra, 2026-10-03
+> > ✍️ **Added by:** Vishnuvardhan Balra, 2026-10-03
 
 ### 2. Contour hugging a finite cut: $\int_0^1 x^{1-p}(1-x)^pQ(x)\,dx$
 
@@ -227,7 +227,7 @@ The numerical value of the integral is $1.20920$. In general $\int_0^\infty\frac
 
 ---
 
-**Added by:** Nishanth SS, 2026-10-03
+> > ✍️ **Added by:** Nishanth SS, 2026-10-03
 
 ### 4. Integral across a finite cut via a large circle: $\int_a^b\dfrac{dx}{\sqrt{(b-x)(x-a)}}=\pi$
 
