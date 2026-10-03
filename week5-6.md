@@ -1,7 +1,7 @@
 
 > > ✍️ **Added by:** Ayush Kumar, <03/10/2026>
 
-# Types of Branch PointS
+# Types of Branch Points
 
 ## 1. Classification of Branch Points
 
