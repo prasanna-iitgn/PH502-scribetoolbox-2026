@@ -1,4 +1,4 @@
-> ✍️ **Added by:** Ayush Kumar, <03/10/2026>
+> ✍️ **Added by:** Ayush Kumar, <2026/10/03>
 
 # Types of Branch Points
 
@@ -58,7 +58,7 @@ Branch points are topological features of multi-valued complex functions; unlike
 * **Principal Sheet vs. Other Sheets:** $\ln(1) = 0$ is true **only on the principal sheet** ($n = 0$, where $\theta \in (-\pi, \pi]$). On sheet $n$, $\ln(1) = 2\pi n i$.
 
 ---
-> > ✍️ **Added by:** Garvita Bajpai, <03/10/2026>
+> > ✍️ **Added by:** Garvita Bajpai, <2026/10/03>
 
 ## 2. Multi-Point Branch Cuts
 
@@ -120,7 +120,7 @@ Entries based on handwritten lecture notes, pp. 119–127 (section "Contour Inte
 
 ---
 
-**Added by:** [MohSahil], 2026-10-02
+**Added by:** [Mohammed Sahil], <2026-10-02>
 
 ### 1. Closed contours on a Riemann surface
 
@@ -147,7 +147,7 @@ $$
 
 ---
 
-**Added by:** [your name(s)], 2026-10-02
+**Added by:** [Vishnu], 2026-10-02
 
 ### 2. Contour hugging a finite cut: $\int_0^1 x^{1-p}(1-x)^pQ(x)\,dx$
 
@@ -192,10 +192,6 @@ $$
 
 Check: this equals the Beta function $B(2-p,1+p)=\dfrac{\Gamma(2-p)\Gamma(1+p)}{\Gamma(3)}$ via $\Gamma(p)\Gamma(1-p)=\pi/\sin\pi p$. At $p=\tfrac12$, $J=\pi/8$, the area of a semicircle of radius $\tfrac12$ ✓. Numerically: $p=\tfrac13$ gives $0.40307$ both from direct integration and from the formula.
 
----
-
-**Added by:** [your name(s)], 2026-10-02
-
 ### 3. Keyhole contour: $\int_0^\infty \dfrac{x^{p-1}}{1+x}\,dx=\dfrac{\pi}{\sin\pi p}$
 
 **Statement:**
@@ -233,7 +229,7 @@ The numerical value of the integral is $1.20920$. In general $\int_0^\infty\frac
 
 ---
 
-**Added by:** [your name(s)], 2026-10-02
+**Added by:** [Nishant SS], 2026-10-02
 
 ### 4. Integral across a finite cut via a large circle: $\int_a^b\dfrac{dx}{\sqrt{(b-x)(x-a)}}=\pi$
 
