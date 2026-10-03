@@ -75,6 +75,8 @@ When a function possesses multiple branch points, we construct **branch cuts**â€
 #### 2. Choice of Branch Cut
 Since $z = \infty$ is not a branch point, the two finite branch points $z = +1$ and $z = -1$ connect directly to each other. We draw a single compact branch cut along the real axis segment $[-1, 1]$.
 
+![Multi-Point Branch Cut](./images/multi-point-branch-cut.png)
+
 #### 3. Polar Analysis Across Regions
 
 Expressing factors in polar coordinates centered at their respective branch points:
