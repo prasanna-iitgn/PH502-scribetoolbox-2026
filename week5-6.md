@@ -1,33 +1,114 @@
-> ✍️ **Added by:** Nikhil Chaudhary, <02/10/2026>
+> ✍️ **Added by:** Ayush Kumar, <03/10/2026>
 
-# Types of Branch Points & Branch Cuts
+# Types of Branch Points & Multi-Point Branch Cuts
 
 ## 1. Classification of Branch Points
 
-A point $z_0$ is called a **branch point** of a multi-valued function $f(z)$ if traversing a small closed loop encircling $z_0$ prevents the function value from returning to its original starting value, forcing a continuous transition onto a different branch.
+A point $z_0$ in the complex plane is called a **branch point** if evaluating a multi-valued function along a small closed loop encircling $z_0$ prevents the function from returning to its original value. Instead, the function transitions onto a different **branch** (or Riemann sheet).
+
+Branch points are topological features of multi-valued complex functions; unlike isolated singularities (such as poles or removable singularities), they cannot be removed by local algebraic transformations.
 
 ---
 
 ### (i) Algebraic Branch Points
 
-**Definition & Concept:** 
-An **algebraic branch point** occurs when going around $z_0$ a **finite number $q$ of times** ($q \in \mathbb{Z}^+$) returns the function back to its initial value. The integer $q$ is called the **order of the branch point** (or order of winding).
+**Definition:** A branch point where encircling $z_0$ a **finite number of times** ($q$ times) brings the multi-valued function back to its original value on the starting sheet.
 
-```mermaid
-graph TD
-    subgraph Sheet1 ["Sheet 1: 0 ≤ θ < 2π"]
-        A["Loop 1: Phase 0 → 2π/3"]
-    end
-    subgraph Sheet2 ["Sheet 2: 2π ≤ θ < 4π"]
-        B["Loop 2: Phase 2π/3 → 4π/3"]
-    end
-    subgraph Sheet3 ["Sheet 3: 4π ≤ θ < 6π"]
-        C["Loop 3: Phase 4π/3 → 2π"]
-    end
-    
-    A -->|"1st Circuit (2π)"| B
-    B -->|"2nd Circuit (2π)"| C
-    C -->|"3rd Circuit (Returns to Sheet 1)"| A> > ✍️ **Added by:** Ayush Kumar, <03/10/2026>
+* **General Form:** Functions like $f(z) = (z - z_0)^{p/q}$, where $p$ and $q$ are coprime integers ($q > 1$).
+* **Branch Order & Phase Shift:** The integer $q$ defines the order or sheet-count. Encircling $z_0$ once alters the argument by $2\pi$, which shifts the overall phase of the function by $2\pi (p/q)$.
+* **Riemann Surface Structure:** Consists of $q$ distinct sheets joined cross-wise along branch cuts:
+  * **Loop 1 ($0 \to 2\pi$):** Phase shifts by $+2\pi(p/q) \to$ transitions from Sheet 1 to Sheet 2.
+  * **Loop 2 ($2\pi \to 4\pi$):** Phase shifts by $+4\pi(p/q) \to$ transitions from Sheet 2 to Sheet 3.
+  * $\dots$
+  * **Loop $q$ ($2\pi(q-1) \to 2\pi q$):** Phase shifts by $+2\pi p$ (an integer multiple of $2\pi$), returning back to Sheet 1.
+
+#### Worked Example: $f(z) = z^{1/3}$
+
+* **Identifying Branch Points:**
+  * **At $z = 0$:** Writing $z = r e^{i\theta}$, we have $f(z) = r^{1/3} e^{i(\theta + 2\pi n)/3}$. Encircling $z = 0$ once ($\Delta\theta = 2\pi$) changes the phase factor by $e^{i 2\pi/3} \neq 1$. Hence, $z = 0$ is a branch point.
+  * **At $z = \infty$:** Substituting $z = 1/w$ gives $g(w) = w^{-1/3}$. Encircling $w = 0$ shifts the phase of $g(w)$ by $-2\pi/3 \neq 0 \pmod{2\pi}$. Thus, $w = 0 \implies z = \infty$ is also an algebraic branch point.
+
+* **Tracking the 3 Riemann Sheets:**
+  * **Loop 1 ($n = 0$):** Phase goes from $0$ to $2\pi/3$ (Sheet 1).
+  * **Loop 2 ($n = 1$):** Phase goes from $2\pi/3$ to $4\pi/3$ (Sheet 2).
+  * **Loop 3 ($n = 2$):** Phase goes from $4\pi/3$ to $2\pi$ (Sheet 3).
+  * **Loop 4 ($n = 3$):** Phase shift equals $e^{i 6\pi / 3} = e^{i 2\pi} = 1$, which returns back to Sheet 1. So $f(z) = z^{1/3}$ requires **3 Riemann sheets**.
+
+---
+
+### (ii) Winding Points (Irrational Power Branch Points)
+
+**Definition:** A branch point for $f(z) = (z - z_0)^\alpha$ where the exponent $\alpha$ is an **irrational real number** (or a complex number with a non-zero imaginary part).
+
+* **Phase Factor:** Encircling $z_0$ once ($\Delta\theta = 2\pi$) multiplies the function value by $e^{i 2\pi \alpha}$.
+* **Infinite Sheet Structure:** After $n$ full turns around $z_0$, the phase factor becomes $e^{i 2\pi n \alpha}$. Because $\alpha$ is irrational, $n\alpha$ can never be an integer for any non-zero integer $n$.
+* Since $e^{i 2\pi n \alpha} \neq 1$ for all $n \in \mathbb{Z} \setminus \{0\}$, you can loop infinitely many times and never return to the initial starting sheet.
+* **Riemann Surface:** Requires an **infinite number of Riemann sheets** spiraling endlessly in both directions (like a helical staircase).
+
+---
+
+### (iii) Logarithmic Branch Points
+
+**Definition:** A branch point where going around $z_0$ continuously adds a constant non-zero value to the function during every full loop, so it never returns to its starting value.
+
+* **General Form:** $f(z) = \ln(z - z_0)$.
+* **Complex Logarithm Formula:** 
+  $$\ln(z - z_0) = \ln r + i(\theta + 2\pi n), \quad n \in \mathbb{Z}$$
+* **Behavior Around $z_0$:** Every counter-clockwise loop around $z_0$ increases $\theta$ by $2\pi$, adding $+2\pi i$ to the function value:
+  $$f(z \cdot e^{2\pi i}) = \ln r + i(\theta + 2\pi) = f(z) + 2\pi i$$
+* **Branch Points for $\ln z$:** Located at $z = 0$ and $z = \infty$ (verified via $z = 1/w \implies \ln(1/w) = -\ln w$).
+* **Principal Sheet vs. Other Sheets:** $\ln(1) = 0$ is true **only on the principal sheet** ($n = 0$, where $\theta \in (-\pi, \pi]$). On sheet $n$, $\ln(1) = 2\pi n i$.
+
+---
+> > ✍️ **Added by:** Garvita Bajpai, <03/10/2026>
+
+## 2. Multi-Point Branch Cuts
+
+When a function possesses multiple branch points, we construct **branch cuts**—lines or curves connecting the branch points—so that the function remains single-valued and analytic in the remaining region.
+
+### Worked Example: $f(z) = \sqrt{z^2 - 1} = (z-1)^{1/2}(z+1)^{1/2}$
+
+#### 1. Identify Branch Points
+* **Finite Branch Points:** $z = 1$ and $z = -1$ are both algebraic branch points of order 2.
+* **At Infinity ($z \to \infty$):** Substitute $z = 1/w$:
+  $$f(1/w) = \sqrt{\frac{1}{w^2} - 1} = \frac{\sqrt{1 - w^2}}{w}$$
+  As $w \to 0$, $\sqrt{1 - w^2}$ is analytic and single-valued around $w = 0$. The factor $1/w$ is just a simple pole, not a branch point. Therefore, $z = \infty$ is **not** a branch point.
+
+#### 2. Choice of Branch Cut
+Since $z = \infty$ is not a branch point, the two finite branch points $z = +1$ and $z = -1$ connect directly to each other. We draw a single compact branch cut along the real axis segment $[-1, 1]$.
+
+#### 3. Polar Analysis Across Regions
+
+Expressing factors in polar coordinates centered at their respective branch points:
+$$z - 1 = r_1 e^{i\theta_1}, \quad z + 1 = r_2 e^{i\theta_2} \implies f(z) = \sqrt{r_1 r_2} e^{i(\theta_1 + \theta_2)/2}$$
+
+| Region on Real Axis | Phase of $(z-1)^{1/2}$ ($\theta_1/2$) | Phase of $(z+1)^{1/2}$ ($\theta_2/2$) | Total Phase $(\theta_1 + \theta_2)/2$ | Function Value $f(z)$ |
+| :--- | :---: | :---: | :---: | :---: |
+| **Right of $+1$** ($x > 1$) | $0$ | $0$ | $0$ | $+\sqrt{x^2 - 1}$ |
+| **Between $-1$ and $+1$ (Top edge)** | $\pi/2$ | $0$ | $\pi/2$ | $+i\sqrt{1 - x^2}$ |
+| **Between $-1$ and $+1$ (Bottom edge)** | $3\pi/2$ | $0$ | $3\pi/2$ | $-i\sqrt{1 - x^2}$ |
+| **Left of $-1$** ($x < -1$) | $\pi/2$ | $\pi/2$ | $\pi$ | $-\sqrt{x^2 - 1}$ |
+
+#### 4. Discontinuity & Continuity Verification
+* **Phase Jump across the Cut $[-1, 1]$:** 
+  Crossing the segment $[-1, 1]$ gives a discontinuous jump of:
+  $$f_{\text{top}}(x) - f_{\text{bottom}}(x) = (+i\sqrt{1-x^2}) - (-i\sqrt{1-x^2}) = 2i\sqrt{1-x^2}$$
+* **Outside the Cut:** 
+  For a closed path surrounding **both** branch points $z = 1$ and $z = -1$ simultaneously, $\Delta\theta_1 = 2\pi$ and $\Delta\theta_2 = 2\pi$. The net phase shift is:
+  $$\Delta \text{Phase} = \frac{2\pi + 2\pi}{2} = 2\pi$$
+  Since $e^{i 2\pi} = 1$, the function returns to its initial value, confirming that $f(z)$ is continuous and single-valued everywhere outside the segment $[-1, 1]$.
+
+---
+
+### Important Things to Remember
+
+* **Conservation of Cuts:** A branch cut must connect at least two branch points (where infinity $z = \infty$ counts as a valid candidate).
+* **Cut Flexibility:** The choice of branch cut path is arbitrary, but the endpoint branch points themselves are invariant properties of the function.
+* **Testing Infinity:** To verify if infinity is a branch point, substitute $z = 1/w$ and test whether $w = 0$ is a branch point.
+* **Multiple Branch Points:** If a closed contour encloses multiple branch points, sum the phase changes from all enclosed points. If the total phase shift is an integer multiple of $2\pi$, no branch cut needs to extend to infinity through that outer region.
+*
+*
+* > ✍️ **Added by:** Ayush Kumar, <03/10/2026>
 
 # Types of Branch Points
 
