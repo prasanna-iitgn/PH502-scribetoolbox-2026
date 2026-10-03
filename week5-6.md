@@ -5,7 +5,8 @@
 
 ## 1. Classification of Branch Points
 
-A point $z_0$ is called a **branch point** if going around it in a small closed loop brings you to a different branch instead of returning to the original function value
+A point $z_0$ is called a **branch point** if going around it in a small closed loop brings you to a different branch instead of returning to the original function value [cite 3]
+
 ---
 
 ### (i) Algebraic Branch Points
