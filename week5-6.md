@@ -106,9 +106,9 @@ $$z - 1 = r_1 e^{i\theta_1}, \quad z + 1 = r_2 e^{i\theta_2} \implies f(z) = \sq
 * **Multiple Branch Points:** If a closed contour encloses multiple branch points, sum the phase changes from all enclosed points. If the total phase shift is an integer multiple of $2\pi$, no branch cut needs to extend to infinity through that outer region.
 *
 
+> > ✍️ **Added by:** Mohammed Sahil, 2026-10-03
 
 # Contour Integrals in the Presence of Branch Points
-
 
 
 Entries based on handwritten lecture notes, pp. 119–127 (section "Contour Integrals in the Presence of Branch Points"). Each entry follows the same format: statement, condensed derivation, one worked example.
@@ -119,8 +119,6 @@ Entries based on handwritten lecture notes, pp. 119–127 (section "Contour Inte
 - $\arg$ is measured in $(0,2\pi)$ when the cut lies on the positive real axis.
 
 ---
-
-**Added by:** Mohammed Sahil, 2026-10-03
 
 ### 1. Closed contours on a Riemann surface
 
