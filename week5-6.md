@@ -1,6 +1,5 @@
-> ✍️ **Added by:**
->
-> > ✍️ **Added by:** Nikhil Chaudhary, <02/10/2026>
+
+> > ✍️ **Added by:** Ayush Kumar, <03/10/2026>
 
 # Types of Branch Points & Branch Cuts
 
