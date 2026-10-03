@@ -120,7 +120,7 @@ Entries based on handwritten lecture notes, pp. 119–127 (section "Contour Inte
 
 ---
 
-**Added by:** [your name(s)], 2026-10-02
+**Added by:** [MohSahil], 2026-10-02
 
 ### 1. Closed contours on a Riemann surface
 
