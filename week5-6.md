@@ -1,4 +1,33 @@
-> > ✍️ **Added by:** Ayush Kumar, <03/10/2026>
+> ✍️ **Added by:** Nikhil Chaudhary, <02/10/2026>
+
+# Types of Branch Points & Branch Cuts
+
+## 1. Classification of Branch Points
+
+A point $z_0$ is called a **branch point** of a multi-valued function $f(z)$ if traversing a small closed loop encircling $z_0$ prevents the function value from returning to its original starting value, forcing a continuous transition onto a different branch.
+
+---
+
+### (i) Algebraic Branch Points
+
+**Definition & Concept:** 
+An **algebraic branch point** occurs when going around $z_0$ a **finite number $q$ of times** ($q \in \mathbb{Z}^+$) returns the function back to its initial value. The integer $q$ is called the **order of the branch point** (or order of winding).
+
+```mermaid
+graph TD
+    subgraph Sheet1 ["Sheet 1: 0 ≤ θ < 2π"]
+        A["Loop 1: Phase 0 → 2π/3"]
+    end
+    subgraph Sheet2 ["Sheet 2: 2π ≤ θ < 4π"]
+        B["Loop 2: Phase 2π/3 → 4π/3"]
+    end
+    subgraph Sheet3 ["Sheet 3: 4π ≤ θ < 6π"]
+        C["Loop 3: Phase 4π/3 → 2π"]
+    end
+    
+    A -->|"1st Circuit (2π)"| B
+    B -->|"2nd Circuit (2π)"| C
+    C -->|"3rd Circuit (Returns to Sheet 1)"| A> > ✍️ **Added by:** Ayush Kumar, <03/10/2026>
 
 # Types of Branch Points
 
