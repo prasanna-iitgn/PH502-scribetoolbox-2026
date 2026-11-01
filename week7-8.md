@@ -1,19 +1,15 @@
 > ✍️ **Added by:** Sagar Shakya, 2026-10-30
 # Differential Equations
-
 Differential equations are the simplest way to characterize the laws governing the physics of a variety of systems, so a good understanding of them is indispensable for any student of physics.
 
 ### Differentiation is linear
-
 Derivatives of any order are linear operations:
-
 $$
 \frac{d^n}{dx^n}\bigl(a\varphi(x)+b\psi(x)\bigr)
 = a\frac{d^n\varphi}{dx^n}+b\frac{d^n\psi}{dx^n}.
 $$
 
-Hence the general differential operator
-
+In operator notation, the general differential operator can be represented as
 $$
 \boxed{
 \mathcal{L} \equiv \sum_{\nu=0}^{n} p_\nu(x)
@@ -21,54 +17,36 @@ $$
 }
 $$
 
-is also linear, i.e.
+**Remark:**
+The differential operator is linear: each term $\(p_\nu(x)\,d^\nu/dx^\nu\)$ is a derivative (linear) followed by multiplication by a fixed function (also linear), and a sum of linear operators is linear.
 
-$$
-\mathcal{L}[a\varphi+b\psi]
-= a\mathcal{L}\varphi+b\mathcal{L}\psi
-$$
-
-(check!).
-
-> **Remark (Theory):**
->
-> The check is immediate: each term \(p_\nu(x)\,d^\nu/dx^\nu\) is a derivative (linear) followed by multiplication by a fixed function (also linear), and a sum of linear operators is linear.
-
-### Linear and homogeneous ODEs
-
+## Linear and Homogeneous ODEs
 **Linear ODE:**
-
 $$
 \mathcal{L}\varphi(x)=F(x)
 $$
 
 **Homogeneous ODE:**
-
 $$
 \mathcal{L}\varphi(x)=0
 \quad
 (\varphi \text{ appears to the same power in every term})
 $$
 
-**Inhomogeneous ODE:**
-
+**Non-homogeneous ODE:**
 $$
 \mathcal{L}\varphi(x)=F(x)
 =F(x)(\varphi(x))^0
 $$
 
 ### Non-uniqueness and superposition
-
 Solutions of linear ODEs are in general not unique (without additional *boundary conditions*). Any linear combination of two solutions is another solution: if
-
 $$
 \mathcal{L}\varphi=0
 \qquad \text{and} \qquad
 \mathcal{L}\psi=0,
 $$
-
 then
-
 $$
 \mathcal{L}[a\varphi+b\psi]=0.
 $$
@@ -77,23 +55,15 @@ $$
 
 The **order** of an ODE is the order of its highest derivative; the **degree** is the power of that highest derivative.
 
-> **Remark (Theory):**
->
-> Superposition holds only for homogeneous linear equations. For \(\mathcal{L}y=F\neq 0\), the sum of two solutions solves the equation with source \(2F\), not \(F\). Instead, the difference of two solutions of the inhomogeneous equation solves the homogeneous one, so the general solution is
->
-> $$
-> y=y_{\text{hom}}+y_{\text{part}}.
-> $$
+**Remark:**
+Superposition holds only for homogeneous linear equations. For $\(\mathcal{L}y=F\neq 0\)$, the sum of two solutions solves the equation with source $\(2F\)$, not $\(F\)$. Instead, the difference of two solutions of the non-homogeneous equation solves the homogeneous one, so the general solution is
+$$
+y=y_{\text{hom}}+y_{\text{part}}.
+$$
+where $y_{\text{part}}$ is called the particular solution of the ODE.
 
----
-
-**Reading suggestion:** Arfken/Weber, Sections 7.1–7.3.
-
-### Methods to solve different kinds of DEs
-
-
+## Methods to solve different kinds of ODEs
 ### Linear first-order ODEs
-
 As a class of ODEs with a general solution method, consider
 
 $$
