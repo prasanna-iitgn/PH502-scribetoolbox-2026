@@ -381,6 +381,8 @@ $$
 
 This describes the growth of current in a series RL circuit when a constant voltage is applied at $t=0$. The current starts from zero and approaches its steady-state value $V_0/R$ as time increases.
 
+---
+
 > ✍️ **Added by:** Priya Yadav, Vivek Kumar Meena, 2026-10-30
 ## Second Order Homogeneous Linear ODEs (SOLO)
 
@@ -495,6 +497,8 @@ $$
 $$
 
 Hence $\(z=0\)$ (i.e. $\(x\to\infty\)$) is an *irregular* singularity.
+
+---
 
 ## Frobenius Method
 Consider the homogeneous SOLO
@@ -859,35 +863,35 @@ When $\(j+2=2n\)$, $\(a_{j+2}\)$ blows up. So the series solution fails for $\(s
 
 **Remark:** The two roots differ by $\(2n\)$. If $\(2n\)$ is not an integer, the $\(s=-n\)$ series also works and gives $\(J_{-n}(x)\)$. The breakdown above is the integer-difference case, treated by Fuchs' theorem below.
 
+---
 
 > ✍️ **Added by:** Jigyasa Rana, 2026-10-31
 ## Fuchs' Theorem
+### When does a series solution work?
 
-### When does a series solution work? (Heuristic analysis)
-
-- SHO equation, \(x=0\): an ordinary (non-singular) point \(\Rightarrow\) 2 linearly independent solutions.
-- Bessel equation, \(x=0\): a regular singular point \(\Rightarrow\) only 1 solution from the series.
+- SHO equation, $\(x=0\)$: an ordinary (non-singular) point $\(\Rightarrow\)$ 2 linearly independent solutions.
+- Bessel equation, $\(x=0\)$: a regular singular point $\(\Rightarrow\)$ only 1 solution from the series.
 
 So, seemingly, singular points have some influence. Consider
 
 $$
 y''-\frac{6}{x^2}y=0
-\tag{13A}
+\qquad{\ \ \ \ \ \ \... (13A)}
 $$
 
 $$
 y''-\frac{6}{x^3}y=0
-\tag{13B}
+\qquad{\ \ \ \ \ \ \... (13B)}
 $$
 
 $$
 y''+\frac{1}{x}y'-\frac{b^2}{x^2}y=0
-\tag{13C}
+\qquad{\ \ \ \ \ \ \... (13C)}
 $$
 
 $$
 y''+\frac{1}{x^2}y'-\frac{b^2}{x^2}y=0
-\tag{13D}
+\qquad{\ \ \ \ \ \ \... (13D)}
 $$
 
 **Equation (13A).**
@@ -904,9 +908,9 @@ $$
 s^2-s-6=0,
 $$
 
-so \(s=3\) or \(s=-2\).
+so $\(s=3\)$ or $\(s=-2\)$.
 
-The equation is homogeneous in \(x\) (each term scales as \(x^{-2}\)), so there is no recurrence relation, and \(y=x^s\) gives the two solutions
+The equation is homogeneous in $\(x\)$ (each term scales as $\(x^{-2}\)$), so there is no recurrence relation, and $\(y=x^s\)$ gives the two solutions
 
 $$
 \boxed{
@@ -914,21 +918,21 @@ y=x^3,\qquad y=x^{-2}.
 }
 $$
 
-Note that one of them diverges at \(x=0\). Here \(x=0\) is a regular singular point.
+Note that one of them diverges at $\(x=0\)$. Here $\(x=0\)$ is a regular singular point.
 
 **Equation (13B).**
 
-It differs from (13A) by one power of \(x\) (\(x=0\) is an irregular singularity). The lowest-power condition gives
+It differs from (13A) by one power of $\(x\)$ ($\(x=0\)$ is an irregular singularity). The lowest-power condition gives
 
 $$
 -6a_0=0,
 $$
 
-but \(a_0\neq0\). Therefore there is **no series solution**.
+but $\(a_0\neq0\)$. Therefore there is **no series solution**.
 
 **Equation (13C).**
 
-Here \(x=0\) is a regular singularity. The indicial equation is
+Here $\(x=0\)$ is a regular singularity. The indicial equation is
 
 $$
 s^2-b^2=0,
@@ -946,12 +950,12 @@ $$
 \boxed{
 y=x^b,\qquad y=x^{-b}.
 }
-\tag{14A}
+\qquad{\ \ \ \ \ \ \... (14A)}
 $$
 
 **Equation (13D).**
 
-This only increases the power in the \(y'\) coefficient from \(-1\) to \(-2\) (irregular singularity at \(x=0\)). The indicial equation gives \(s=0\) and the recurrence relation is
+This only increases the power in the $\(y'\)$ coefficient from $\(-1\)$ to $\(-2\)$ (irregular singularity at $\(x=0\)$). The indicial equation gives $\(s=0\)$ and the recurrence relation is
 
 $$
 \boxed{
@@ -969,7 +973,7 @@ $$
 \end{aligned}
 $$
 
-So the power series solution blows up (it has zero radius of convergence), unless \(b\) is chosen such that
+So the power series solution blows up (it has zero radius of convergence), unless $\(b\)$ is chosen such that
 
 $$
 b^2=j_{\max}(j_{\max}-1),
@@ -977,127 +981,35 @@ $$
 
 in which case the series terminates.
 
----
+$\ $
 
-### Statement of the theorem
-
-**Theorem (Fuchs)**
-
-A Frobenius series expansion about an ordinary point or a regular singular point of a SOLO leads to at least one solution of the ODE.
-
-Proving Fuchs' theorem rigorously is somewhat cumbersome (a note is provided on Google Classroom). The key idea is to ask when the series solution converges; unsurprisingly this depends on the behaviour of \(xP(x)\) and \(x^2Q(x)\), especially their Taylor expansions in the region of convergence.
+A Frobenius series expansion about an ordinary point or a regular singular point of a SOLO leads to at least one solution of the ODE. It is useful to note that whether the series solution converges, depends on the behaviour of $\(xP(x)\)$ and $\(x^2Q(x)\)$, especially on their Taylor expansions in the region of convergence.
 
 ### Cases
-
-When expanding about a regular singular or ordinary point (with indicial roots \(s_1\geq s_2\)):
+When expanding about a regular singular or ordinary point (with indicial roots $\(s_1\geq s_2\)$):
 
 1. If the solutions of the indicial equation **differ by a non-integer**, Frobenius produces **two independent solutions**.
 
 2. If the solutions of the indicial equation are **separated by an integer** (including 0), only **one solution is guaranteed**: the *larger* of the two roots definitely gives a solution.
 
-Bessel's equation with integer \(n\) is the second case: \(s=\pm n\) differ by \(2n\), and only the \(s=+n\) root gave a solution.
+Bessel's equation with integer $\(n\)$ is the second case: $\(s=\pm n\)$ differ by $\(2n\)$, and only the $\(s=+n\)$ root gave a solution.
 
-> **Remark (Theory)**
->
-> In the second case the second solution generally contains a logarithm,
->
-> $$
-> y_2=y_1\ln x+\dots
-> $$
->
-> (derived in the next subsection, beyond page 20).
->
-> Also, a Frobenius series about \(x_0\) converges at least up to the nearest other singular point of the ODE in the complex plane.
+**Remark:**
+A Frobenius series about $\(x_0\)$ converges at least up to the nearest other singular point of the ODE in the complex plane.
+
+---
 
 > ✍️ **Added by:** Anushree Srivastava, 2026-11-01
 
-## How to find other solution when Frobenius finds only one
-
-We now develop a method to find the other solution by exploiting some general properties of SOLOs. To this end, we briefly introduce the linear algebra of functions.
-
 ### Concept of Wronskian
 
-#### Linear algebra of functions
-
-1. A function \(f(x)\) that is square-integrable, i.e.
-
-   $$
-   \int_{-\infty}^{\infty}dx\,|f(x)|^2<\infty,
-   $$
-
-   is a vector in an infinite-dimensional vector space, with column-vector representation
-
-   $$
-   f(x)\leftrightarrow
-   \bigl(
-   \dots,f(-x_N),f(-x_{N-1}),\dots,
-   f(0),f(x_1),\dots,f(x_N),\dots
-   \bigr)^T.
-   $$
-
-2. The **inner product** of two functions:
-
-   $$
-   (f(x),g(x))=\langle f|g\rangle
-   =\int dx\,f^*(x)\,g(x).
-   $$
-
-3. Two functions \(\varphi_1(x),\varphi_2(x)\) are **orthogonal** if
-
-   $$
-   \langle\varphi_1|\varphi_2\rangle=0.
-   $$
-
-4. A set of functions \(\{\varphi_1(x),\dots,\varphi_n(x)\}\) is **linearly independent** if
-
-   $$
-   \sum_\lambda k_\lambda\varphi_\lambda(x)=0
-   $$
-
-   has only one solution,
-
-   $$
-   k_1=k_2=\dots=k_n=0.
-   $$
-
-   If not, the set is linearly dependent.
-
-5. If the set is mutually orthogonal \(\Rightarrow\) linearly independent.
-
-   *Proof.* Consider
-
-   $$
-   \Psi(x)=\sum_\lambda k_\lambda\varphi_\lambda
-   $$
-
-   (with the \(\varphi_\lambda\) mutually orthogonal and non-zero). Then
-
-   $$
-   \begin{aligned}
-   \langle\Psi|\Psi\rangle
-   &=\sum_\lambda |k_\lambda|^2
-   \langle\varphi_\lambda|\varphi_\lambda\rangle\\
-   &=0 \quad \text{if }\Psi(x)=0.
-   \end{aligned}
-   $$
-
-   Therefore,
-
-   $$
-   \boxed{k_\lambda=0\qquad\forall\lambda.}
-   $$
-
-   \(\square\)
-
-#### The Wronskian
-
-Now consider a set of solutions \(\{\varphi_1,\dots,\varphi_n\}\) of an ODE. If the set is linearly dependent, there exist \(k_\lambda\), not all zero, with
+Consider a set of solutions $\(\{\varphi_1,\dots,\varphi_n\}\)$ of an ODE. If the set is linearly dependent, there exist $\(k_\lambda\)$, not all zero, with
 
 $$
 \sum_{\lambda=1}^n k_\lambda\varphi_\lambda(x)=0
 $$
 
-for all \(x\). Differentiating repeatedly:
+for all $\(x\)$. Differentiating repeatedly:
 
 $$
 \begin{aligned}
@@ -1108,7 +1020,7 @@ $$
 \end{aligned}
 $$
 
-These are homogeneous linear equations for the variables \(k_\lambda\), valid for all \(x\). A non-trivial solution \(k_\lambda\) (i.e. not all \(k_\lambda=0\), as required for linear dependence) exists only if
+These are homogeneous linear equations for the variables $\(k_\lambda\)$, valid for all $\(x\)$. A non-trivial solution $\(k_\lambda\)$ (i.e. not all $\(k_\lambda=0\)$, as required for linear dependence) exists only if
 
 $$
 \boxed{
@@ -1127,7 +1039,7 @@ $$
 
 Therefore:
 
-- If the Wronskian \(W\neq0\) \(\Rightarrow\) linear independence.
+- If the Wronskian $\(W\neq0\)$ $\(\Rightarrow\)$ linear independence.
 - If \(W=0\) for all \(x\in[a,b]\), then \(\{\varphi_\lambda(x)\}\) is linearly dependent over \([a,b]\).
 
 > **Remark (Theory)**
