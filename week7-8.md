@@ -11,6 +11,7 @@ $$
 $$
 
 In operator notation, the general differential operator can be represented as
+
 $$
 \boxed{
 \mathcal{L} \equiv \sum_{\nu=0}^{n} p_\nu(x)
@@ -23,11 +24,13 @@ The differential operator is linear: each term $\(p_\nu(x)\,d^\nu/dx^\nu\)$ is a
 
 ## Linear and Homogeneous ODEs
 **Linear ODE:**
+
 $$
 \mathcal{L}\varphi(x)=F(x)
 $$
 
 **Homogeneous ODE:**
+
 $$
 \mathcal{L}\varphi(x)=0
 \quad
@@ -35,6 +38,7 @@ $$
 $$
 
 **Non-homogeneous ODE:**
+
 $$
 \mathcal{L}\varphi(x)=F(x)
 =F(x)(\varphi(x))^0
@@ -42,12 +46,15 @@ $$
 
 ### Non-uniqueness and superposition
 Solutions of linear ODEs are in general not unique (without additional *boundary conditions*). Any linear combination of two solutions is another solution: if
+
 $$
 \mathcal{L}\varphi=0
 \qquad \text{and} \qquad
 \mathcal{L}\psi=0,
 $$
+
 then
+
 $$
 \mathcal{L}[a\varphi+b\psi]=0.
 $$
@@ -58,23 +65,30 @@ The **order** of an ODE is the order of its highest derivative; the **degree** i
 
 **Remark:**
 Superposition holds only for homogeneous linear equations. For $\(\mathcal{L}y=F\neq 0\)$, the sum of two solutions solves the equation with source $\(2F\)$, not $\(F\)$. Instead, the difference of two solutions of the non-homogeneous equation solves the homogeneous one, so the general solution is
+
 $$
 y=y_{\text{hom}}+y_{\text{part}}.
 $$
+
 where $y_{\text{part}}$ is called the particular solution of the ODE.
 
 ## Methods to solve different kinds of ODEs
 ### Linear First-Order ODE: Integrating Factor Method
 Consider the first-order linear non-homogeneous ODE
+
 $$
 \frac{dy}{dx}+p(x)y=q(x).
 \tag{2A}
 $$
+
 If the equation is *exact*, i.e. it can be expressed as
+
 $$
 \frac{d}{dx}\varphi(y,x)=0,
 $$
+
 then its solution is simply
+
 $$
 \varphi(y,x)=\text{constant}.
 $$
@@ -82,34 +96,47 @@ $$
 For a general first-order linear ODE, we introduce an **integrating factor** $\alpha(x)$ to convert the left-hand side into a perfect derivative. **Derivation-**
 
 Multiplying equation (2A) throughout by $\alpha(x)$ gives
+
 $$
 \alpha(x)\frac{dy}{dx}+\alpha(x)p(x)y
 =\alpha(x)q(x).
 \tag{2B}
 $$
+
 We want the left-hand side to be expressible as
+
 $$
 \frac{d}{dx}[\alpha(x)y(x)].
 $$
+
 Using the product rule,
+
 $$
 \frac{d}{dx}[\alpha y]
 =\alpha\frac{dy}{dx}+y\frac{d\alpha}{dx}.
 $$
+
 Comparing this with the left-hand side of equation (2B), we require
+
 $$
 \frac{d\alpha}{dx}=\alpha(x)p(x).
 \tag{2C}
 $$
+
 This is a separable differential equation. Rearranging,
+
 $$
 \frac{d\alpha}{\alpha}=p(x)\,dx.
 $$
+
 Integrating both sides,
+
 $$
 \ln\alpha=\int p(x)\,dx,
 $$
+
 which gives the **integrating factor**
+
 $$
 \boxed{
 \alpha(x)=\exp\left[\int p(x)\,dx\right].
@@ -119,14 +146,19 @@ $$
 
 **General Solution:**
 With this choice of integrating factor, equation (2B) becomes
+
 $$
 \frac{d}{dx}[\alpha(x)y(x)]=\alpha(x)q(x).
 $$
+
 Integrating both sides,
+
 $$
 \alpha(x)y(x)=\int\alpha(x)q(x)\,dx+C.
 $$
+
 Therefore, the general solution is
+
 $$
 \boxed{
 y(x)=\frac{1}{\alpha(x)}
@@ -134,52 +166,71 @@ y(x)=\frac{1}{\alpha(x)}
 }
 \tag{2E}
 $$
+
 The solution can be separated into homogeneous and particular parts:
+
 $$
 y(x)=y_h(x)+y_p(x),
 $$
+
 where
+
 $$
 \boxed{
 y_h(x)=\frac{C}{\alpha(x)}
 }
 $$
+
 is the solution of the corresponding homogeneous equation
+
 $$
 \frac{dy}{dx}+p(x)y=0,
 $$
+
 and
+
 $$
 \boxed{
 y_p(x)=\frac{1}{\alpha(x)}
 \int\alpha(x)q(x)\,dx
 }
+
 $$
 is a particular solution of the non-homogeneous equation.
 Thus, the general solution consists of the sum of the homogeneous solution and a particular solution. The arbitrary constant $C$ determines the contribution from the homogeneous part.
 
 #### The Homogeneous First-Order ODE Has Only One Linearly Independent Solution
 Consider the homogeneous first-order linear ODE
+
 $$
 y'(x)+p(x)y(x)=0.
 $$
+
 **Proof:** Let $y_1(x)$ and $y_2(x)$ be two non-zero solutions of this equation. Then,
+
 $$
 \frac{y_1'}{y_1}=-p(x)
 =\frac{y_2'}{y_2}.
 $$
+
 Rearranging,
+
 $$
 \frac{y_1'}{y_1}=\frac{y_2'}{y_2}.
 $$
+
 Integrating both sides,
+
 $$
 \ln|y_1|=\ln|y_2|+C.
 $$
+
 Hence,
+
 $$
 y_1=c\,y_2,
 $$
+
 where $c$ is a constant.
 
 Therefore, any two solutions are proportional to each other, and the homogeneous first-order linear ODE has only **one linearly independent solution**. $\square$
