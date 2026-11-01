@@ -63,130 +63,125 @@ $$
 where $y_{\text{part}}$ is called the particular solution of the ODE.
 
 ## Methods to solve different kinds of ODEs
-### Linear first-order ODEs
-As a class of ODEs with a general solution method, consider
-
+### Linear First-Order ODE: Integrating Factor Method
+Consider the first-order linear non-homogeneous ODE
 $$
-\frac{dy}{dx}+p(x)\,y=q(x).
+\frac{dy}{dx}+p(x)y=q(x).
 \tag{2A}
 $$
-
-If the equation is *exact*, i.e. it can be simplified to
-
+If the equation is *exact*, i.e. it can be expressed as
 $$
 \frac{d}{dx}\varphi(y,x)=0,
 $$
-
-then \(\varphi(y,x)=\text{const}\) is the solution.
-
-If not, introduce an **integrating factor** \(\alpha(x)\):
-
+then its solution is simply
 $$
-\alpha(x)\frac{dy}{dx}+\alpha(x)p(x)\,y=\alpha(x)q(x).
+\varphi(y,x)=\text{constant}.
 $$
 
-We want the left-hand side to be a perfect differential,
+For a general first-order linear ODE, we introduce an **integrating factor** $\alpha(x)$ to convert the left-hand side into a perfect derivative. **Derivation-**
 
+Multiplying equation (2A) throughout by $\alpha(x)$ gives
 $$
-\frac{d}{dx}\bigl[\alpha(x)y(x)\bigr].
+\alpha(x)\frac{dy}{dx}+\alpha(x)p(x)y
+=\alpha(x)q(x).
+\tag{2B}
 $$
-
-This requires
-
+We want the left-hand side to be expressible as
 $$
-\begin{aligned}
+\frac{d}{dx}[\alpha(x)y(x)].
+$$
+Using the product rule,
+$$
 \frac{d}{dx}[\alpha y]
-&=\alpha\frac{dy}{dx}+\alpha p\,y\\
-\alpha\frac{dy}{dx}+\frac{d\alpha}{dx}y
-&=\alpha\frac{dy}{dx}+\alpha p\,y
-\end{aligned}
+=\alpha\frac{dy}{dx}+y\frac{d\alpha}{dx}.
 $$
-
-which gives
-
+Comparing this with the left-hand side of equation (2B), we require
 $$
-\frac{d\alpha}{dx}=\alpha(x)\,p(x),
+\frac{d\alpha}{dx}=\alpha(x)p(x).
+\tag{2C}
 $$
-
-which is a separable equation. Therefore,
-
+This is a separable differential equation. Rearranging,
 $$
-\int\frac{d\alpha}{\alpha}
-=\int^x p(x')\,dx'
+\frac{d\alpha}{\alpha}=p(x)\,dx.
 $$
-
-and hence
-
+Integrating both sides,
+$$
+\ln\alpha=\int p(x)\,dx,
+$$
+which gives the **integrating factor**
 $$
 \boxed{
-\alpha(x)=\exp\left[\int^x p(x')\,dx'\right]
+\alpha(x)=\exp\left[\int p(x)\,dx\right].
 }
+\tag{2D}
 $$
 
-The original equation becomes
-
+**General Solution:**
+With this choice of integrating factor, equation (2B) becomes
 $$
-\frac{d}{dx}[\alpha(x)y(x)]=\alpha(x)q(x),
+\frac{d}{dx}[\alpha(x)y(x)]=\alpha(x)q(x).
 $$
-
-so
-
+Integrating both sides,
+$$
+\alpha(x)y(x)=\int\alpha(x)q(x)\,dx+C.
+$$
+Therefore, the general solution is
 $$
 \boxed{
 y(x)=\frac{1}{\alpha(x)}
-\left[
-\int^x\alpha(x')q(x')\,dx'+C
-\right]
-\equiv y_2(x)+y_1(x)
+\left[\int\alpha(x)q(x)\,dx+C\right].
+}
+\tag{2E}
+$$
+The solution can be separated into homogeneous and particular parts:
+$$
+y(x)=y_h(x)+y_p(x),
+$$
+where
+$$
+\boxed{
+y_h(x)=\frac{C}{\alpha(x)}
 }
 $$
-
-where
-
+is the solution of the corresponding homogeneous equation
 $$
-\begin{aligned}
-y_1(x)&=\frac{C}{\alpha(x)}
-&&\text{solves the homogeneous equation }
-\frac{dy}{dx}+p(x)y=0,\\[8pt]
-y_2(x)&=\frac{1}{\alpha(x)}
-\int^x\alpha(x')q(x')\,dx'
-&&\text{particular solution / particular integral.}
-\end{aligned}
+\frac{dy}{dx}+p(x)y=0,
 $$
+and
+$$
+\boxed{
+y_p(x)=\frac{1}{\alpha(x)}
+\int\alpha(x)q(x)\,dx
+}
+$$
+is a particular solution of the non-homogeneous equation.
+Thus, the general solution consists of the sum of the homogeneous solution and a particular solution. The arbitrary constant $C$ determines the contribution from the homogeneous part.
 
-Thus the solution of equation (2A) is unique up to a constant \(C\) multiplying the homogeneous part.
-
-#### The homogeneous first-order ODE has only one linearly independent solution
-
-Consider
-
+#### The Homogeneous First-Order ODE Has Only One Linearly Independent Solution
+Consider the homogeneous first-order linear ODE
 $$
 y'(x)+p(x)y(x)=0.
 $$
-
-*Proof.* Let \(y_1(x),y_2(x)\) be two solutions. Then
-
+**Proof:** Let $y_1(x)$ and $y_2(x)$ be two non-zero solutions of this equation. Then,
 $$
-\frac{y_1'}{y_1}
-=-p(x)
-=\frac{y_2'}{y_2}
+\frac{y_1'}{y_1}=-p(x)
+=\frac{y_2'}{y_2}.
 $$
-
-which gives
-
+Rearranging,
 $$
-\ln y_1=\ln y_2+C
+\frac{y_1'}{y_1}=\frac{y_2'}{y_2}.
 $$
-
-and hence
-
+Integrating both sides,
 $$
-y_1=c\,y_2.
+\ln|y_1|=\ln|y_2|+C.
 $$
+Hence,
+$$
+y_1=c\,y_2,
+$$
+where $c$ is a constant.
 
-Therefore, \(y_1,y_2\) are not linearly independent. \(\square\)
-
----
+Therefore, any two solutions are proportional to each other, and the homogeneous first-order linear ODE has only **one linearly independent solution**. $\square$
 
 ### ODEs with constant coefficients
 
