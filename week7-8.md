@@ -4,6 +4,7 @@ Differential equations are the simplest way to characterize the laws governing t
 
 ### Differentiation is linear
 Derivatives of any order are linear operations:
+
 $$
 \frac{d^n}{dx^n}\bigl(a\varphi(x)+b\psi(x)\bigr)
 = a\frac{d^n\varphi}{dx^n}+b\frac{d^n\psi}{dx^n}.
