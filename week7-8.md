@@ -1040,17 +1040,16 @@ $$
 Therefore:
 
 - If the Wronskian $\(W\neq0\)$ $\(\Rightarrow\)$ linear independence.
-- If \(W=0\) for all \(x\in[a,b]\), then \(\{\varphi_\lambda(x)\}\) is linearly dependent over \([a,b]\).
+- If $\(W=0\)$ for all $\(x\in[a,b]\)$, then $\(\{\varphi_\lambda(x)\}\)$ is linearly dependent over $\([a,b]\)$.
 
-> **Remark (Theory)**
->
-> The statement "\(W\equiv0\Rightarrow\) dependent" holds for *solutions of the same linear ODE*, which is the case used here. For arbitrary functions, \(W\equiv0\) does not by itself imply dependence (e.g. \(x^2\) and \(x|x|\) have \(W\equiv0\) but are independent on \(\mathbb R\)).
+**Remark:**
+The statement "$\(W\equiv0\Rightarrow\)$ dependent" holds for *solutions of the same linear ODE*, which is the case used here. For arbitrary functions, $\(W\equiv0\)$ does not by itself imply dependence (e.g. $\(x^2\)$ and $\(x|x|\)$ have $\(W\equiv0\)$ but are independent on $\(\mathbb R\)$).
 
 **Example**
 
 **1) SHO solutions**
 
-\(\varphi_1=\sin\omega x\), \(\varphi_2=\cos\omega x\):
+$\(\varphi_1=\sin\omega x\)$, $\(\varphi_2=\cos\omega x\)$:
 
 $$
 \begin{aligned}
@@ -1065,11 +1064,11 @@ W&=
 \end{aligned}
 $$
 
-So \(\varphi_1,\varphi_2\) are linearly independent.
+So $\(\varphi_1,\varphi_2\)$ are linearly independent.
 
 **2)**
 
-\(\dfrac{d^2\varphi}{dx^2}=\varphi(x)\) has solutions
+$\(\dfrac{d^2\varphi}{dx^2}=\varphi(x)\)$ has solutions
 
 $$
 \varphi_1=e^x,\qquad \varphi_2=e^{-x}.
@@ -1089,9 +1088,9 @@ e^x&-e^{-x}
 \end{aligned}
 $$
 
-So \(\{e^x,e^{-x}\}\) is linearly independent.
+So $\(\{e^x,e^{-x}\}\)$ is linearly independent.
 
-But consider the set \(\{e^x,e^{-x},\cosh x\}\):
+But consider the set $\(\{e^x,e^{-x},\cosh x\}\)$:
 
 $$
 W=
@@ -1115,13 +1114,13 @@ $$
 
 #### A second order equation has only two linearly independent solutions
 
-Let \(\{y_1,y_2,y_3\}\) be three solutions of
+Let $\(\{y_1,y_2,y_3\}\)$ be three solutions of
 
 $$
 y''+P(x)y'+Q(x)y=0.
 $$
 
-The Wronskian of a pair \(\{y_j,y_k\}\) is
+The Wronskian of a pair $\(\{y_j,y_k\}\)$ is
 
 $$
 W_{jk}=y_jy_k'-y_j'y_k,
@@ -1133,7 +1132,7 @@ $$
 W_{jk}'=y_jy_k''-y_j''y_k.
 $$
 
-From the ODE, for \(j\) and \(k\):
+From the ODE, for $\(j\)$ and $\(k\)$:
 
 $$
 \frac{y_j''}{y_j}
@@ -1143,7 +1142,7 @@ $$
 +P\frac{y_k'}{y_k}.
 $$
 
-Multiplying by \(y_jy_k\) and rearranging,
+Multiplying by $\(y_jy_k\)$ and rearranging,
 
 $$
 \begin{aligned}
@@ -1159,10 +1158,10 @@ $$
 \boxed{
 W_{jk}'=-P(x)\,W_{jk}.
 }
-\tag{19A}
+\qquad{\ \ \ \ \ \ \... (19A)}
 $$
 
-Now consider the full Wronskian of \(\{y_1,y_2,y_3\}\). Expanding along the second row,
+Now consider the full Wronskian of $\(\{y_1,y_2,y_3\}\)$. Expanding along the second row,
 
 $$
 \begin{aligned}
@@ -1200,7 +1199,7 @@ $$
 
 (two identical rows).
 
-So \(W=0\) and \(\{y_1,y_2,y_3\}\) are linearly dependent. Hence,
+So $\(W=0\)$ and $\(\{y_1,y_2,y_3\}\)$ are linearly dependent. Hence,
 
 $$
 \boxed{
