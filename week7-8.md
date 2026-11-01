@@ -72,13 +72,14 @@ $$
 
 where $y_{\text{part}}$ is called the particular solution of the ODE.
 
+
 ## Methods to solve different kinds of ODEs
 ### Linear First-Order ODE: Integrating Factor Method
 Consider the first-order linear non-homogeneous ODE
 
 $$
-\frac{dy}{dx}+p(x)y=q(x).
-\tag{2A}
+\frac{dy}{dx}+p(x)y=q(x)
+\qquad{\ \ \ \ \ \ \... (2A)}
 $$
 
 If the equation is *exact*, i.e. it can be expressed as
@@ -99,8 +100,8 @@ Multiplying equation (2A) throughout by $\alpha(x)$ gives
 
 $$
 \alpha(x)\frac{dy}{dx}+\alpha(x)p(x)y
-=\alpha(x)q(x).
-\tag{2B}
+=\alpha(x)q(x)
+\qquad{\ \ \ \ \ \ \... (2B)}
 $$
 
 We want the left-hand side to be expressible as
@@ -119,8 +120,8 @@ $$
 Comparing this with the left-hand side of equation (2B), we require
 
 $$
-\frac{d\alpha}{dx}=\alpha(x)p(x).
-\tag{2C}
+\frac{d\alpha}{dx}=\alpha(x)p(x)
+\qquad{\ \ \ \ \ \ \... (2C)}
 $$
 
 This is a separable differential equation. Rearranging,
@@ -141,7 +142,7 @@ $$
 \boxed{
 \alpha(x)=\exp\left[\int p(x)\,dx\right].
 }
-\tag{2D}
+\qquad{\ \ \ \ \ \ \... (2D)}
 $$
 
 **General Solution:**
@@ -164,7 +165,7 @@ $$
 y(x)=\frac{1}{\alpha(x)}
 \left[\int\alpha(x)q(x)\,dx+C\right].
 }
-\tag{2E}
+\qquad{\ \ \ \ \ \ \... (2E)}
 $$
 
 The solution can be separated into homogeneous and particular parts:
@@ -235,65 +236,153 @@ where $c$ is a constant.
 
 Therefore, any two solutions are proportional to each other, and the homogeneous first-order linear ODE has only **one linearly independent solution**. $\square$
 
-### ODEs with constant coefficients
 
-As a warm-up to series solutions, consider the special case of an \(n\)th-order ODE with constant coefficients:
-
-$$
-\frac{d^n y}{dx^n}
-+a_{n-1}\frac{d^{n-1}y}{dx^{n-1}}
-+\dots
-+a_1\frac{dy}{dx}
-+a_0y=0.
-\tag{4B}
-$$
-
-Try the solution form
+### Linear Homogeneous ODEs with Constant Coefficients
+As a warm-up to series solutions, consider a linear homogeneous ODE of order $n$ with constant coefficients:
 
 $$
-y(x)=e^{\alpha x}.
+\begin{aligned}
+\frac{d^ny}{dx^n}
+&+a_{n-1}\frac{d^{n-1}y}{dx^{n-1}}
++a_{n-2}\frac{d^{n-2}y}{dx^{n-2}}\\
+&+\cdots+a_1\frac{dy}{dx}+a_0y=0.
+\end{aligned}
+\qquad{\ \ \ \ \ \ \... (4A)}
 $$
 
-This leads to
+Try a solution of the form
 
 $$
-\alpha^n+a_{n-1}\alpha^{n-1}
-+\dots+a_1\alpha+a_0=0.
-\tag{4A}
+y(x)=e^{mx}.
 $$
 
-If the algebraic equation (4A) has \(n\) non-repeating roots, then
+Since
 
 $$
-e^{\alpha_1x},\dots,e^{\alpha_nx}
+\frac{d^k}{dx^k}e^{mx}=m^ke^{mx},
 $$
 
-are \(n\) linearly independent solutions of equation (4B).
+substituting this form into equation (4A) gives
 
-> **Remark (Theory):**
->
-> Each substitution works because
->
-> $$
-> \frac{d^k}{dx^k}e^{\alpha x}
-> =\alpha^k e^{\alpha x},
-> $$
->
-> so the ODE collapses to
->
-> $$
-> e^{\alpha x}\times
-> \text{(polynomial in }\alpha\text{)}=0,
-> $$
->
-> and \(e^{\alpha x}\neq 0\).
->
-> If a root \(\alpha\) is repeated \(m\) times, the additional independent solutions are
->
-> $$
-> xe^{\alpha x},\dots,x^{m-1}e^{\alpha x}.
-> $$
+$$
+e^{mx}\left[
+m^n+a_{n-1}m^{n-1}+a_{n-2}m^{n-2}
++\cdots+a_1m+a_0
+\right]=0.
+$$
 
+Since $e^{mx}\neq 0$, we obtain the **characteristic equation**:
+
+$$
+\boxed{
+m^n+a_{n-1}m^{n-1}+a_{n-2}m^{n-2}
++\cdots+a_1m+a_0=0.
+}
+\qquad{\ \ \ \ \ \ \... (4B)}
+$$
+
+If the characteristic equation has $n$ distinct roots $m_1,m_2,\ldots,m_n$, then
+
+$$
+e^{m_1x},e^{m_2x},\ldots,e^{m_nx}
+$$
+
+are $n$ linearly independent solutions of the original ODE. Therefore, the general solution is
+
+$$
+\boxed{
+y(x)=C_1e^{m_1x}+C_2e^{m_2x}
++\cdots+C_ne^{m_nx}.
+}
+$$
+
+**Remark (Repeated Roots):**
+If a root $m$ is repeated $r$ times, the corresponding $r$ linearly independent solutions are
+
+$$
+e^{mx},\;xe^{mx},\;x^2e^{mx},\ldots,x^{r-1}e^{mx}.
+$$
+
+Thus, repeated roots introduce additional solutions multiplied by successive powers of $x$.
+
+##### Example: Series RL Circuit Equation
+Consider a series RL circuit with inductance $L$, resistance $R$, current $I(t)$, and applied voltage $V(t)$. By Kirchhoff's voltage law,
+
+$$
+L\frac{dI(t)}{dt}+RI(t)=V(t).
+$$
+
+Dividing throughout by $L$,
+
+$$
+\frac{dI(t)}{dt}+\frac{R}{L}I(t)
+=\frac{V(t)}{L}.
+$$
+
+Comparing this with the standard first-order linear ODE,
+
+$$
+\frac{dy}{dx}+P(x)y=Q(x),
+$$
+
+we identify
+
+$$
+P(t)=\frac{R}{L},
+\qquad
+Q(t)=\frac{V(t)}{L}.
+$$
+
+The integrating factor is therefore
+
+$$
+\begin{aligned}
+\alpha(t)
+&=e^{\int (R/L)\,dt}\\
+&=e^{Rt/L}.
+\end{aligned}
+$$
+
+For a constant applied voltage $V(t)=V_0$, the general solution is
+
+$$
+I(t)=\frac{1}{\alpha(t)}
+\left[
+\int e^{Rt/L}\frac{V_0}{L}\,dt+C
+\right].
+$$
+
+Evaluating the integral,
+
+$$
+\begin{aligned}
+I(t)
+&=e^{-Rt/L}
+\left[
+\frac{V_0}{R}e^{Rt/L}+C
+\right]\\
+&=\frac{V_0}{R}+Ce^{-Rt/L}.
+\end{aligned}
+$$
+
+Using the initial condition $I(0)=0$,
+
+$$
+0=\frac{V_0}{R}+C
+\quad\Longrightarrow\quad
+C=-\frac{V_0}{R}.
+$$
+
+Hence, the current in the circuit is
+
+$$
+\boxed{
+I(t)=\frac{V_0}{R}
+\left(1-e^{-Rt/L}\right).
+}
+$$
+
+This describes the growth of current in a series RL circuit when a constant voltage is applied at $t=0$. The current starts from zero and approaches its steady-state value $V_0/R$ as time increases.
 
 > ✍️ **Added by:** Priya Yadav, Vivek Kumar Meena, 2026-10-30
 ## Second Order Homogeneous Linear ODEs
