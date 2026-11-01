@@ -20,9 +20,9 @@ $$
 $$
 
 **Remark:**
-The differential operator is linear: each term $\(p_\nu(x)\,d^\nu/dx^\nu\)$ is a derivative (linear) followed by multiplication by a fixed function (also linear), and a sum of linear operators is linear.
+The differential operator is linear: each term $\(p_\nu(x)\, \frac{d^\nu}{dx^\nu}\)$ is a derivative (linear) followed by multiplication by a fixed function (also linear), and a sum of linear operators is linear.
 
-## Linear and Homogeneous ODEs
+## 1. Linear and Homogeneous ODEs
 **Linear ODE:**
 
 $$
@@ -72,9 +72,10 @@ $$
 
 where $y_{\text{part}}$ is called the particular solution of the ODE.
 
+---
 
-## Methods to solve different kinds of ODEs
-### Linear First-Order ODE: Integrating Factor Method
+## 2. Methods to solve different kinds of ODEs
+### (i) Linear First-Order ODE: Integrating Factor Method
 Consider the first-order linear non-homogeneous ODE
 
 $$
@@ -237,14 +238,13 @@ where $c$ is a constant.
 Therefore, any two solutions are proportional to each other, and the homogeneous first-order linear ODE has only **one linearly independent solution**.
 
 
-### Linear Homogeneous ODEs with Constant Coefficients
+### (ii) Linear Homogeneous ODEs with Constant Coefficients
 As a warm-up to series solutions, consider a linear homogeneous ODE of order $n$ with constant coefficients:
 
 $$
 \frac{d^ny}{dx^n}+a_{n-1}\frac{d^{n-1}y}{dx^{n-1}}
 +a_{n-2}\frac{d^{n-2}y}{dx^{n-2}}+\cdots+a_1\frac{dy}{dx}+a_0y=0.
-
-\qquad{\ \ \ \ \ \ \... (4A)}
+\qquad{\ \ \ \ \ \ \... (2F)}
 $$
 
 Try a solution of the form
@@ -259,7 +259,7 @@ $$
 \frac{d^k}{dx^k}e^{mx}=m^ke^{mx},
 $$
 
-substituting this form into equation (4A) gives
+substituting this form into equation (2F) gives
 
 $$
 e^{mx}\left[
@@ -275,7 +275,7 @@ $$
 m^n+a_{n-1}m^{n-1}+a_{n-2}m^{n-2}
 +\cdots+a_1m+a_0=0.
 }
-\qquad{\ \ \ \ \ \ \... (4B)}
+\qquad{\ \ \ \ \ \ \... (2G)}
 $$
 
 If the characteristic equation has $n$ distinct roots $m_1,m_2,\ldots,m_n$, then
@@ -384,7 +384,7 @@ This describes the growth of current in a series RL circuit when a constant volt
 ---
 
 > ✍️ **Added by:** Priya Yadav, Vivek Kumar Meena, 2026-10-30
-## Second Order Homogeneous Linear ODEs (SOLO)
+## 3. Second Order Homogeneous Linear ODEs (SOLO)
 
 The general form of a second order linear homogeneous ODE is
 
@@ -392,11 +392,11 @@ $$
 \boxed{
 y''(x)+P(x)\,y'(x)+Q(x)\,y(x)=0
 }
-\qquad{\ \ \ \ \ \ \... (5A)}
+\qquad{\ \ \ \ \ \ \... (3A)}
 $$
 
 ### Singular points of the SOLO
-As a precursor to the series solution method, we classify ODEs using singularities. We will see that the nature of the singularities is intimately connected to the feasibility of finding series solutions. Given the SOLO (5A):
+As a precursor to the series solution method, we classify ODEs using singularities. We will see that the nature of the singularities is intimately connected to the feasibility of finding series solutions. Given the SOLO (3A):
 
 **Definition: Ordinary and singular points**
 
@@ -432,7 +432,7 @@ $$
 z=\frac{1}{x}
 $$
 
-and consider $\(W(z)=y(1/z)\)$. Given that $\(y(x)\)$ satisfies (5A), $\(W(z)\)$ satisfies
+and consider $\(W(z)=y(1/z)\)$. Given that $\(y(x)\)$ satisfies (3A), $\(W(z)\)$ satisfies
 
 $$
 \frac{d^2W}{dz^2}
@@ -443,6 +443,7 @@ W(z)=0.
 $$
 
 We examine the behaviour of $\(\tilde P(z),\tilde Q(z)\)$ at $\(z=0\)$.
+
 **Remark:**
 With $\(y(x)=W(1/x)\)$, one finds
 
@@ -496,19 +497,19 @@ $$
 \lim_{z\to0}z^2\tilde Q(z)=\infty.
 $$
 
-Hence $\(z=0\)$ (i.e. $\(x\to\infty\)$) is an *irregular* singularity.
+Hence $\(z=0\)$ (i.e. $\(x\to\infty\)$ ) is an *irregular* singularity.
 
 ---
 
-## Frobenius Method
+## 4. Frobenius Method
 Consider the homogeneous SOLO
 
 $$
 \frac{d^2y}{dx^2}+P(x)\frac{dy}{dx}+Q(x)y=0.
-\qquad{\ \ \ \ \ \ \... (7A)}
+\qquad{\ \ \ \ \ \ \... (4A)}
 $$
 
-We would like to solve (7A) by expressing $\(y(x)\)$ as a power series in $\(x\)$. One motivation is that $\(y(x)\)$ often represents some physical function that we expect to be real analytic. We describe the method with a power series about $\(x=0\)$ (general $\(x=x_0\)$ is remarked on later).
+We would like to solve (4A) by expressing $\(y(x)\)$ as a power series in $\(x\)$. One motivation is that $\(y(x)\)$ often represents some physical function that we expect to be real analytic. We describe the method with a power series about $\(x=0\)$ (general $\(x=x_0\)$ is remarked on later).
 
 ### General form (Frobenius series)
 
@@ -517,10 +518,10 @@ $$
 y(x)=x^s\sum_{j=0}^{\infty}a_jx^j
 }
 \qquad \text{with } a_0\neq0.
-\qquad{\ \ \ \ \ \ \... (7B)}
+\qquad{\ \ \ \ \ \ \... (4B)}
 $$
 
-The smallest power $\(s\)$ and the coefficients $\(a_j\)$ are to be determined by plugging (7B) into (7A).
+The smallest power $\(s\)$ and the coefficients $\(a_j\)$ are to be determined by plugging (4B) into (4A).
 
 ### Steps
 
@@ -539,7 +540,7 @@ p_{-1}=\lim_{x\to0}xP(x),
 q_{-2}=\lim_{x\to0}x^2Q(x).
 $$
 
-The lowest power of $\(x\)$ in (7A) gives
+The lowest power of $\(x\)$ in (4A) gives
 
 $$
 \boxed{
@@ -555,15 +556,15 @@ $$
 P(x)=0,\quad Q(x)=\omega^2,
 $$
 
-so $\(x=0\)$ is an ordinary point. Substituting (7B):
+so $\(x=0\)$ is an ordinary point. Substituting (4B):
 
 $$
 \sum_{j=0}^{\infty}a_j(s+j)(s+j-1)x^{s+j-2}
 +\omega^2\sum_{j=0}^{\infty}a_jx^{s+j}=0.
-\qquad{\ \ \ \ \ \ \... (8A)}
+\qquad{\ \ \ \ \ \ \... (4C)}
 $$
 
-**Step 1 (coefficient of $\(x^{s-2}\)$):**
+**Step 1 (coefficient of $\(x^{s-2}\)$ ):**
 
 $$
 a_0s(s-1)=0
@@ -575,7 +576,7 @@ $$
 \boxed{s=0\quad\text{or}\quad s=1.}
 $$
 
-**Step 2 (coefficient of $\(x^{s-1}\)$):**
+**Step 2 (coefficient of $\(x^{s-1}\)$ ):**
 
 $$
 a_1(s+1)s=0.
@@ -583,7 +584,7 @@ $$
 
 This is automatically satisfied for $\(s=0\)$; if $\(s=1\)$, then $\(a_1=0\)$.
 
-**Step 3 (coefficient of $\(x^{s+j}\)$, $\(j\geq0\)$):**
+**Step 3 (coefficient of $\(x^{s+j}\)$, $\(j\geq0\)$ ):**
 
 $$
 a_{j+2}(s+j+2)(s+j+1)+\omega^2a_j=0,
@@ -685,19 +686,19 @@ y(x)=c_1\cos\omega x+c_2\sin\omega x.
 $$
 
 **Remarks:**
-1. The series solution should be substituted back into (7A) to ensure that errors in the calculation are detected.
+1. The series solution should be substituted back into (4A) to ensure that errors in the calculation are detected.
 2. A series solution may not always converge: sometimes the series satisfies the ODE formally but does not converge (the Legendre equation is an example, as we will see later).
 3. We can also expand about $\(x_0\neq0\)$:
 
-   $$
-   y(x)=\sum_{j=0}^{\infty}a_j(x-x_0)^{j+s}.
-   $$
+$$
+y(x)=\sum_{j=0}^{\infty} a_j(x-x_0)^{j+s}.
+$$
 
    Choosing $\(x_0\)$ to be an ordinary point (not singular) is safe to ensure the existence of a series solution. Even in this case, we can expect divergence of the solution when
 
-   $$
-   |x-x_0|=|z_1-x_0|,
-   $$
+$$
+|x-x_0|=|z_1-x_0|,
+$$
 
    where $\(z_1\)$ is the nearest singular point to $\(x_0\)$.
 
@@ -709,7 +710,7 @@ $$
 \boxed{
 x^2y''+xy'+(x^2-n^2)y=0.
 }
-\qquad{\ \ \ \ \ \ \... (10A)}
+\qquad{\ \ \ \ \ \ \... (4D)}
 $$
 
 Again take
@@ -721,12 +722,8 @@ $$
 and substitute:
 
 $$
-\begin{aligned}
-&\sum_j a_j(s+j)(s+j-1)x^{s+j}\\
-&+\sum_j a_j(s+j)x^{s+j}\\
-&+\sum_j a_jx^{s+j+2}\\
-&-\sum_j a_jn^2x^{s+j}=0.
-\end{aligned}
+\sum_j a_j(s+j)(s+j-1)x^{s+j} +\sum_j a_j(s+j)x^{s+j}
++\sum_j a_jx^{s+j+2}-\sum_j a_jn^2x^{s+j}=0.
 $$
 
 **Lowest power $\(x^s\)$:**
@@ -743,7 +740,7 @@ Hence,
 
 $$
 \boxed{s=+n,\quad s=-n.}
-\qquad{\ \ \ \ \ \ \... (11A)}
+\qquad{\ \ \ \ \ \ \... (4E)}
 $$
 
 **Second lowest power $\(x^{s+1}\)$:**
@@ -762,7 +759,7 @@ For $\(s=\pm n\)$, $\((s+1)^2-n^2=(n\pm1)^2-n^2\neq0\)$ in general, therefore
 
 $$
 \boxed{a_1=0.}
-\qquad{\ \ \ \ \ \ \... (11B)}
+\qquad{\ \ \ \ \ \ \... (4F)}
 $$
 
 **General term $\(x^{s+j}\)$:**
@@ -786,7 +783,7 @@ $$
 \boxed{
 a_{j+2}=\frac{-a_j}{(s+j+2)^2-n^2}.
 }
-\qquad{\ \ \ \ \ \ \... (12A)}
+\qquad{\ \ \ \ \ \ \... (4G)}
 $$
 
 Since $\(a_1=0\)$, all odd coefficients vanish:
@@ -866,35 +863,35 @@ When $\(j+2=2n\)$, $\(a_{j+2}\)$ blows up. So the series solution fails for $\(s
 ---
 
 > ✍️ **Added by:** Jigyasa Rana, 2026-10-31
-## Fuchs' Theorem
+## 5. Fuchs' Theorem
 ### When does a series solution work?
 
-- SHO equation, $\(x=0\)$: an ordinary (non-singular) point $\(\Rightarrow\)$ 2 linearly independent solutions.
-- Bessel equation, $\(x=0\)$: a regular singular point $\(\Rightarrow\)$ only 1 solution from the series.
+- SHO equation, $\(x=0\)$: an ordinary (non-singular) point $\Rightarrow$ 2 linearly independent solutions.
+- Bessel equation, $\(x=0\)$: a regular singular point $\Rightarrow$ only 1 solution from the series.
 
 So, seemingly, singular points have some influence. Consider
 
 $$
 y''-\frac{6}{x^2}y=0
-\qquad{\ \ \ \ \ \ \... (13A)}
+\qquad{\ \ \ \ \ \ \... (5A)}
 $$
 
 $$
 y''-\frac{6}{x^3}y=0
-\qquad{\ \ \ \ \ \ \... (13B)}
+\qquad{\ \ \ \ \ \ \... (5B)}
 $$
 
 $$
 y''+\frac{1}{x}y'-\frac{b^2}{x^2}y=0
-\qquad{\ \ \ \ \ \ \... (13C)}
+\qquad{\ \ \ \ \ \ \... (5C)}
 $$
 
 $$
 y''+\frac{1}{x^2}y'-\frac{b^2}{x^2}y=0
-\qquad{\ \ \ \ \ \ \... (13D)}
+\qquad{\ \ \ \ \ \ \... (5D)}
 $$
 
-**Equation (13A).**
+**Equation (5A).**
 
 The indicial equation is
 
@@ -910,7 +907,7 @@ $$
 
 so $\(s=3\)$ or $\(s=-2\)$.
 
-The equation is homogeneous in $\(x\)$ (each term scales as $\(x^{-2}\)$), so there is no recurrence relation, and $\(y=x^s\)$ gives the two solutions
+The equation is homogeneous in $x$ (each term scales as $\(x^{-2}\)$ ), so there is no recurrence relation, and $\(y=x^s\)$ gives the two solutions
 
 $$
 \boxed{
@@ -920,9 +917,9 @@ $$
 
 Note that one of them diverges at $\(x=0\)$. Here $\(x=0\)$ is a regular singular point.
 
-**Equation (13B).**
+**Equation (5B).**
 
-It differs from (13A) by one power of $\(x\)$ ($\(x=0\)$ is an irregular singularity). The lowest-power condition gives
+It differs from (5A) by one power of $\(x\)$ ($\(x=0\)$ is an irregular singularity). The lowest-power condition gives
 
 $$
 -6a_0=0,
@@ -930,7 +927,7 @@ $$
 
 but $\(a_0\neq0\)$. Therefore there is **no series solution**.
 
-**Equation (13C).**
+**Equation (5C).**
 
 Here $\(x=0\)$ is a regular singularity. The indicial equation is
 
@@ -950,12 +947,11 @@ $$
 \boxed{
 y=x^b,\qquad y=x^{-b}.
 }
-\qquad{\ \ \ \ \ \ \... (14A)}
 $$
 
-**Equation (13D).**
+**Equation (5D).**
 
-This only increases the power in the $\(y'\)$ coefficient from $\(-1\)$ to $\(-2\)$ (irregular singularity at $\(x=0\)$). The indicial equation gives $\(s=0\)$ and the recurrence relation is
+This only increases the power in the $\(y'\)$ coefficient from $\(-1\)$ to $\(-2\)$ (irregular singularity at $\(x=0\)$ ). The indicial equation gives $\(s=0\)$ and the recurrence relation is
 
 $$
 \boxed{
@@ -973,7 +969,7 @@ $$
 \end{aligned}
 $$
 
-So the power series solution blows up (it has zero radius of convergence), unless $\(b\)$ is chosen such that
+So the power series solution blows up (it has zero radius of convergence), unless $b$ is chosen such that
 
 $$
 b^2=j_{\max}(j_{\max}-1),
@@ -985,8 +981,8 @@ $\ $
 
 A Frobenius series expansion about an ordinary point or a regular singular point of a SOLO leads to at least one solution of the ODE. It is useful to note that whether the series solution converges, depends on the behaviour of $\(xP(x)\)$ and $\(x^2Q(x)\)$, especially on their Taylor expansions in the region of convergence.
 
-### Cases
-When expanding about a regular singular or ordinary point (with indicial roots $\(s_1\geq s_2\)$):
+### Cases:
+When expanding about a regular singular or ordinary point (with indicial roots $\(s_1\geq s_2\)$ ):
 
 1. If the solutions of the indicial equation **differ by a non-integer**, Frobenius produces **two independent solutions**.
 
@@ -1001,7 +997,7 @@ A Frobenius series about $\(x_0\)$ converges at least up to the nearest other si
 
 > ✍️ **Added by:** Anushree Srivastava, 2026-11-01
 
-### Concept of Wronskian
+### 6. Concept of Wronskian
 
 Consider a set of solutions $\(\{\varphi_1,\dots,\varphi_n\}\)$ of an ODE. If the set is linearly dependent, there exist $\(k_\lambda\)$, not all zero, with
 
@@ -1043,7 +1039,7 @@ Therefore:
 - If $\(W=0\)$ for all $\(x\in[a,b]\)$, then $\(\{\varphi_\lambda(x)\}\)$ is linearly dependent over $\([a,b]\)$.
 
 **Remark:**
-The statement "$\(W\equiv0\Rightarrow\)$ dependent" holds for *solutions of the same linear ODE*, which is the case used here. For arbitrary functions, $\(W\equiv0\)$ does not by itself imply dependence (e.g. $\(x^2\)$ and $\(x|x|\)$ have $\(W\equiv0\)$ but are independent on $\(\mathbb R\)$).
+The statement "$W\equiv0\Rightarrow$ dependent" holds for *solutions of the same linear ODE*, which is the case used here. For arbitrary functions, $\(W\equiv0\)$ does not by itself imply dependence (e.g. $\(x^2\)$ and $\(x|x|\)$ have $\(W\equiv0\)$ but are independent on $\mathbb R$ ).
 
 **Example**
 
@@ -1066,9 +1062,8 @@ $$
 
 So $\(\varphi_1,\varphi_2\)$ are linearly independent.
 
-**2)**
-
-$\(\dfrac{d^2\varphi}{dx^2}=\varphi(x)\)$ has solutions
+**2)$\dfrac{d^2\varphi}{dx^2}=\varphi(x)$**
+has solutions
 
 $$
 \varphi_1=e^x,\qquad \varphi_2=e^{-x}.
@@ -1158,7 +1153,7 @@ $$
 \boxed{
 W_{jk}'=-P(x)\,W_{jk}.
 }
-\qquad{\ \ \ \ \ \ \... (19A)}
+\qquad{\ \ \ \ \ \ \... (6A)}
 $$
 
 Now consider the full Wronskian of $\(\{y_1,y_2,y_3\}\)$. Expanding along the second row,
