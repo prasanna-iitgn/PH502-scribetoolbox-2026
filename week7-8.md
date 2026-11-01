@@ -195,8 +195,8 @@ $$
 y_p(x)=\frac{1}{\alpha(x)}
 \int\alpha(x)q(x)\,dx
 }
-
 $$
+
 is a particular solution of the non-homogeneous equation.
 Thus, the general solution consists of the sum of the homogeneous solution and a particular solution. The arbitrary constant $C$ determines the contribution from the homogeneous part.
 
@@ -234,19 +234,16 @@ $$
 
 where $c$ is a constant.
 
-Therefore, any two solutions are proportional to each other, and the homogeneous first-order linear ODE has only **one linearly independent solution**. $\square$
+Therefore, any two solutions are proportional to each other, and the homogeneous first-order linear ODE has only **one linearly independent solution**.
 
 
 ### Linear Homogeneous ODEs with Constant Coefficients
 As a warm-up to series solutions, consider a linear homogeneous ODE of order $n$ with constant coefficients:
 
 $$
-\begin{aligned}
-\frac{d^ny}{dx^n}
-&+a_{n-1}\frac{d^{n-1}y}{dx^{n-1}}
-+a_{n-2}\frac{d^{n-2}y}{dx^{n-2}}\\
-&+\cdots+a_1\frac{dy}{dx}+a_0y=0.
-\end{aligned}
+\frac{d^ny}{dx^n}+a_{n-1}\frac{d^{n-1}y}{dx^{n-1}}
++a_{n-2}\frac{d^{n-2}y}{dx^{n-2}}+\cdots+a_1\frac{dy}{dx}+a_0y=0.
+
 \qquad{\ \ \ \ \ \ \... (4A)}
 $$
 
@@ -305,7 +302,7 @@ $$
 
 Thus, repeated roots introduce additional solutions multiplied by successive powers of $x$.
 
-##### Example: Series RL Circuit Equation
+#### Example: Series RL Circuit Equation
 Consider a series RL circuit with inductance $L$, resistance $R$, current $I(t)$, and applied voltage $V(t)$. By Kirchhoff's voltage law,
 
 $$
@@ -385,29 +382,28 @@ $$
 This describes the growth of current in a series RL circuit when a constant voltage is applied at $t=0$. The current starts from zero and approaches its steady-state value $V_0/R$ as time increases.
 
 > ✍️ **Added by:** Priya Yadav, Vivek Kumar Meena, 2026-10-30
-## Second Order Homogeneous Linear ODEs
+## Second Order Homogeneous Linear ODEs (SOLO)
 
-The general form of a second order linear ODE (SOLO, homogeneous case; the inhomogeneous case is commented on at the end) is
+The general form of a second order linear homogeneous ODE is
 
 $$
 \boxed{
 y''(x)+P(x)\,y'(x)+Q(x)\,y(x)=0
 }
-\tag{5A}
+\qquad{\ \ \ \ \ \ \... (5A)}
 $$
 
 ### Singular points of the SOLO
-
 As a precursor to the series solution method, we classify ODEs using singularities. We will see that the nature of the singularities is intimately connected to the feasibility of finding series solutions. Given the SOLO (5A):
 
 **Definition: Ordinary and singular points**
 
-1. A point \(x_0\) such that \(P(x_0)\) and \(Q(x_0)\) are finite is an **ordinary point** of the ODE.
-2. A point \(x_0\) such that \(P(x)\) or \(Q(x)\) diverges as \(x\to x_0\) is a **singular point** of the ODE.
+1. A point $\(x_0\)$ such that $\(P(x_0)\)$ and $\(Q(x_0)\)$ are finite is an **ordinary point** of the ODE.
+2. A point $\(x_0\)$ such that $\(P(x)\)$ or $\(Q(x)\)$ diverges as $\(x\to x_0\)$ is a **singular point** of the ODE.
 
 **Definition: Regular and irregular singular points**
 
-A singular point \(x_0\) is a **regular singular point** if, although \(P(x)\) or \(Q(x)\) diverges at \(x_0\), both
+A singular point $\(x_0\)$ is a **regular singular point** if, although $\(P(x)\)$ or $\(Q(x)\)$ diverges at $\(x_0\)$, both
 
 $$
 (x-x_0)P(x)
@@ -415,9 +411,9 @@ $$
 (x-x_0)^2Q(x)
 $$
 
-remain finite as \(x\to x_0\).
+remain finite as $\(x\to x_0\)$.
 
-It is an **irregular** ("essential") **singularity** if \(P(x)\) diverges faster than \(\dfrac{1}{x-x_0}\), or \(Q(x)\) diverges faster than \(\dfrac{1}{(x-x_0)^2}\), i.e.
+It is an **irregular** ("essential") **singularity** if $\(P(x)\)$ diverges faster than $\(\dfrac{1}{x-x_0}\)$, or $\(Q(x)\)$ diverges faster than $\(\dfrac{1}{(x-x_0)^2}\)$, i.e.
 
 $$
 \boxed{
@@ -427,15 +423,14 @@ $$
 }
 $$
 
-### Behaviour at infinity
-
-The above definitions hold for every finite \(x_0\). To understand the behaviour as \(x\to\infty\), set
+#### Behaviour at infinity
+The above definitions hold for every finite $\(x_0\)$. To understand the behaviour as $\(x\to\infty\)$, set
 
 $$
 z=\frac{1}{x}
 $$
 
-and consider \(W(z)=y(1/z)\). Given that \(y(x)\) satisfies (5A), \(W(z)\) satisfies
+and consider $\(W(z)=y(1/z)\)$. Given that $\(y(x)\)$ satisfies (5A), $\(W(z)\)$ satisfies
 
 $$
 \frac{d^2W}{dz^2}
@@ -445,25 +440,23 @@ $$
 W(z)=0.
 $$
 
-We examine the behaviour of \(\tilde P(z),\tilde Q(z)\) at \(z=0\).
+We examine the behaviour of $\(\tilde P(z),\tilde Q(z)\)$ at $\(z=0\)$.
+**Remark:**
+With $\(y(x)=W(1/x)\)$, one finds
 
-> **Remark (Theory: derivation)**
->
-> With \(y(x)=W(1/x)\), one finds
->
-> $$
-> y'=-z^2W'
-> $$
->
-> and
->
-> $$
-> y''=z^4W''+2z^3W'.
-> $$
->
-> Substituting into \(y''+Py'+Qy=0\) and dividing by \(z^4\) gives the equation above.
+$$
+y'=-z^2W'
+$$
 
-**Example: Bessel's equation**
+and
+
+$$
+y''=z^4W''+2z^3W'.
+$$
+
+Substituting into $\(y''+Py'+Qy=0\)$ and dividing by $\(z^4\)$ gives the equation above.
+
+#### Example: Bessel's equation
 
 $$
 x^2y''+xy'+(x^2-n^2)y=0
@@ -477,7 +470,7 @@ P(x)=\frac{1}{x},
 Q(x)=1-\frac{n^2}{x^2}.
 $$
 
-\(x=0\) is a singular point. It is a *regular* singular point because
+$\(x=0\)$ is a singular point. It is a *regular* singular point because
 
 $$
 \lim_{x\to0}xP(x)=1,
@@ -501,18 +494,17 @@ $$
 \lim_{z\to0}z^2\tilde Q(z)=\infty.
 $$
 
-Hence \(z=0\) (i.e. \(x\to\infty\)) is an *irregular* singularity.
+Hence $\(z=0\)$ (i.e. $\(x\to\infty\)$) is an *irregular* singularity.
 
-### Frobenius Method
-
+## Frobenius Method
 Consider the homogeneous SOLO
 
 $$
 \frac{d^2y}{dx^2}+P(x)\frac{dy}{dx}+Q(x)y=0.
-\tag{7A}
+\qquad{\ \ \ \ \ \ \... (7A)}
 $$
 
-We would like to solve (7A) by expressing \(y(x)\) as a power series in \(x\). One motivation is that \(y(x)\) often represents some physical function that we expect to be real analytic. We describe the method with a power series about \(x=0\) (general \(x=x_0\) is remarked on later).
+We would like to solve (7A) by expressing $\(y(x)\)$ as a power series in $\(x\)$. One motivation is that $\(y(x)\)$ often represents some physical function that we expect to be real analytic. We describe the method with a power series about $\(x=0\)$ (general $\(x=x_0\)$ is remarked on later).
 
 ### General form (Frobenius series)
 
@@ -521,38 +513,37 @@ $$
 y(x)=x^s\sum_{j=0}^{\infty}a_jx^j
 }
 \qquad \text{with } a_0\neq0.
-\tag{7B}
+\qquad{\ \ \ \ \ \ \... (7B)}
 $$
 
-The smallest power \(s\) and the coefficients \(a_j\) are to be determined by plugging (7B) into (7A).
+The smallest power $\(s\)$ and the coefficients $\(a_j\)$ are to be determined by plugging (7B) into (7A).
 
 ### Steps
 
-By uniqueness of power series, the coefficient of each power of \(x\) must vanish separately.
+By uniqueness of power series, the coefficient of each power of $\(x\)$ must vanish separately.
 
-1. **Step 1:** Examine the coefficient of the *smallest* power of \(x\). This gives the **indicial equation** for \(s\).
-2. **Step 2:** Consider the *second lowest* power of \(x\). This fixes (or constrains) \(a_1\).
-3. **Step 3:** Consider the general term and demand that it vanishes. This gives a **recursion relation** for \(a_{j+2}\) (or \(a_{j+1}\)) in terms of earlier coefficients.
+1. **Step 1:** Examine the coefficient of the *smallest* power of $\(x\)$. This gives the **indicial equation** for $\(s\)$.
+2. **Step 2:** Consider the *second lowest* power of $\(x\)$. This fixes (or constraints) $\(a_1\)$.
+3. **Step 3:** Consider the general term and demand that it vanishes. This gives a **recursion relation** for $\(a_{j+2}\)$ (or $\(a_{j+1}\)$) in terms of earlier coefficients.
 
-> **Remark (Theory: indicial equation in general)**
->
-> If \(x=0\) is a regular singular point, write
->
-> $$
-> p_{-1}=\lim_{x\to0}xP(x),
-> \qquad
-> q_{-2}=\lim_{x\to0}x^2Q(x).
-> $$
->
-> The lowest power of \(x\) in (7A) gives
->
-> $$
-> \boxed{
-> s(s-1)+p_{-1}s+q_{-2}=0.
-> }
-> $$
+**Remark (Indicial equation in general):**
+If $\(x=0\)$ is a regular singular point, write
 
-**Example: Simple harmonic oscillator**
+$$
+p_{-1}=\lim_{x\to0}xP(x),
+\qquad
+q_{-2}=\lim_{x\to0}x^2Q(x).
+$$
+
+The lowest power of $\(x\)$ in (7A) gives
+
+$$
+\boxed{
+s(s-1)+p_{-1}s+q_{-2}=0.
+}
+$$
+
+#### Example: Simple harmonic oscillator
 
 $$
 \frac{d^2y}{dx^2}+\omega^2y=0
@@ -560,35 +551,35 @@ $$
 P(x)=0,\quad Q(x)=\omega^2,
 $$
 
-so \(x=0\) is an ordinary point. Substituting (7B):
+so $\(x=0\)$ is an ordinary point. Substituting (7B):
 
 $$
 \sum_{j=0}^{\infty}a_j(s+j)(s+j-1)x^{s+j-2}
 +\omega^2\sum_{j=0}^{\infty}a_jx^{s+j}=0.
-\tag{8A}
+\qquad{\ \ \ \ \ \ \... (8A)}
 $$
 
-**Step 1 (coefficient of \(x^{s-2}\)):**
+**Step 1 (coefficient of $\(x^{s-2}\)$):**
 
 $$
 a_0s(s-1)=0
 $$
 
-with \(a_0\neq0\), the *indicial equation*, so
+with $\(a_0\neq0\)$, the *indicial equation*, so
 
 $$
 \boxed{s=0\quad\text{or}\quad s=1.}
 $$
 
-**Step 2 (coefficient of \(x^{s-1}\)):**
+**Step 2 (coefficient of $\(x^{s-1}\)$):**
 
 $$
 a_1(s+1)s=0.
 $$
 
-This is automatically satisfied for \(s=0\); if \(s=1\), then \(a_1=0\).
+This is automatically satisfied for $\(s=0\)$; if $\(s=1\)$, then $\(a_1=0\)$.
 
-**Step 3 (coefficient of \(x^{s+j}\), \(j\geq0\)):**
+**Step 3 (coefficient of $\(x^{s+j}\)$, $\(j\geq0\)$):**
 
 $$
 a_{j+2}(s+j+2)(s+j+1)+\omega^2a_j=0,
@@ -601,14 +592,13 @@ $$
 a_{j+2}=-a_j\frac{\omega^2}{(s+j+2)(s+j+1)}
 }
 \qquad \text{(recursion relation)}
-\tag{8D}
+\qquad{\ \ \ \ \ \ \... (8D)}
 $$
 
-Once \(a_j\) is known, \(a_{j+2},a_{j+4},\dots\) are fixed.
+Once $\(a_j\)$ is known, $\(a_{j+2},a_{j+4},\dots\)$ are fixed.
 
-**Case \(s=0\).**
-
-\(a_1\) is arbitrary; take \(a_1=0\) (the odd series is anyway the \(s=1\) solution). Then
+**Case $\(s=0\)$.**
+$\(a_1\)$ is arbitrary; take $\(a_1=0\)$ (the odd series is anyway the $\(s=1\)$ solution). Then
 
 $$
 a_3=a_5=a_7=\dots=0,
@@ -652,8 +642,7 @@ y(x)\big|_{s=0}
 \end{aligned}
 $$
 
-**Case \(s=1\).**
-
+**Case $\(s=1\)$.**
 Here
 
 $$
@@ -691,29 +680,24 @@ y(x)=c_1\cos\omega x+c_2\sin\omega x.
 }
 $$
 
-### Remarks
-
+**Remarks:**
 1. The series solution should be substituted back into (7A) to ensure that errors in the calculation are detected.
-
 2. A series solution may not always converge: sometimes the series satisfies the ODE formally but does not converge (the Legendre equation is an example, as we will see later).
-
-3. We can also expand about \(x_0\neq0\):
+3. We can also expand about $\(x_0\neq0\)$:
 
    $$
    y(x)=\sum_{j=0}^{\infty}a_j(x-x_0)^{j+s}.
    $$
 
-   Choosing \(x_0\) to be an ordinary point (not singular) is safe to ensure the existence of a series solution. Even in this case, we can expect divergence of the solution when
+   Choosing $\(x_0\)$ to be an ordinary point (not singular) is safe to ensure the existence of a series solution. Even in this case, we can expect divergence of the solution when
 
    $$
    |x-x_0|=|z_1-x_0|,
    $$
 
-   where \(z_1\) is the nearest singular point to \(x_0\).
+   where $\(z_1\)$ is the nearest singular point to $\(x_0\)$.
 
----
-
-**Example: Bessel's equation**
+#### Example: Bessel's equation
 
 The oscillator example was simple and gave two linearly independent solutions directly. Consider the more non-trivial case
 
@@ -721,7 +705,7 @@ $$
 \boxed{
 x^2y''+xy'+(x^2-n^2)y=0.
 }
-\tag{10A}
+\qquad{\ \ \ \ \ \ \... (10A)}
 $$
 
 Again take
@@ -741,7 +725,7 @@ $$
 \end{aligned}
 $$
 
-**Lowest power \(x^s\):**
+**Lowest power $\(x^s\)$:**
 
 $$
 a_0\bigl[s(s-1)+s-n^2\bigr]=0
@@ -755,10 +739,10 @@ Hence,
 
 $$
 \boxed{s=+n,\quad s=-n.}
-\tag{11A}
+\qquad{\ \ \ \ \ \ \... (11A)}
 $$
 
-**Second lowest power \(x^{s+1}\):**
+**Second lowest power $\(x^{s+1}\)$:**
 
 $$
 a_1\bigl[(s+1)s+(s+1)-n^2\bigr]=0
@@ -770,14 +754,14 @@ $$
 a_1\bigl[(s+1)^2-n^2\bigr]=0.
 $$
 
-For \(s=\pm n\), \((s+1)^2-n^2=(n\pm1)^2-n^2\neq0\) in general, therefore
+For $\(s=\pm n\)$, $\((s+1)^2-n^2=(n\pm1)^2-n^2\neq0\)$ in general, therefore
 
 $$
 \boxed{a_1=0.}
-\tag{11B}
+\qquad{\ \ \ \ \ \ \... (11B)}
 $$
 
-**General term \(x^{s+j}\):**
+**General term $\(x^{s+j}\)$:**
 
 $$
 \begin{aligned}
@@ -798,16 +782,16 @@ $$
 \boxed{
 a_{j+2}=\frac{-a_j}{(s+j+2)^2-n^2}.
 }
-\tag{12A}
+\qquad{\ \ \ \ \ \ \... (12A)}
 $$
 
-Since \(a_1=0\), all odd coefficients vanish:
+Since $\(a_1=0\)$, all odd coefficients vanish:
 
 $$
 a_1=a_3=\dots=0.
 $$
 
-**Case \(s=+n\).**
+**Case $\(s=+n\)$.**
 
 Then
 
@@ -859,7 +843,7 @@ y(x)=J_n(x)
 \text{(Bessel function of the first kind).}
 $$
 
-**Case \(s=-n\).**
+**Case $\(s=-n\)$.**
 
 From (12A),
 
@@ -871,11 +855,10 @@ a_{j+2}
 \end{aligned}
 $$
 
-When \(j+2=2n\), \(a_{j+2}\) blows up. So the series solution fails for \(s=-n\), and *only one solution is obtained for Bessel's equation* (for integer \(n\)).
+When $\(j+2=2n\)$, $\(a_{j+2}\)$ blows up. So the series solution fails for $\(s=-n\)$, and *only one solution is obtained for Bessel's equation* (for integer $\(n\)$).
 
-> **Remark (Theory)**
->
-> The two roots differ by \(2n\). If \(2n\) is not an integer, the \(s=-n\) series also works and gives \(J_{-n}(x)\). The breakdown above is the integer-difference case, treated by Fuchs' theorem below.
+**Remark:** The two roots differ by $\(2n\)$. If $\(2n\)$ is not an integer, the $\(s=-n\)$ series also works and gives $\(J_{-n}(x)\)$. The breakdown above is the integer-difference case, treated by Fuchs' theorem below.
+
 
 > ✍️ **Added by:** Jigyasa Rana, 2026-10-31
 ## Fuchs' Theorem
