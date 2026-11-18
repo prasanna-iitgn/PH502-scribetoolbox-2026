@@ -137,12 +137,49 @@ Entries and topics covered during Weeks 3 and 4:
 *(self-study / upcoming entries)*
 
 ---
-
 ### Module 4: Linear Algebra
 
-*(self-study / upcoming entries)*
+#### [Week 13–14](https://github.com/prasanna-iitgn/PH502-scribetoolbox-2026/blob/main/week13-14.md)
+
+Entries and topics covered during Weeks 13 and 14:
+
+- **Characteristic Polynomial, Cayley–Hamilton, Traces & Matrix Operators** (Manjot Kaur - 2026-11-09)
+  * Characteristic Polynomial, Spectrum and Vieta Relations
+  * Cayley–Hamilton Theorem
+  * Traces, Power Sums and Nilpotent Matrices
+  * Generalized Gaussian Integral
+  * Inner Product on the Space of Matrices
+  * Matrices as Operators and Projection Operators
+  * Gram–Schmidt Orthonormalization
+- **Special Matrices, Null Space & Diagonalization** (Shankaranarayanan M - 2026-11-10)
+  * Hermitian, Unitary and Positive Matrices
+  * Further Properties of Special Matrices
+  * Null Space, Rank and the Rank–Nullity Theorem
+  * Row Space, Column Space and Left Null Space
+  * Degenerate Eigenvalues and Defective Matrices
+  * When Can a Matrix Be Diagonalized?
+  * Minimal Polynomial and How to Find It
+  * Worked Analysis of a Circulant Matrix
+- **Matrix Decompositions & Sequence Spaces** (Souradip Majumdar - 2026-11-12)
+  * The All-Ones Matrix: Minimal Polynomial from M² = nM
+  * Schur Decomposition and the Spectral Theorem
+  * Spectral Representation and Functions of a Matrix
+  * Singular Value Decomposition and Pseudo-Inverse
+  * LU Decomposition
+  * Jordan Canonical Form
+  * The Spaces ℓ₂ and ℒ₂
+- **Hilbert Spaces, Operators & Continuous Bases** (Devarshkumar K. Panchal - 2026-11-13)
+  * ℓₚ Spaces and Duality
+  * Continuous Basis and the Fourier Transform
+  * Position- and Momentum-Space Wavefunctions
+  * Hilbert Spaces, Completeness and Separability
+  * Linear Manifolds and Subspaces
+  * Operators: Domain, Range and Inverse
+  * Linear Operators, Norm and Boundedness
+  * Failure of Trace Cyclicity in Infinite Dimensions
 
 ---
+
 
 ## Sample Entry
 
